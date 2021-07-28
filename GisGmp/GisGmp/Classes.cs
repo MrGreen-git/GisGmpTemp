@@ -26,7 +26,7 @@ public class ChargeCreationRequest : RequestType {
 
 
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0", IsNullable=false)]
 public class DeedInfo {
@@ -46,7 +46,7 @@ public class DeedInfo {
     public string subjName { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum DeedInfoIDType {
 
@@ -78,7 +78,7 @@ public enum DeedInfoIDType {
     Item16,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ExecutiveProcedureInfoTypeExecutOrgan {
     [XmlAttribute]
@@ -103,7 +103,7 @@ public class ExecutiveProcedureInfoTypeExecutOrgan {
     public string organSignFIO { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ExecutiveProcedureInfoTypeDebtor {
     public ExecutiveProcedureInfoTypeDebtorPerson Person { get; set; }
@@ -121,7 +121,7 @@ public class ExecutiveProcedureInfoTypeDebtor {
     public string debtorCountryCode { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ExecutiveProcedureInfoTypeDebtorPerson {
     [XmlAttribute]
@@ -140,7 +140,7 @@ public class ExecutiveProcedureInfoTypeDebtorPerson {
     public string debtorBirthPlace { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum ExecutiveProcedureInfoTypeDebtorPersonDebtorGender {
 
@@ -149,7 +149,7 @@ public enum ExecutiveProcedureInfoTypeDebtorPersonDebtorGender {
     женский,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum ExecutiveProcedureInfoTypeDebtorDebtorType {
 
@@ -166,7 +166,7 @@ public enum ExecutiveProcedureInfoTypeDebtorDebtorType {
     Item1700,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum ExecutiveProcedureInfoTypeSrokPrIspType {
 
@@ -180,7 +180,7 @@ public enum ExecutiveProcedureInfoTypeSrokPrIspType {
     Item3,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
 public class ImportedChargeType : ChargeType {
     [XmlAttribute]
@@ -192,562 +192,188 @@ public class ImportedChargeType : ChargeType {
 
 [XmlInclude(typeof(ExportRequestType))]
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class RequestType {
-    
-    private string idField;
-    
-    private DateTime timestampField;
-    
-    private string senderIdentifierField;
-    
-    private string senderRoleField;
-
-    [XmlAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
+    [XmlAttribute(DataType = "ID")]
+    public string Id { get; set; }
 
     [XmlAttribute]
-    public DateTime timestamp {
-        get {
-            return this.timestampField;
-        }
-        set {
-            this.timestampField = value;
-        }
-    }
+    public DateTime timestamp { get; set; }
 
     [XmlAttribute]
-    public string senderIdentifier {
-        get {
-            return this.senderIdentifierField;
-        }
-        set {
-            this.senderIdentifierField = value;
-        }
-    }
+    public string senderIdentifier { get; set; }
 
     [XmlAttribute]
-    public string senderRole {
-        get {
-            return this.senderRoleField;
-        }
-        set {
-            this.senderRoleField = value;
-        }
-    }
+    public string senderRole { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ExportRequestType : RequestType {
-    
-    private PagingType pagingField;
-    
-    private string originatorIdField;
-
-    public PagingType Paging {
-        get {
-            return this.pagingField;
-        }
-        set {
-            this.pagingField = value;
-        }
-    }
+    public PagingType Paging { get; set; }
 
     [XmlAttribute]
-    public string originatorId {
-        get {
-            return this.originatorIdField;
-        }
-        set {
-            this.originatorIdField = value;
-        }
-    }
+    public string originatorId { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class PagingType {
-    
-    private string pageNumberField;
-    
-    private string pageLengthField;
+    [XmlAttribute(DataType = "nonNegativeInteger")]
+    public string pageNumber { get; set; }
 
-    [XmlAttribute(DataType="nonNegativeInteger")]
-    public string pageNumber {
-        get {
-            return this.pageNumberField;
-        }
-        set {
-            this.pageNumberField = value;
-        }
-    }
-
-    [XmlAttribute(DataType="nonNegativeInteger")]
-    public string pageLength {
-        get {
-            return this.pageLengthField;
-        }
-        set {
-            this.pageLengthField = value;
-        }
-    }
+    [XmlAttribute(DataType = "nonNegativeInteger")]
+    public string pageLength { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/import-chargestemplate/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/import-chargestemplate/2.4.0", IsNullable=false)]
 public class ChargeCreationResponse : ResponseType {
-    
-    private ChargeType chargeField;
-
-    public ChargeType Charge {
-        get {
-            return this.chargeField;
-        }
-        set {
-            this.chargeField = value;
-        }
-    }
+    public ChargeType Charge { get; set; }
 }
 
 [XmlInclude(typeof(ImportPackageResponseType))]
-
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ResponseType {
-    
-    private string idField;
-    
-    private string rqIdField;
-    
-    private string recipientIdentifierField;
-    
-    private DateTime timestampField;
-
-    [XmlAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
+    [XmlAttribute(DataType = "ID")]
+    public string Id { get; set; }
 
     [XmlAttribute]
-    public string RqId {
-        get {
-            return this.rqIdField;
-        }
-        set {
-            this.rqIdField = value;
-        }
-    }
+    public string RqId { get; set; }
 
     [XmlAttribute]
-    public string recipientIdentifier {
-        get {
-            return this.recipientIdentifierField;
-        }
-        set {
-            this.recipientIdentifierField = value;
-        }
-    }
+    public string recipientIdentifier { get; set; }
 
     [XmlAttribute]
-    public DateTime timestamp {
-        get {
-            return this.timestampField;
-        }
-        set {
-            this.timestampField = value;
-        }
-    }
+    public DateTime timestamp { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot("ImportChargesResponse", Namespace="urn://roskazna.ru/gisgmp/xsd/services/import-charges/2.4.0", IsNullable=false)]
 public class ImportPackageResponseType : ResponseType {
-    
-    private ImportProtocolType[] importProtocolField;
-
     [XmlElement("ImportProtocol")]
-    public ImportProtocolType[] ImportProtocol {
-        get {
-            return this.importProtocolField;
-        }
-        set {
-            this.importProtocolField = value;
-        }
-    }
+    public ImportProtocolType[] ImportProtocol { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class ImportProtocolType {
-    
-    private string entityIDField;
-    
-    private string codeField;
-    
-    private string descriptionField;
-
-    [XmlAttribute(DataType="ID")]
-    public string entityID {
-        get {
-            return this.entityIDField;
-        }
-        set {
-            this.entityIDField = value;
-        }
-    }
+    [XmlAttribute(DataType = "ID")]
+    public string entityID { get; set; }
 
     [XmlAttribute]
-    public string code {
-        get {
-            return this.codeField;
-        }
-        set {
-            this.codeField = value;
-        }
-    }
+    public string code { get; set; }
 
     [XmlAttribute]
-    public string description {
-        get {
-            return this.descriptionField;
-        }
-        set {
-            this.descriptionField = value;
-        }
-    }
+    public string description { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0", IsNullable=false)]
 public class ChangeStatus : ChangeStatusType {
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public abstract class ChangeStatusType {
-    
-    private string meaningField;
-    
-    private string reasonField;
-    
-    private DateTime changeDateField;
-    
-    private bool changeDateFieldSpecified;
+    public string Meaning { get; set; }
 
-    public string Meaning {
-        get {
-            return this.meaningField;
-        }
-        set {
-            this.meaningField = value;
-        }
-    }
+    public string Reason { get; set; }
 
-    public string Reason {
-        get {
-            return this.reasonField;
-        }
-        set {
-            this.reasonField = value;
-        }
-    }
-
-    public DateTime ChangeDate {
-        get {
-            return this.changeDateField;
-        }
-        set {
-            this.changeDateField = value;
-        }
-    }
+    public DateTime ChangeDate { get; set; }
 
     [XmlIgnore]
-    public bool ChangeDateSpecified {
-        get {
-            return this.changeDateFieldSpecified;
-        }
-        set {
-            this.changeDateFieldSpecified = value;
-        }
-    }
+    public bool ChangeDateSpecified { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0", IsNullable=false)]
 public class ChangeStatusInfo : ChangeStatusType {
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot("TimeInterval", Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0", IsNullable=false)]
 public class TimeIntervalType {
-    
-    private DateTime startDateField;
-    
-    private DateTime endDateField;
+    [XmlAttribute]
+    public DateTime startDate { get; set; }
 
     [XmlAttribute]
-    public DateTime startDate {
-        get {
-            return this.startDateField;
-        }
-        set {
-            this.startDateField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public DateTime endDate {
-        get {
-            return this.endDateField;
-        }
-        set {
-            this.endDateField = value;
-        }
-    }
+    public DateTime endDate { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0", IsNullable=false)]
 public class KBKlist {
-    
-    private string[] kBKField;
-
     [XmlElement("KBK")]
-    public string[] KBK {
-        get {
-            return this.kBKField;
-        }
-        set {
-            this.kBKField = value;
-        }
-    }
+    public string[] KBK { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
-[XmlRoot("directoryOKTMO", Namespace="urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/attachments/directoryOK" +
-    "TMO/2.4.0", IsNullable=false)]
+[XmlRoot("directoryOKTMO", Namespace="urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/attachments/directoryOKTMO/2.4.0", IsNullable=false)]
 public class directoryOKTMOType {
-    
-    private oktmoNSIInfoType[] oktmoNSIInfoField;
-
     [XmlElement("oktmoNSIInfo")]
-    public oktmoNSIInfoType[] oktmoNSIInfo {
-        get {
-            return this.oktmoNSIInfoField;
-        }
-        set {
-            this.oktmoNSIInfoField = value;
-        }
-    }
+    public oktmoNSIInfoType[] oktmoNSIInfo { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public class oktmoNSIInfoType {
-    
-    private string regionCodeField;
-    
-    private string areaCodeField;
-    
-    private string cityCodeField;
-    
-    private string localCodeField;
-    
-    private string controlNumField;
-    
-    private string sectionField;
-    
-    private string codeField;
-    
-    private string nameField;
-    
-    private string centreNameField;
-    
-    private string clarificationField;
-    
-    private string lastChangeNumField;
-    
-    private oktmoNSIInfoTypeLastChangeType lastChangeTypeField;
-    
-    private DateTime changeDateField;
-    
-    private DateTime introductionDateField;
-    
-    private DateTime updateDateField;
+    [XmlAttribute]
+    public string regionCode { get; set; }
 
     [XmlAttribute]
-    public string regionCode {
-        get {
-            return this.regionCodeField;
-        }
-        set {
-            this.regionCodeField = value;
-        }
-    }
+    public string areaCode { get; set; }
 
     [XmlAttribute]
-    public string areaCode {
-        get {
-            return this.areaCodeField;
-        }
-        set {
-            this.areaCodeField = value;
-        }
-    }
+    public string cityCode { get; set; }
 
     [XmlAttribute]
-    public string cityCode {
-        get {
-            return this.cityCodeField;
-        }
-        set {
-            this.cityCodeField = value;
-        }
-    }
+    public string localCode { get; set; }
 
     [XmlAttribute]
-    public string localCode {
-        get {
-            return this.localCodeField;
-        }
-        set {
-            this.localCodeField = value;
-        }
-    }
+    public string controlNum { get; set; }
 
     [XmlAttribute]
-    public string controlNum {
-        get {
-            return this.controlNumField;
-        }
-        set {
-            this.controlNumField = value;
-        }
-    }
+    public string section { get; set; }
 
     [XmlAttribute]
-    public string section {
-        get {
-            return this.sectionField;
-        }
-        set {
-            this.sectionField = value;
-        }
-    }
+    public string code { get; set; }
 
     [XmlAttribute]
-    public string code {
-        get {
-            return this.codeField;
-        }
-        set {
-            this.codeField = value;
-        }
-    }
+    public string name { get; set; }
 
     [XmlAttribute]
-    public string name {
-        get {
-            return this.nameField;
-        }
-        set {
-            this.nameField = value;
-        }
-    }
+    public string centreName { get; set; }
 
     [XmlAttribute]
-    public string centreName {
-        get {
-            return this.centreNameField;
-        }
-        set {
-            this.centreNameField = value;
-        }
-    }
+    public string clarification { get; set; }
 
     [XmlAttribute]
-    public string clarification {
-        get {
-            return this.clarificationField;
-        }
-        set {
-            this.clarificationField = value;
-        }
-    }
+    public string lastChangeNum { get; set; }
 
     [XmlAttribute]
-    public string lastChangeNum {
-        get {
-            return this.lastChangeNumField;
-        }
-        set {
-            this.lastChangeNumField = value;
-        }
-    }
+    public oktmoNSIInfoTypeLastChangeType lastChangeType { get; set; }
+
+    [XmlAttribute(DataType = "date")]
+    public DateTime changeDate { get; set; }
+
+    [XmlAttribute(DataType = "date")]
+    public DateTime introductionDate { get; set; }
 
     [XmlAttribute]
-    public oktmoNSIInfoTypeLastChangeType lastChangeType {
-        get {
-            return this.lastChangeTypeField;
-        }
-        set {
-            this.lastChangeTypeField = value;
-        }
-    }
-
-    [XmlAttribute(DataType="date")]
-    public DateTime changeDate {
-        get {
-            return this.changeDateField;
-        }
-        set {
-            this.changeDateField = value;
-        }
-    }
-
-    [XmlAttribute(DataType="date")]
-    public DateTime introductionDate {
-        get {
-            return this.introductionDateField;
-        }
-        set {
-            this.introductionDateField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public DateTime updateDate {
-        get {
-            return this.updateDateField;
-        }
-        set {
-            this.updateDateField = value;
-        }
-    }
+    public DateTime updateDate { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public enum oktmoNSIInfoTypeLastChangeType {
 
@@ -764,192 +390,62 @@ public enum oktmoNSIInfoTypeLastChangeType {
     Item0,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
-[XmlRoot("directoryUBP", Namespace="urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/attachments/directoryUB" +
-    "P/2.4.0", IsNullable=false)]
+[XmlRoot("directoryUBP", Namespace="urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/attachments/directoryUBP/2.4.0", IsNullable=false)]
 public class directoryUBPType {
-    
-    private PayeeNSIInfoType[] payeeNSIInfoField;
-
     [XmlElement("PayeeNSIInfo")]
-    public PayeeNSIInfoType[] PayeeNSIInfo {
-        get {
-            return this.payeeNSIInfoField;
-        }
-        set {
-            this.payeeNSIInfoField = value;
-        }
-    }
+    public PayeeNSIInfoType[] PayeeNSIInfo { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public class PayeeNSIInfoType {
-    
-    private string[] kBKlistField;
-    
-    private PayeeNSIInfoTypeOrgKS[] orgKSllistField;
-    
-    private string nameField;
-    
-    private string innField;
-    
-    private string kppField;
-    
-    private string kbkGlavaCodeField;
-    
-    private PayeeNSIInfoTypeOrgStatus orgStatusField;
-    
-    private DateTime updateDateField;
+    [XmlArrayItem("kbk", IsNullable = false)]
+    public string[] KBKlist { get; set; }
 
-    [XmlArrayItem("kbk", IsNullable=false)]
-    public string[] KBKlist {
-        get {
-            return this.kBKlistField;
-        }
-        set {
-            this.kBKlistField = value;
-        }
-    }
-
-    [XmlArrayItem("OrgKS", IsNullable=false)]
-    public PayeeNSIInfoTypeOrgKS[] OrgKSllist {
-        get {
-            return this.orgKSllistField;
-        }
-        set {
-            this.orgKSllistField = value;
-        }
-    }
+    [XmlArrayItem("OrgKS", IsNullable = false)]
+    public PayeeNSIInfoTypeOrgKS[] OrgKSllist { get; set; }
 
     [XmlAttribute]
-    public string name {
-        get {
-            return this.nameField;
-        }
-        set {
-            this.nameField = value;
-        }
-    }
+    public string name { get; set; }
 
     [XmlAttribute]
-    public string inn {
-        get {
-            return this.innField;
-        }
-        set {
-            this.innField = value;
-        }
-    }
+    public string inn { get; set; }
 
     [XmlAttribute]
-    public string kpp {
-        get {
-            return this.kppField;
-        }
-        set {
-            this.kppField = value;
-        }
-    }
+    public string kpp { get; set; }
 
     [XmlAttribute]
-    public string kbkGlavaCode {
-        get {
-            return this.kbkGlavaCodeField;
-        }
-        set {
-            this.kbkGlavaCodeField = value;
-        }
-    }
+    public string kbkGlavaCode { get; set; }
 
     [XmlAttribute]
-    public PayeeNSIInfoTypeOrgStatus orgStatus {
-        get {
-            return this.orgStatusField;
-        }
-        set {
-            this.orgStatusField = value;
-        }
-    }
+    public PayeeNSIInfoTypeOrgStatus orgStatus { get; set; }
 
     [XmlAttribute]
-    public DateTime updateDate {
-        get {
-            return this.updateDateField;
-        }
-        set {
-            this.updateDateField = value;
-        }
-    }
+    public DateTime updateDate { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public class PayeeNSIInfoTypeOrgKS {
-    
-    private string kSNumberField;
-    
-    private string bikField;
-    
-    private string bankAccountNumberField;
-    
-    private PayeeNSIInfoTypeOrgKSStatKS statKSField;
-    
-    private DateTime dateInField;
+    [XmlAttribute]
+    public string KSNumber { get; set; }
 
     [XmlAttribute]
-    public string KSNumber {
-        get {
-            return this.kSNumberField;
-        }
-        set {
-            this.kSNumberField = value;
-        }
-    }
+    public string bik { get; set; }
 
     [XmlAttribute]
-    public string bik {
-        get {
-            return this.bikField;
-        }
-        set {
-            this.bikField = value;
-        }
-    }
+    public string bankAccountNumber { get; set; }
 
     [XmlAttribute]
-    public string bankAccountNumber {
-        get {
-            return this.bankAccountNumberField;
-        }
-        set {
-            this.bankAccountNumberField = value;
-        }
-    }
+    public PayeeNSIInfoTypeOrgKSStatKS statKS { get; set; }
 
-    [XmlAttribute]
-    public PayeeNSIInfoTypeOrgKSStatKS statKS {
-        get {
-            return this.statKSField;
-        }
-        set {
-            this.statKSField = value;
-        }
-    }
-
-    [XmlAttribute(DataType="date")]
-    public DateTime dateIn {
-        get {
-            return this.dateInField;
-        }
-        set {
-            this.dateInField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime dateIn { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public enum PayeeNSIInfoTypeOrgKSStatKS {
 
@@ -960,7 +456,7 @@ public enum PayeeNSIInfoTypeOrgKSStatKS {
     KS3,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]
 public enum PayeeNSIInfoTypeOrgStatus {
 
@@ -977,224 +473,75 @@ public enum PayeeNSIInfoTypeOrgStatus {
     Item4,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0", IsNullable=false)]
 public class ExportChargesRequest : ExportRequestType {
-    
-    private EsiaUserInfoType esiaUserInfoField;
-    
-    private ChargesExportConditions chargesExportConditionsField;
-    
-    private ExportChargesRequestExternal externalField;
-    
-    private bool externalFieldSpecified;
+    public EsiaUserInfoType EsiaUserInfo { get; set; }
 
-    public EsiaUserInfoType EsiaUserInfo {
-        get {
-            return this.esiaUserInfoField;
-        }
-        set {
-            this.esiaUserInfoField = value;
-        }
-    }
-
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
-    public ChargesExportConditions ChargesExportConditions {
-        get {
-            return this.chargesExportConditionsField;
-        }
-        set {
-            this.chargesExportConditionsField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
+    public ChargesExportConditions ChargesExportConditions { get; set; }
 
     [XmlAttribute]
-    public ExportChargesRequestExternal external {
-        get {
-            return this.externalField;
-        }
-        set {
-            this.externalField = value;
-        }
-    }
+    public ExportChargesRequestExternal external { get; set; }
 
     [XmlIgnore]
-    public bool externalSpecified {
-        get {
-            return this.externalFieldSpecified;
-        }
-        set {
-            this.externalFieldSpecified = value;
-        }
-    }
+    public bool externalSpecified { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class EsiaUserInfoType {
-    
-    private object itemField;
-    
-    private string userIdField;
-    
-    private string sessionIndexField;
-    
-    private DateTime sessionDateField;
-    
-    private bool sessionDateFieldSpecified;
-
     [XmlElement("IndividualBusiness", typeof(EsiaUserInfoTypeIndividualBusiness))]
     [XmlElement("Person", typeof(EsiaUserInfoTypePerson))]
-    public object Item {
-        get {
-            return this.itemField;
-        }
-        set {
-            this.itemField = value;
-        }
-    }
+    public object Item { get; set; }
 
-    [XmlAttribute(DataType="integer")]
-    public string userId {
-        get {
-            return this.userIdField;
-        }
-        set {
-            this.userIdField = value;
-        }
-    }
+    [XmlAttribute(DataType = "integer")]
+    public string userId { get; set; }
 
     [XmlAttribute]
-    public string sessionIndex {
-        get {
-            return this.sessionIndexField;
-        }
-        set {
-            this.sessionIndexField = value;
-        }
-    }
+    public string sessionIndex { get; set; }
 
     [XmlAttribute]
-    public DateTime sessionDate {
-        get {
-            return this.sessionDateField;
-        }
-        set {
-            this.sessionDateField = value;
-        }
-    }
+    public DateTime sessionDate { get; set; }
 
     [XmlIgnore]
-    public bool sessionDateSpecified {
-        get {
-            return this.sessionDateFieldSpecified;
-        }
-        set {
-            this.sessionDateFieldSpecified = value;
-        }
-    }
+    public bool sessionDateSpecified { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class EsiaUserInfoTypeIndividualBusiness {
-    
-    private string personINNField;
-
     [XmlAttribute]
-    public string personINN {
-        get {
-            return this.personINNField;
-        }
-        set {
-            this.personINNField = value;
-        }
-    }
+    public string personINN { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class EsiaUserInfoTypePerson {
-    
-    private EsiaUserInfoTypePersonDocumentIdentity documentIdentityField;
-    
-    private string snilsField;
-    
-    private string personINNField;
-
-    public EsiaUserInfoTypePersonDocumentIdentity DocumentIdentity {
-        get {
-            return this.documentIdentityField;
-        }
-        set {
-            this.documentIdentityField = value;
-        }
-    }
+    public EsiaUserInfoTypePersonDocumentIdentity DocumentIdentity { get; set; }
 
     [XmlAttribute]
-    public string snils {
-        get {
-            return this.snilsField;
-        }
-        set {
-            this.snilsField = value;
-        }
-    }
+    public string snils { get; set; }
 
     [XmlAttribute]
-    public string personINN {
-        get {
-            return this.personINNField;
-        }
-        set {
-            this.personINNField = value;
-        }
-    }
+    public string personINN { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class EsiaUserInfoTypePersonDocumentIdentity {
-    
-    private EsiaUserInfoTypePersonDocumentIdentityCode codeField;
-    
-    private string seriesField;
-    
-    private string numberField;
+    [XmlAttribute]
+    public EsiaUserInfoTypePersonDocumentIdentityCode code { get; set; }
 
     [XmlAttribute]
-    public EsiaUserInfoTypePersonDocumentIdentityCode code {
-        get {
-            return this.codeField;
-        }
-        set {
-            this.codeField = value;
-        }
-    }
+    public string series { get; set; }
 
     [XmlAttribute]
-    public string series {
-        get {
-            return this.seriesField;
-        }
-        set {
-            this.seriesField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public string number {
-        get {
-            return this.numberField;
-        }
-        set {
-            this.numberField = value;
-        }
-    }
+    public string number { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum EsiaUserInfoTypePersonDocumentIdentityCode {
 
@@ -1205,22 +552,15 @@ public enum EsiaUserInfoTypePersonDocumentIdentityCode {
     Item2,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IsNullable=false)]
 public class ChargesExportConditions : Conditions {
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public abstract class Conditions {
-    
-    private object itemField;
-    
-    private ItemChoiceType itemElementNameField;
-    
-    private string kindField;
-
     [XmlElement("ChargesConditions", typeof(ChargesConditionsType))]
     [XmlElement("ClarificationsConditions", typeof(ClarificationsConditionsType))]
     [XmlElement("IncomesConditions", typeof(IncomesConditionsType))]
@@ -1229,89 +569,31 @@ public abstract class Conditions {
     [XmlElement("RefundsConditions", typeof(RefundsConditionsType))]
     [XmlElement("TimeConditions", typeof(TimeConditionsType))]
     [XmlChoiceIdentifier("ItemElementName")]
-    public object Item {
-        get {
-            return this.itemField;
-        }
-        set {
-            this.itemField = value;
-        }
-    }
+    public object Item { get; set; }
 
     [XmlIgnore]
-    public ItemChoiceType ItemElementName {
-        get {
-            return this.itemElementNameField;
-        }
-        set {
-            this.itemElementNameField = value;
-        }
-    }
+    public ItemChoiceType ItemElementName { get; set; }
 
     [XmlAttribute]
-    public string kind {
-        get {
-            return this.kindField;
-        }
-        set {
-            this.kindField = value;
-        }
-    }
+    public string kind { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class ChargesConditionsType {
-    
-    private string[] supplierBillIDField;
-    
-    private TimeIntervalType timeIntervalField;
-    
-    private PaymentMethodType paymentMethodField;
-    
-    private bool paymentMethodFieldSpecified;
-
     [XmlElement("SupplierBillID")]
-    public string[] SupplierBillID {
-        get {
-            return this.supplierBillIDField;
-        }
-        set {
-            this.supplierBillIDField = value;
-        }
-    }
+    public string[] SupplierBillID { get; set; }
 
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public TimeIntervalType TimeInterval {
-        get {
-            return this.timeIntervalField;
-        }
-        set {
-            this.timeIntervalField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public TimeIntervalType TimeInterval { get; set; }
 
-    public PaymentMethodType paymentMethod {
-        get {
-            return this.paymentMethodField;
-        }
-        set {
-            this.paymentMethodField = value;
-        }
-    }
+    public PaymentMethodType paymentMethod { get; set; }
 
     [XmlIgnore]
-    public bool paymentMethodSpecified {
-        get {
-            return this.paymentMethodFieldSpecified;
-        }
-        set {
-            this.paymentMethodFieldSpecified = value;
-        }
-    }
+    public bool paymentMethodSpecified { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum PaymentMethodType {
 
@@ -1319,110 +601,44 @@ public enum PaymentMethodType {
     Item1,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class ClarificationsConditionsType {
-    
-    private string[] clarificationIDField;
-
     [XmlElement("ClarificationID")]
-    public string[] ClarificationID {
-        get {
-            return this.clarificationIDField;
-        }
-        set {
-            this.clarificationIDField = value;
-        }
-    }
+    public string[] ClarificationID { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class IncomesConditionsType {
-    
-    private string[] incomeIdField;
-
     [XmlElement("IncomeId")]
-    public string[] IncomeId {
-        get {
-            return this.incomeIdField;
-        }
-        set {
-            this.incomeIdField = value;
-        }
-    }
+    public string[] IncomeId { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class PayersConditionsType {
-    
-    private string[] itemsField;
-    
-    private ItemsChoiceType[] itemsElementNameField;
-    
-    private TimeIntervalType timeIntervalField;
-    
-    private string[] kBKlistField;
-    
-    private PayersConditionsTypeBeneficiary[] beneficiaryField;
-
     [XmlElement("PayerIdentifier", typeof(string))]
     [XmlElement("PayerInn", typeof(string))]
     [XmlChoiceIdentifier("ItemsElementName")]
-    public string[] Items {
-        get {
-            return this.itemsField;
-        }
-        set {
-            this.itemsField = value;
-        }
-    }
+    public string[] Items { get; set; }
 
     [XmlElement("ItemsElementName")]
     [XmlIgnore]
-    public ItemsChoiceType[] ItemsElementName {
-        get {
-            return this.itemsElementNameField;
-        }
-        set {
-            this.itemsElementNameField = value;
-        }
-    }
+    public ItemsChoiceType[] ItemsElementName { get; set; }
 
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public TimeIntervalType TimeInterval {
-        get {
-            return this.timeIntervalField;
-        }
-        set {
-            this.timeIntervalField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public TimeIntervalType TimeInterval { get; set; }
 
-    [XmlArray(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    [XmlArrayItem("KBK", IsNullable=false)]
-    public string[] KBKlist {
-        get {
-            return this.kBKlistField;
-        }
-        set {
-            this.kBKlistField = value;
-        }
-    }
+    [XmlArray(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    [XmlArrayItem("KBK", IsNullable = false)]
+    public string[] KBKlist { get; set; }
 
     [XmlElement("Beneficiary")]
-    public PayersConditionsTypeBeneficiary[] Beneficiary {
-        get {
-            return this.beneficiaryField;
-        }
-        set {
-            this.beneficiaryField = value;
-        }
-    }
+    public PayersConditionsTypeBeneficiary[] Beneficiary { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IncludeInSchema=false)]
 public enum ItemsChoiceType {
 
@@ -1431,141 +647,55 @@ public enum ItemsChoiceType {
     PayerInn,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class PayersConditionsTypeBeneficiary {
-    
-    private string innField;
-    
-    private string kppField;
+    [XmlAttribute]
+    public string inn { get; set; }
 
     [XmlAttribute]
-    public string inn {
-        get {
-            return this.innField;
-        }
-        set {
-            this.innField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public string kpp {
-        get {
-            return this.kppField;
-        }
-        set {
-            this.kppField = value;
-        }
-    }
+    public string kpp { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class PaymentsConditionsType {
-    
-    private string[] paymentIdField;
-
     [XmlElement("PaymentId")]
-    public string[] PaymentId {
-        get {
-            return this.paymentIdField;
-        }
-        set {
-            this.paymentIdField = value;
-        }
-    }
+    public string[] PaymentId { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class RefundsConditionsType {
-    
-    private string[] refundIdField;
-
     [XmlElement("RefundId")]
-    public string[] RefundId {
-        get {
-            return this.refundIdField;
-        }
-        set {
-            this.refundIdField = value;
-        }
-    }
+    public string[] RefundId { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class TimeConditionsType {
-    
-    private TimeIntervalType timeIntervalField;
-    
-    private TimeConditionsTypeBeneficiary[] beneficiaryField;
-    
-    private string[] kBKlistField;
-
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public TimeIntervalType TimeInterval {
-        get {
-            return this.timeIntervalField;
-        }
-        set {
-            this.timeIntervalField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public TimeIntervalType TimeInterval { get; set; }
 
     [XmlElement("Beneficiary")]
-    public TimeConditionsTypeBeneficiary[] Beneficiary {
-        get {
-            return this.beneficiaryField;
-        }
-        set {
-            this.beneficiaryField = value;
-        }
-    }
+    public TimeConditionsTypeBeneficiary[] Beneficiary { get; set; }
 
-    [XmlArray(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    [XmlArrayItem("KBK", IsNullable=false)]
-    public string[] KBKlist {
-        get {
-            return this.kBKlistField;
-        }
-        set {
-            this.kBKlistField = value;
-        }
-    }
+    [XmlArray(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    [XmlArrayItem("KBK", IsNullable = false)]
+    public string[] KBKlist { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 public class TimeConditionsTypeBeneficiary {
-    
-    private string innField;
-    
-    private string kppField;
+    [XmlAttribute]
+    public string inn { get; set; }
 
     [XmlAttribute]
-    public string inn {
-        get {
-            return this.innField;
-        }
-        set {
-            this.innField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public string kpp {
-        get {
-            return this.kppField;
-        }
-        set {
-            this.kppField = value;
-        }
-    }
+    public string kpp { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IncludeInSchema=false)]
 public enum ItemChoiceType {
 
@@ -1584,7 +714,7 @@ public enum ItemChoiceType {
     TimeConditions,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 public enum ExportChargesRequestExternal {
 
@@ -1595,161 +725,59 @@ public enum ExportChargesRequestExternal {
     Item1,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0", IsNullable=false)]
 public class ExportChargesResponse : ResponseType {
-    
-    private object[] itemsField;
-    
-    private bool hasMoreField;
-    
-    private bool needReRequestField;
-    
     public ExportChargesResponse() {
-        this.needReRequestField = false;
+        needReRequest = false;
     }
 
     [XmlElement("ChargeInfo", typeof(ExportChargesResponseChargeInfo))]
     [XmlElement("ChargeOffense", typeof(ExportChargesResponseChargeOffense))]
-    public object[] Items {
-        get {
-            return this.itemsField;
-        }
-        set {
-            this.itemsField = value;
-        }
-    }
+    public object[] Items { get; set; }
 
     [XmlAttribute]
-    public bool hasMore {
-        get {
-            return this.hasMoreField;
-        }
-        set {
-            this.hasMoreField = value;
-        }
-    }
+    public bool hasMore { get; set; }
 
     [XmlAttribute]
     [System.ComponentModel.DefaultValue(false)]
-    public bool needReRequest {
-        get {
-            return this.needReRequestField;
-        }
-        set {
-            this.needReRequestField = value;
-        }
-    }
+    public bool needReRequest { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 public class ExportChargesResponseChargeInfo : ChargeType {
-    
-    private ExportChargesResponseChargeInfoReconcileWithoutPayment[] reconcileWithoutPaymentField;
-    
-    private ChangeStatusInfo changeStatusInfoField;
-    
-    private long amountToPayField;
-    
-    private AcknowledgmentStatusType acknowledgmentStatusField;
-    
-    private bool acknowledgmentStatusFieldSpecified;
-    
-    private string requisiteCheckCodeField;
-
     [XmlElement("ReconcileWithoutPayment")]
-    public ExportChargesResponseChargeInfoReconcileWithoutPayment[] ReconcileWithoutPayment {
-        get {
-            return this.reconcileWithoutPaymentField;
-        }
-        set {
-            this.reconcileWithoutPaymentField = value;
-        }
-    }
+    public ExportChargesResponseChargeInfoReconcileWithoutPayment[] ReconcileWithoutPayment { get; set; }
 
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public ChangeStatusInfo ChangeStatusInfo {
-        get {
-            return this.changeStatusInfoField;
-        }
-        set {
-            this.changeStatusInfoField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public ChangeStatusInfo ChangeStatusInfo { get; set; }
 
     [XmlAttribute]
-    public long amountToPay {
-        get {
-            return this.amountToPayField;
-        }
-        set {
-            this.amountToPayField = value;
-        }
-    }
+    public long amountToPay { get; set; }
 
     [XmlAttribute]
-    public AcknowledgmentStatusType acknowledgmentStatus {
-        get {
-            return this.acknowledgmentStatusField;
-        }
-        set {
-            this.acknowledgmentStatusField = value;
-        }
-    }
+    public AcknowledgmentStatusType acknowledgmentStatus { get; set; }
 
     [XmlIgnore]
-    public bool acknowledgmentStatusSpecified {
-        get {
-            return this.acknowledgmentStatusFieldSpecified;
-        }
-        set {
-            this.acknowledgmentStatusFieldSpecified = value;
-        }
-    }
+    public bool acknowledgmentStatusSpecified { get; set; }
 
     [XmlAttribute]
-    public string requisiteCheckCode {
-        get {
-            return this.requisiteCheckCodeField;
-        }
-        set {
-            this.requisiteCheckCodeField = value;
-        }
-    }
+    public string requisiteCheckCode { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 public class ExportChargesResponseChargeInfoReconcileWithoutPayment {
-    
-    private string reconcileIDField;
-    
-    private ulong amountReconcileField;
+    [XmlAttribute]
+    public string reconcileID { get; set; }
 
     [XmlAttribute]
-    public string reconcileID {
-        get {
-            return this.reconcileIDField;
-        }
-        set {
-            this.reconcileIDField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public ulong amountReconcile {
-        get {
-            return this.amountReconcileField;
-        }
-        set {
-            this.amountReconcileField = value;
-        }
-    }
+    public ulong amountReconcile { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum AcknowledgmentStatusType {
 
@@ -1772,310 +800,105 @@ public enum AcknowledgmentStatusType {
     Item6,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0")]
 public class ExportChargesResponseChargeOffense {
-    
-    private OffenseType additionalOffenseField;
-    
-    private string supplierBillIDField;
-
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Charge/2.4.0")]
-    public OffenseType AdditionalOffense {
-        get {
-            return this.additionalOffenseField;
-        }
-        set {
-            this.additionalOffenseField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Charge/2.4.0")]
+    public OffenseType AdditionalOffense { get; set; }
 
     [XmlAttribute]
-    public string supplierBillID {
-        get {
-            return this.supplierBillIDField;
-        }
-        set {
-            this.supplierBillIDField = value;
-        }
-    }
+    public string supplierBillID { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0", IsNullable=false)]
 public class ExportIncomesRequest : ExportRequestType {
-    
-    private IncomesExportConditions incomesExportConditionsField;
-
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
-    public IncomesExportConditions IncomesExportConditions {
-        get {
-            return this.incomesExportConditionsField;
-        }
-        set {
-            this.incomesExportConditionsField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
+    public IncomesExportConditions IncomesExportConditions { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
 [XmlRoot(Namespace="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IsNullable=false)]
 public class IncomesExportConditions : Conditions {
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0", IsNullable=false)]
 public class ExportIncomesResponse : ResponseType {
-    
-    private ExportIncomesResponseIncomeInfo[] incomeInfoField;
-    
-    private bool hasMoreField;
-
     [XmlElement("IncomeInfo")]
-    public ExportIncomesResponseIncomeInfo[] IncomeInfo {
-        get {
-            return this.incomeInfoField;
-        }
-        set {
-            this.incomeInfoField = value;
-        }
-    }
+    public ExportIncomesResponseIncomeInfo[] IncomeInfo { get; set; }
 
     [XmlAttribute]
-    public bool hasMore {
-        get {
-            return this.hasMoreField;
-        }
-        set {
-            this.hasMoreField = value;
-        }
-    }
+    public bool hasMore { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0")]
 public class ExportIncomesResponseIncomeInfo : IncomeType {
-    
-    private ChangeStatusInfo changeStatusInfoField;
-
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public ChangeStatusInfo ChangeStatusInfo {
-        get {
-            return this.changeStatusInfoField;
-        }
-        set {
-            this.changeStatusInfoField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public ChangeStatusInfo ChangeStatusInfo { get; set; }
 }
 
 [XmlInclude(typeof(ImportedIncomeType))]
-
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Income/2.4.0")]
 public class IncomeType : PaymentBaseType {
-    
-    private IncomeTypeIncomeIndex incomeIndexField;
-    
-    private string transactionIDField;
-    
-    private DateTime edDateField;
-    
-    private string incomeIdField;
-    
-    private DateTime incomeDateField;
-    
-    private IncomeTypeEdCode edCodeField;
-    
-    private string edNoField;
-    
-    private DateTime chargeOffDateField;
-    
-    private bool chargeOffDateFieldSpecified;
-    
-    private bool isUncertainField;
-    
-    private string paymentIdField;
-
-    public IncomeTypeIncomeIndex IncomeIndex {
-        get {
-            return this.incomeIndexField;
-        }
-        set {
-            this.incomeIndexField = value;
-        }
-    }
+    public IncomeTypeIncomeIndex IncomeIndex { get; set; }
 
     [XmlAttribute]
-    public string transactionID {
-        get {
-            return this.transactionIDField;
-        }
-        set {
-            this.transactionIDField = value;
-        }
-    }
+    public string transactionID { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime edDate {
-        get {
-            return this.edDateField;
-        }
-        set {
-            this.edDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime edDate { get; set; }
 
     [XmlAttribute]
-    public string incomeId {
-        get {
-            return this.incomeIdField;
-        }
-        set {
-            this.incomeIdField = value;
-        }
-    }
+    public string incomeId { get; set; }
 
     [XmlAttribute]
-    public DateTime incomeDate {
-        get {
-            return this.incomeDateField;
-        }
-        set {
-            this.incomeDateField = value;
-        }
-    }
+    public DateTime incomeDate { get; set; }
 
     [XmlAttribute]
-    public IncomeTypeEdCode edCode {
-        get {
-            return this.edCodeField;
-        }
-        set {
-            this.edCodeField = value;
-        }
-    }
+    public IncomeTypeEdCode edCode { get; set; }
 
     [XmlAttribute]
-    public string edNo {
-        get {
-            return this.edNoField;
-        }
-        set {
-            this.edNoField = value;
-        }
-    }
+    public string edNo { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime chargeOffDate {
-        get {
-            return this.chargeOffDateField;
-        }
-        set {
-            this.chargeOffDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime chargeOffDate { get; set; }
 
     [XmlIgnore]
-    public bool chargeOffDateSpecified {
-        get {
-            return this.chargeOffDateFieldSpecified;
-        }
-        set {
-            this.chargeOffDateFieldSpecified = value;
-        }
-    }
+    public bool chargeOffDateSpecified { get; set; }
 
     [XmlAttribute]
-    public bool isUncertain {
-        get {
-            return this.isUncertainField;
-        }
-        set {
-            this.isUncertainField = value;
-        }
-    }
+    public bool isUncertain { get; set; }
 
     [XmlAttribute]
-    public string paymentId {
-        get {
-            return this.paymentIdField;
-        }
-        set {
-            this.paymentIdField = value;
-        }
-    }
+    public string paymentId { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Income/2.4.0")]
 public class IncomeTypeIncomeIndex {
-    
-    private string kbkField;
-    
-    private string oktmoField;
-    
-    private string innField;
-    
-    private string kppField;
-    
-    private string accountNumberField;
+    [XmlAttribute]
+    public string kbk { get; set; }
 
     [XmlAttribute]
-    public string kbk {
-        get {
-            return this.kbkField;
-        }
-        set {
-            this.kbkField = value;
-        }
-    }
+    public string oktmo { get; set; }
 
     [XmlAttribute]
-    public string oktmo {
-        get {
-            return this.oktmoField;
-        }
-        set {
-            this.oktmoField = value;
-        }
-    }
+    public string inn { get; set; }
 
     [XmlAttribute]
-    public string inn {
-        get {
-            return this.innField;
-        }
-        set {
-            this.innField = value;
-        }
-    }
+    public string kpp { get; set; }
 
     [XmlAttribute]
-    public string kpp {
-        get {
-            return this.kppField;
-        }
-        set {
-            this.kppField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public string accountNumber {
-        get {
-            return this.accountNumberField;
-        }
-        set {
-            this.accountNumberField = value;
-        }
-    }
+    public string accountNumber { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Income/2.4.0")]
 public enum IncomeTypeEdCode {
 
@@ -2094,286 +917,92 @@ public enum IncomeTypeEdCode {
 [XmlInclude(typeof(ImportedPaymentType))]
 [XmlInclude(typeof(IncomeType))]
 [XmlInclude(typeof(ImportedIncomeType))]
-
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0")]
 public class PaymentBaseType {
-    
-    private PaymentOrgType paymentOrgField;
-    
-    private Payer1 payerField;
-    
-    private Payee payeeField;
-    
-    private BudgetIndexType budgetIndexField;
-    
-    private AccDocType accDocField;
-    
-    private AdditionalDataType[] additionalDataField;
-    
-    private string supplierBillIDField;
-    
-    private string purposeField;
-    
-    private ulong amountField;
-    
-    private DateTime receiptDateField;
-    
-    private bool receiptDateFieldSpecified;
-    
-    private DateTime paymentExecDateField;
-    
-    private bool paymentExecDateFieldSpecified;
-    
-    private string kbkField;
-    
-    private string oktmoField;
-    
-    private TransKindType transKindField;
+    public PaymentOrgType PaymentOrg { get; set; }
 
-    public PaymentOrgType PaymentOrg {
-        get {
-            return this.paymentOrgField;
-        }
-        set {
-            this.paymentOrgField = value;
-        }
-    }
+    public Payer1 Payer { get; set; }
 
-    public Payer1 Payer {
-        get {
-            return this.payerField;
-        }
-        set {
-            this.payerField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
+    public Payee Payee { get; set; }
 
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
-    public Payee Payee {
-        get {
-            return this.payeeField;
-        }
-        set {
-            this.payeeField = value;
-        }
-    }
+    public BudgetIndexType BudgetIndex { get; set; }
 
-    public BudgetIndexType BudgetIndex {
-        get {
-            return this.budgetIndexField;
-        }
-        set {
-            this.budgetIndexField = value;
-        }
-    }
+    public AccDocType AccDoc { get; set; }
 
-    public AccDocType AccDoc {
-        get {
-            return this.accDocField;
-        }
-        set {
-            this.accDocField = value;
-        }
-    }
-
-    [XmlElement("AdditionalData", Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public AdditionalDataType[] AdditionalData {
-        get {
-            return this.additionalDataField;
-        }
-        set {
-            this.additionalDataField = value;
-        }
-    }
+    [XmlElement("AdditionalData", Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public AdditionalDataType[] AdditionalData { get; set; }
 
     [XmlAttribute]
-    public string supplierBillID {
-        get {
-            return this.supplierBillIDField;
-        }
-        set {
-            this.supplierBillIDField = value;
-        }
-    }
+    public string supplierBillID { get; set; }
 
     [XmlAttribute]
-    public string purpose {
-        get {
-            return this.purposeField;
-        }
-        set {
-            this.purposeField = value;
-        }
-    }
+    public string purpose { get; set; }
 
     [XmlAttribute]
-    public ulong amount {
-        get {
-            return this.amountField;
-        }
-        set {
-            this.amountField = value;
-        }
-    }
+    public ulong amount { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime receiptDate {
-        get {
-            return this.receiptDateField;
-        }
-        set {
-            this.receiptDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime receiptDate { get; set; }
 
     [XmlIgnore]
-    public bool receiptDateSpecified {
-        get {
-            return this.receiptDateFieldSpecified;
-        }
-        set {
-            this.receiptDateFieldSpecified = value;
-        }
-    }
+    public bool receiptDateSpecified { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime paymentExecDate {
-        get {
-            return this.paymentExecDateField;
-        }
-        set {
-            this.paymentExecDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime paymentExecDate { get; set; }
 
     [XmlIgnore]
-    public bool paymentExecDateSpecified {
-        get {
-            return this.paymentExecDateFieldSpecified;
-        }
-        set {
-            this.paymentExecDateFieldSpecified = value;
-        }
-    }
+    public bool paymentExecDateSpecified { get; set; }
 
     [XmlAttribute]
-    public string kbk {
-        get {
-            return this.kbkField;
-        }
-        set {
-            this.kbkField = value;
-        }
-    }
+    public string kbk { get; set; }
 
     [XmlAttribute]
-    public string oktmo {
-        get {
-            return this.oktmoField;
-        }
-        set {
-            this.oktmoField = value;
-        }
-    }
+    public string oktmo { get; set; }
 
     [XmlAttribute]
-    public TransKindType transKind {
-        get {
-            return this.transKindField;
-        }
-        set {
-            this.transKindField = value;
-        }
-    }
+    public TransKindType transKind { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
 public class PaymentOrgType {
-    
-    private object itemField;
-
     [XmlElement("Bank", typeof(BankType))]
     [XmlElement("Other", typeof(PaymentOrgTypeOther))]
     [XmlElement("UFK", typeof(string))]
-    public object Item {
-        get {
-            return this.itemField;
-        }
-        set {
-            this.itemField = value;
-        }
-    }
+    public object Item { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
 public enum PaymentOrgTypeOther {
 
     CASH,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0")]
 [XmlRoot("Payer", Namespace="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0", IsNullable=false)]
 public class Payer1 : PayerType {
-    
-    private string payerNameField;
-    
-    private string payerAccountField;
+    [XmlAttribute]
+    public string payerName { get; set; }
 
     [XmlAttribute]
-    public string payerName {
-        get {
-            return this.payerNameField;
-        }
-        set {
-            this.payerNameField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public string payerAccount {
-        get {
-            return this.payerAccountField;
-        }
-        set {
-            this.payerAccountField = value;
-        }
-    }
+    public string payerAccount { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public class AccDocType {
-    
-    private string accDocNoField;
-    
-    private DateTime accDocDateField;
-
     [XmlAttribute]
-    public string accDocNo {
-        get {
-            return this.accDocNoField;
-        }
-        set {
-            this.accDocNoField = value;
-        }
-    }
+    public string accDocNo { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime accDocDate {
-        get {
-            return this.accDocDateField;
-        }
-        set {
-            this.accDocDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime accDocDate { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
 public enum TransKindType {
 
@@ -2388,213 +1017,65 @@ public enum TransKindType {
 }
 
 [XmlInclude(typeof(ImportedPaymentType))]
-
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0")]
 public class PaymentType : PaymentBaseType {
-    
-    private PaymentTypePartialPayt partialPaytField;
-    
-    private string paymentIdField;
-    
-    private DateTime paymentDateField;
-    
-    private DateTime deliveryDateField;
-    
-    private bool deliveryDateFieldSpecified;
-    
-    private string eSIA_IDField;
-
-    public PaymentTypePartialPayt PartialPayt {
-        get {
-            return this.partialPaytField;
-        }
-        set {
-            this.partialPaytField = value;
-        }
-    }
+    public PaymentTypePartialPayt PartialPayt { get; set; }
 
     [XmlAttribute]
-    public string paymentId {
-        get {
-            return this.paymentIdField;
-        }
-        set {
-            this.paymentIdField = value;
-        }
-    }
+    public string paymentId { get; set; }
 
     [XmlAttribute]
-    public DateTime paymentDate {
-        get {
-            return this.paymentDateField;
-        }
-        set {
-            this.paymentDateField = value;
-        }
-    }
+    public DateTime paymentDate { get; set; }
 
-    [XmlAttribute(DataType="date")]
-    public DateTime deliveryDate {
-        get {
-            return this.deliveryDateField;
-        }
-        set {
-            this.deliveryDateField = value;
-        }
-    }
+    [XmlAttribute(DataType = "date")]
+    public DateTime deliveryDate { get; set; }
 
     [XmlIgnore]
-    public bool deliveryDateSpecified {
-        get {
-            return this.deliveryDateFieldSpecified;
-        }
-        set {
-            this.deliveryDateFieldSpecified = value;
-        }
-    }
+    public bool deliveryDateSpecified { get; set; }
 
     [XmlAttribute]
-    public string ESIA_ID {
-        get {
-            return this.eSIA_IDField;
-        }
-        set {
-            this.eSIA_IDField = value;
-        }
-    }
+    public string ESIA_ID { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0")]
 public class PaymentTypePartialPayt {
-    
-    private AccDocType accDocField;
-    
-    private TransKindType transKindField;
-    
-    private string paytNoField;
-    
-    private string transContentField;
-    
-    private string sumResidualPaytField;
-
-    public AccDocType AccDoc {
-        get {
-            return this.accDocField;
-        }
-        set {
-            this.accDocField = value;
-        }
-    }
+    public AccDocType AccDoc { get; set; }
 
     [XmlAttribute]
-    public TransKindType transKind {
-        get {
-            return this.transKindField;
-        }
-        set {
-            this.transKindField = value;
-        }
-    }
+    public TransKindType transKind { get; set; }
 
     [XmlAttribute]
-    public string paytNo {
-        get {
-            return this.paytNoField;
-        }
-        set {
-            this.paytNoField = value;
-        }
-    }
+    public string paytNo { get; set; }
 
     [XmlAttribute]
-    public string transContent {
-        get {
-            return this.transContentField;
-        }
-        set {
-            this.transContentField = value;
-        }
-    }
+    public string transContent { get; set; }
 
-    [XmlAttribute(DataType="integer")]
-    public string sumResidualPayt {
-        get {
-            return this.sumResidualPaytField;
-        }
-        set {
-            this.sumResidualPaytField = value;
-        }
-    }
+    [XmlAttribute(DataType = "integer")]
+    public string sumResidualPayt { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
 public class ImportedPaymentType : PaymentType {
-    
-    private string originatorIdField;
-    
-    private string idField;
-    
-    private ImportedPaymentTypePaymentMethod paymentMethodField;
-    
-    private bool paymentMethodFieldSpecified;
-    
-    private string requisiteCheckCodeField;
+    [XmlAttribute]
+    public string originatorId { get; set; }
+
+    [XmlAttribute(DataType = "ID")]
+    public string Id { get; set; }
 
     [XmlAttribute]
-    public string originatorId {
-        get {
-            return this.originatorIdField;
-        }
-        set {
-            this.originatorIdField = value;
-        }
-    }
-
-    [XmlAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
-
-    [XmlAttribute]
-    public ImportedPaymentTypePaymentMethod paymentMethod {
-        get {
-            return this.paymentMethodField;
-        }
-        set {
-            this.paymentMethodField = value;
-        }
-    }
+    public ImportedPaymentTypePaymentMethod paymentMethod { get; set; }
 
     [XmlIgnore]
-    public bool paymentMethodSpecified {
-        get {
-            return this.paymentMethodFieldSpecified;
-        }
-        set {
-            this.paymentMethodFieldSpecified = value;
-        }
-    }
+    public bool paymentMethodSpecified { get; set; }
 
     [XmlAttribute]
-    public string requisiteCheckCode {
-        get {
-            return this.requisiteCheckCodeField;
-        }
-        set {
-            this.requisiteCheckCodeField = value;
-        }
-    }
+    public string requisiteCheckCode { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
 public enum ImportedPaymentTypePaymentMethod {
 
@@ -2602,121 +1083,46 @@ public enum ImportedPaymentTypePaymentMethod {
     Item1,
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
 public class ImportedIncomeType : IncomeType {
-    
-    private string originatorIdField;
-    
-    private string idField;
-
     [XmlAttribute]
-    public string originatorId {
-        get {
-            return this.originatorIdField;
-        }
-        set {
-            this.originatorIdField = value;
-        }
-    }
+    public string originatorId { get; set; }
 
-    [XmlAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
+    [XmlAttribute(DataType = "ID")]
+    public string Id { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0")]
 [XmlRoot(Namespace="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0", IsNullable=false)]
 public class ExportNoticeRequest {
-    
-    private ExportNoticeRequestDestination destinationField;
-    
-    private object[] itemsField;
-    
-    private string idField;
-    
-    private DateTime timestampField;
-
-    public ExportNoticeRequestDestination Destination {
-        get {
-            return this.destinationField;
-        }
-        set {
-            this.destinationField = value;
-        }
-    }
+    public ExportNoticeRequestDestination Destination { get; set; }
 
     [XmlElement("NoticeCharge", typeof(ExportNoticeRequestNoticeCharge))]
     [XmlElement("NoticeChargeExecutive", typeof(NoticeChargeExecutiveType))]
     [XmlElement("NoticePayment", typeof(ExportNoticeRequestNoticePayment))]
     [XmlElement("NoticeQuittance", typeof(ExportNoticeRequestNoticeQuittance))]
     [XmlElement("NoticeRenouncement", typeof(RenouncementType))]
-    public object[] Items {
-        get {
-            return this.itemsField;
-        }
-        set {
-            this.itemsField = value;
-        }
-    }
+    public object[] Items { get; set; }
 
-    [XmlAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
+    [XmlAttribute(DataType = "ID")]
+    public string Id { get; set; }
 
     [XmlAttribute]
-    public DateTime timestamp {
-        get {
-            return this.timestampField;
-        }
-        set {
-            this.timestampField = value;
-        }
-    }
+    public DateTime timestamp { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0")]
 public class ExportNoticeRequestDestination {
-    
-    private string routingCodeField;
-    
-    private string recipientIdentifierField;
-
-    public string RoutingCode {
-        get {
-            return this.routingCodeField;
-        }
-        set {
-            this.routingCodeField = value;
-        }
-    }
+    public string RoutingCode { get; set; }
 
     [XmlAttribute]
-    public string recipientIdentifier {
-        get {
-            return this.recipientIdentifierField;
-        }
-        set {
-            this.recipientIdentifierField = value;
-        }
-    }
+    public string recipientIdentifier { get; set; }
 }
 
-//[Serializable]
+[Serializable]
 [XmlType(AnonymousType=true, Namespace="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0")]
 public class ExportNoticeRequestNoticeCharge : NoticeChargeType {
 }
@@ -2724,15 +1130,6 @@ public class ExportNoticeRequestNoticeCharge : NoticeChargeType {
 //[Serializable]
 [XmlType(Namespace="http://roskazna.ru/gisgmp/xsd/NoticeCharge/2.4.0")]
 public class NoticeChargeType {
-    
-    private OrganizationType payeeField;
-    
-    private NoticeChargeTypePayer payerField;
-    
-    private ChangeStatusInfo changeStatusInfoField;
-    
-    private DiscountType itemField;
-    
     private NoticeChargeTypeEventNotification eventNotificationField;
     
     private string supplierBillIDField;
@@ -2763,45 +1160,17 @@ public class NoticeChargeType {
     
     private bool acknowledgmentStatusFieldSpecified;
 
-    public OrganizationType Payee {
-        get {
-            return this.payeeField;
-        }
-        set {
-            this.payeeField = value;
-        }
-    }
+    public OrganizationType Payee { get; set; }
 
-    public NoticeChargeTypePayer Payer {
-        get {
-            return this.payerField;
-        }
-        set {
-            this.payerField = value;
-        }
-    }
+    public NoticeChargeTypePayer Payer { get; set; }
 
-    [XmlElement(Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public ChangeStatusInfo ChangeStatusInfo {
-        get {
-            return this.changeStatusInfoField;
-        }
-        set {
-            this.changeStatusInfoField = value;
-        }
-    }
+    [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public ChangeStatusInfo ChangeStatusInfo { get; set; }
 
-    [XmlElement("DiscountFixed", typeof(ChargeTypeDiscountDiscountFixed), Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    [XmlElement("DiscountSize", typeof(ChargeTypeDiscountDiscountSize), Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    [XmlElement("MultiplierSize", typeof(ChargeTypeDiscountMultiplierSize), Namespace="http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-    public DiscountType Item {
-        get {
-            return this.itemField;
-        }
-        set {
-            this.itemField = value;
-        }
-    }
+    [XmlElement("DiscountFixed", typeof(ChargeTypeDiscountDiscountFixed), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    [XmlElement("DiscountSize", typeof(ChargeTypeDiscountDiscountSize), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    [XmlElement("MultiplierSize", typeof(ChargeTypeDiscountMultiplierSize), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
+    public DiscountType Item { get; set; }
 
     public NoticeChargeTypeEventNotification EventNotification {
         get {

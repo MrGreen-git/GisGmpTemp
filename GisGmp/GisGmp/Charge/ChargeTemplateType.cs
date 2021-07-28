@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GisGmp.Common;
+using GisGmp.Organization;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Charge

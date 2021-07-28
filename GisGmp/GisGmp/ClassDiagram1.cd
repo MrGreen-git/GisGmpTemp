@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="GisGmp.Organization.Payee" Collapsed="true">
+    <Position X="1.5" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organization\Payee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Organization.OrganizationType" Collapsed="true">
+    <Position X="15.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAABAAAA=</HashCode>
+      <FileName>Organization\OrganizationType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.AccountType" Collapsed="true">
+    <Position X="13.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AccountType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.AdditionalDataType" Collapsed="true">
+    <Position X="15.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\AdditionalDataType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.BankType" Collapsed="true">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAACAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\BankType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.ChargeType">
+    <Position X="4.25" Y="5.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>KAiAAAAEANABAAMAGQAAAAYECAgKAAAAAAAUACAAAAA=</HashCode>
+      <FileName>Charge\ChargeType.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Payee" />
+      <Property Name="Payer" />
+      <Property Name="Item" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GisGmp.Charge.Payer">
+    <Position X="1.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Charge\Payer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Refund.PayeeType">
+    <Position X="11.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Refund\PayeeType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.PayerType">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\PayerType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.ChargeTemplateType">
+    <Position X="7" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>KAgAAAAEAFABAAMAGQAAAAYEAAgIAAAAAAAQACAAAAA=</HashCode>
+      <FileName>Charge\ChargeTemplateType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.AbstractChargtType" Collapsed="true">
+    <Position X="6" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Charge\AbstractChargtType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.DiscountType" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Common\DiscountType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.ChargeTypeDiscountDiscountFixed" Collapsed="true">
+    <Position X="4.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ChargeTypeDiscountDiscountFixed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.ChargeTypeDiscountDiscountSize" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ChargeTypeDiscountDiscountSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.ChargeTypeDiscountMultiplierSize" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ChargeTypeDiscountMultiplierSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
