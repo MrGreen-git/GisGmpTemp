@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GisGmp.Services.ImportCharges;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Common

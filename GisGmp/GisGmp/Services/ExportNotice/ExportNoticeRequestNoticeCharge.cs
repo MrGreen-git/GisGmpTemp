@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GisGmp.NoticeCharge;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Services.ExportNotice

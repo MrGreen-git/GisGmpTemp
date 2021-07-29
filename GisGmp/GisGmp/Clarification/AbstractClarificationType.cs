@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GisGmp.Package;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Clarification

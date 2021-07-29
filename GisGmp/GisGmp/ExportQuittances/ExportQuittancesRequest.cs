@@ -1,4 +1,5 @@
 ﻿using GisGmp.Common;
+using GisGmp.SearchConditions;
 using System;
 using System.Xml.Serialization;
 

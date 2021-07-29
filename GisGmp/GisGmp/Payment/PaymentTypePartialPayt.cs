@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GisGmp.Common;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Payment

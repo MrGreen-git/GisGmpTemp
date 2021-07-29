@@ -1,4 +1,5 @@
-﻿using GisGmp.Renouncement;
+﻿using GisGmp.NoticeCharge;
+using GisGmp.Renouncement;
 using System;
 using System.Xml.Serialization;
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GisGmp.CommonNSI;
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Services.ExportNoticeNSI
