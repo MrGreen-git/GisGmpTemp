@@ -9,7 +9,7 @@ namespace GisGmp.Services.ExportNSI
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-nsi/2.4.0", IsNullable = false)]
     public class ExportNSIRequest : RequestType
     {
-        public ExportNSIRequestNSIExportConditions NSIExportConditions { get; set; }
+        public NSIExportConditions NSIExportConditions { get; set; }
 
         [XmlAttribute]
         public string originatorId { get; set; }

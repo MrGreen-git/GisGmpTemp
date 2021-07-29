@@ -10,12 +10,12 @@ namespace GisGmp.Services.ExportNotice
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0", IsNullable = false)]
     public class ExportNoticeRequest
     {
-        public ExportNoticeRequestDestination Destination { get; set; }
+        public Destination Destination { get; set; }
 
-        [XmlElement("NoticeCharge", typeof(ExportNoticeRequestNoticeCharge))]
+        [XmlElement("NoticeCharge", typeof(NoticeCharge))]
         [XmlElement("NoticeChargeExecutive", typeof(NoticeChargeExecutiveType))]
-        [XmlElement("NoticePayment", typeof(ExportNoticeRequestNoticePayment))]
-        [XmlElement("NoticeQuittance", typeof(ExportNoticeRequestNoticeQuittance))]
+        [XmlElement("NoticePayment", typeof(NoticePayment))]
+        [XmlElement("NoticeQuittance", typeof(NoticeQuittance))]
         [XmlElement("NoticeRenouncement", typeof(RenouncementType))]
         public object[] Items { get; set; }
 

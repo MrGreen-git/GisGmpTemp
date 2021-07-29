@@ -10,7 +10,7 @@ namespace GisGmp.Services.ExportPayments
     public class ExportPaymentsResponse : ResponseType
     {
         [XmlElement("PaymentInfo")]
-        public ExportPaymentsResponsePaymentInfo[] PaymentInfo { get; set; }
+        public PaymentInfo[] PaymentInfo { get; set; }
 
         [XmlAttribute]
         public bool hasMore { get; set; }
