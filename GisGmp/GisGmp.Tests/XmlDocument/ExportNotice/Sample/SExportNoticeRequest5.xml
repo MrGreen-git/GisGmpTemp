@@ -1,0 +1,16 @@
+<nt:ExportNoticeRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" 
+ xmlns:nt="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0"
+ xmlns:nc="http://roskazna.ru/gisgmp/xsd/NoticeCharge/2.4.0"
+ xmlns:dv="http://roskazna.ru/gisgmp/xsd/Renouncement/2.4.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="G_e4eb9ab7-8ac6-422e-b9a9-e91a2d66e200" timestamp="2021-05-04T20:13:51.0">
+    <nt:Destination recipientIdentifier="3eb5f9">
+        <nt:RoutingCode>45382000</nt:RoutingCode>
+    </nt:Destination>
+    <nt:NoticeRenouncement supplierBillID="32117072411021588933" renouncementID="F304A7C290420210000005894" rulingDate="2021-04-25"
+        rulingNum="356П" refusalGround="Документ не соответствует требованиям, предъявляемым к исполнительным документам" reasonCode="4">
+        <dv:Approver positionCode="25" positionName="Судебный пристав-исполнитель" personApproving="Артемьев Иван Константинович" approvalDate="2021-04-28"/>
+        <dv:Executor VKSPCode="12937" structuralUnitName="Управление Федеральной службой судебных приставов по Москве" structuralUnitAddress="РФ, г. Москва, проезд Югорский, д. 22, корп. 1 /00074320071000000000"
+            structuralLocality="Останкинский отдел УФССП по Москве" executorFullName="Иванов Иван Иванович"/>
+        <com:DeedInfo IDType="3" idDocNo="32117072411021588933" idDocDate="2021-03-05" subjCode="1150000" subjName="Штраф по законодательству об административных правонарушениях (АП)"/>
+    </nt:NoticeRenouncement>
+</nt:ExportNoticeRequest>

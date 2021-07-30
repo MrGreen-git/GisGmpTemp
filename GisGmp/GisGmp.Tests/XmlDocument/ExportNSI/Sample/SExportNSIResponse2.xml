@@ -1,0 +1,8 @@
+<nsi:ExportNSIResponse xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+   xmlns:nsi="urn://roskazna.ru/gisgmp/xsd/services/export-nsi/2.4.0"
+   xmlns:cn="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   Id="G_3df3e555-1dcd-48e1-8483-bb358a128b38" RqId="U_7994af15-f7f2-4a10-a055-5aacf6057d4f" recipientIdentifier="3637ed" timestamp="2021-07-01T10:20:45.713+03:00">
+   <nsi:oktmoNSIInfo regionCode="81" areaCode="615" cityCode="440" localCode="101" controlNum="9" section="2" name="с Комсомольское (Тестовые данные!)" code="81615440101" lastChangeNum="0"
+      lastChangeType="0" changeDate="2013-06-14" introductionDate="2014-01-01" updateDate="2021-03-04T18:13:51"/>
+</nsi:ExportNSIResponse>

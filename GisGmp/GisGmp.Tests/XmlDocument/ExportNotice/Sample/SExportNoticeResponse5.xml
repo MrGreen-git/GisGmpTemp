@@ -1,0 +1,4 @@
+<nt:ExportNoticeResponse xmlns:nt="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0" recipientIdentifier="3eb5f9" Id="G_55e8a242-0a43-4d73-8d60-a0b9c9e1489b" timestamp="2021-05-04T20:15:47Z" RqId="G_e4eb9ab7-8ac6-422e-b9a9-e91a2d66e200">
+	<nt:RoutingCode>45382000</nt:RoutingCode>
+	<nt:ExportNoticeConfirmation>true</nt:ExportNoticeConfirmation>
+</nt:ExportNoticeResponse>

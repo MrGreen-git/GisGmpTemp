@@ -1,0 +1,13 @@
+<ns0:ExportNoticeNSIRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+    xmlns:cn="http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0"
+    xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/ExportNoticeNSI/2.4.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    Id="G_554d04cb-5be6-4372-be84-2ffbfbc42264" timestamp="2021-07-01T12:13:51.621+03:00">
+    <ns0:Destination recipientIdentifier="3637ed">
+        <ns0:RoutingCode>45382000</ns0:RoutingCode>
+    </ns0:Destination>
+    <ns0:NoticeNSI directoryCode="OKTMO">
+        <ns0:oktmoNSIInfo regionCode="81" areaCode="615" cityCode="440" localCode="101" controlNum="9" section="2" name="с Комсомольское (Тестовые данные!)" code="81615440101" lastChangeNum="0"
+            lastChangeType="0" changeDate="2013-06-14" introductionDate="2014-01-01" updateDate="2021-01-07T12:10:51"/>
+    </ns0:NoticeNSI>
+</ns0:ExportNoticeNSIRequest>

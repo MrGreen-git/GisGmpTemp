@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GisGmp.Tests
+{
+    class SubscriptionService
+    {
+        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(SubscriptionService)}";
+
+
+    }
+}

@@ -2,6 +2,10 @@
 GisGmp/bin
 GisGmp/obj
 
+# GisGmp.Tests
+GisGmp.Tests/bin
+GisGmp.Tests/obj
+
 # Visual Studio cache/options directory
 .vs/
 .vs

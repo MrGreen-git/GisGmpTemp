@@ -1,0 +1,33 @@
+<nt:ExportNoticeRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+ xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
+ xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
+ xmlns:nt="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0"
+ xmlns:nc="http://roskazna.ru/gisgmp/xsd/NoticeCharge/2.4.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ Id="G_90274743-6807-4651-9e9d-8c380ca92577" timestamp="2021-04-29T18:13:51.0">
+    <nt:Destination recipientIdentifier="3eb5f9">
+        <nt:RoutingCode>45382000</nt:RoutingCode>
+    </nt:Destination>
+    <nt:NoticeChargeExecutive supplierBillID="18819062009512650975" billDate="2021-02-04T18:13:51.0" totalAmount="50000" purpose="Штраф за неоплаченную парковку"
+        kbk="18811630000010000140" oktmo="45348000" amountToPay="50000">
+        <org:Payee name="ЦАФАП ОДД ГИБДД ГУ МВД России по г. Москве" inn="7707089111" kpp="770731015">
+            <com:OrgAccount accountNumber="03100643000000019500">
+                <com:Bank bik="024501901" correspondentBankAccount="40102810045370000002"/>
+            </com:OrgAccount>
+        </org:Payee>
+        <nc:Payer payerName="Иванов Иван Иванович" payerIdentifier="1010000000008751379232"/>
+        <nc:BudgetIndex status="01" paytReason="0" taxPeriod="0" taxDocNumber="0" taxDocDate="0"/>
+        <nc:ExecutiveProcedureInfo idDeloNo="2524П" idDesDate="2021-02-04" aktDate="2021-02-05" srokPrIsp="0" srokPrIspType="1" claimerAdr="Тестовый адрес взыскателя/00074320071000000000"
+             notifFSSPDate="2021-04-29">
+            <com:DeedInfo IDType="3" idDocNo="18819062009512650975" idDocDate="2021-02-04" subjCode="1150000" subjName="Штраф по законодательству об административных правонарушениях (АП)"/>
+            <com:ExecutOrgan organOkogu="1318025" organCode="30" organ="МВД России" organAdr="Тестовый адрес/00074320071000000000" organSignCodePost="11-3-4-062"
+                 organSign="Специалист" organSignFIO="Фамилия Имя ОТчество"/>
+            <com:Debtor debtorType="2" debtorAdr="Тестовый адрес/00074320071000000000"> 
+                <com:Person debtorGender="мужской"/>
+            </com:Debtor>
+        </nc:ExecutiveProcedureInfo>
+        <com:ChangeStatusInfo>
+            <com:Meaning>1</com:Meaning>
+        </com:ChangeStatusInfo>
+    </nt:NoticeChargeExecutive>
+</nt:ExportNoticeRequest>

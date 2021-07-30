@@ -1,0 +1,11 @@
+<ns0:ForcedAcknowledgementRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+ xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
+ xmlns:qt="http://roskazna.ru/gisgmp/xsd/Quittance/2.4.0"
+ xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
+ xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ Id="G_e5c906a5-0ceb-4320-97e5-233f32dd8925" timestamp="2021-07-01T18:13:51.0" senderIdentifier="3eb551" senderRole="3">
+    <ns0:Reconcile supplierBillId="18817072711544879499">
+        <ns0:PaymentId>10471020010005233009202100000001</ns0:PaymentId>
+    </ns0:Reconcile>
+</ns0:ForcedAcknowledgementRequest>

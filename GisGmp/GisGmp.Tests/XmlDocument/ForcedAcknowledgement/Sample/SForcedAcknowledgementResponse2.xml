@@ -1,0 +1,9 @@
+<ns0:ForcedAcknowledgementResponse xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+ xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
+ xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
+ xmlns:qt="http://roskazna.ru/gisgmp/xsd/Quittance/2.4.0"
+ xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ Id="I_e8c656a3-5ceb-5474-78e5-254f32dd8322" RqId="G_e5c906a5-0ceb-4320-97e5-233f32dd8925" recipientIdentifier="3eb551" timestamp="2021-07-01T18:13:51.0">
+     <ns0:Done>true</ns0:Done>
+</ns0:ForcedAcknowledgementResponse>

@@ -1,0 +1,27 @@
+<n1:ExportIncomesResponse xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
+	xmlns:inc="http://roskazna.ru/gisgmp/xsd/Income/2.4.0"
+	xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
+	xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
+	xmlns:n1="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0"
+	Id="I_54a39db1-8753-5522-1739-bc94254ccdb4" RqId="G_dae1c895-d47d-33ac-28d8-597f11d9e561"
+	recipientIdentifier="aaa111" timestamp="2021-07-01T17:25:45.031+03:00" hasMore="false">
+	<n1:IncomeInfo incomeId="49999300920200000000000000301067"
+		incomeDate="2020-09-30T15:01:30.511+03:00" edCode="ED101" edNo="0012345"
+		supplierBillID="18817072416285972102" paymentId="10471020010005233009202000000001"
+		purpose="Штраф" amount="50000" kbk="18811630020016000140" oktmo="45348000" transKind="01"
+		isUncertain="0">
+		<pmnt:PaymentOrg>
+			<org:Bank bik="047252006"/>
+		</pmnt:PaymentOrg>
+		<pmnt:Payer payerIdentifier="1010000000003751379232" payerName="Тестовый плательщик"/>
+		<org:Payee name="УВД по ЦАО ГУ МВД России по г. Москве" inn="7706012716" kpp="770901011">
+			<com:OrgAccount accountNumber="03100643000000019500">
+				<com:Bank bik="024501901" correspondentBankAccount="40102810045370000002"/>
+			</com:OrgAccount>
+		</org:Payee>
+		<pmnt:BudgetIndex status="01" paytReason="0" taxPeriod="0" taxDocNumber="0" taxDocDate="0"/>
+		<com:ChangeStatusInfo>
+			<com:Meaning>1</com:Meaning>
+		</com:ChangeStatusInfo>
+	</n1:IncomeInfo>
+</n1:ExportIncomesResponse> 
