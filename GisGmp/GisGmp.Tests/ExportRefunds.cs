@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
 namespace GisGmp.Tests
 {
-    class ExportRefunds
+    public class ExportRefunds
     {
+        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ExportRefunds)}";
+
+        [Fact]
+        public void ExportRefundsRequest()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
+
+        [Fact]
+        public void ExportRefundsResponse()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
     }
 }

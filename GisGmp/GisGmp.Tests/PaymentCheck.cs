@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
 namespace GisGmp.Tests
 {
-    class PaymentCheck
+    public class PaymentCheck
     {
+        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(PaymentCheck)}";
+
+        [Fact]
+        public void PaymentCheckRequest()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
+
+        [Fact]
+        public void PaymentCheckResponse()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
     }
 }

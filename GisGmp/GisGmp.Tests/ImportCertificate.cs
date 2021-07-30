@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
 namespace GisGmp.Tests
 {
-    class ImportCertificate
+    public class ImportCertificate
     {
+        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ImportCertificate)}";
+
+        [Fact]
+        public void ImportCertificateRequest()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
+
+        [Fact]
+        public void ImportCertificateResponse()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
     }
 }

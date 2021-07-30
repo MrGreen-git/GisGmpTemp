@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
 namespace GisGmp.Tests
 {
-    class ImportClarification
+    public class ImportClarification
     {
+        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ImportClarification)}";
+
+        [Fact]
+        public void ImportClarificationRequest()
+        {
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
+
+        [Fact]
+        public void ImportClarificationResponse()
+        {           
+            //Arrange
+            //Act
+            //Assert              
+            Assert.True(false);
+        }
     }
 }
