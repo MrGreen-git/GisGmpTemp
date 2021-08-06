@@ -7,13 +7,22 @@ namespace GisGmp.Common
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
     public class ImportProtocolType
     {
-        [XmlAttribute(DataType = "ID")]
-        public string entityID { get; set; }
+        /// <summary>
+        /// Идентификатор сущности в пакете
+        /// </summary>
+        [XmlAttribute("entityID", DataType = "ID")]
+        public string EntityID { get; set; }
 
-        [XmlAttribute]
-        public string code { get; set; }
+        /// <summary>
+        /// Код результата обработки: 0 — если запрос успешно принят или код ошибки в случае отказа в приеме к обработке документа
+        /// </summary>
+        [XmlAttribute("code")]
+        public string Code { get; set; }
 
-        [XmlAttribute]
-        public string description { get; set; }
+        /// <summary>
+        /// Описание результата обработки
+        /// </summary>
+        [XmlAttribute("description")]
+        public string Description { get; set; }
     }
 }

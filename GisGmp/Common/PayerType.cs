@@ -13,7 +13,10 @@ namespace GisGmp.Common
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
     public class PayerType
     {
-        [XmlAttribute]
-        public string payerIdentifier { get; set; }
+        /// <summary>
+        /// Поле номер 201: Идентификатор плательщика
+        /// </summary>
+        [XmlAttribute("payerIdentifier")]
+        public string PayerIdentifier { get; set; }
     }
 }
