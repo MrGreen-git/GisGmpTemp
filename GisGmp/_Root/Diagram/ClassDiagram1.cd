@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GisGmp.Income.IncomeType">
+    <Position X="4.75" Y="1.75" Width="2.25" />
+    <Members>
+      <Property Name="ChargeOffDateSpecified" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAAAABAAAAAABACAAAAAAAAgAAAgABAAAgAQAAAAAAE=</HashCode>
+      <FileName>Income\IncomeType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Payment.PaymentBaseType" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IKgAAAAAAEAAAAMBAAAAAAIAAAIQgAAEAAAQACAAAAA=</HashCode>
+      <FileName>Payment\PaymentBaseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Payment.PaymentType">
+    <Position X="1.25" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAABAAAAAARAEAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Payment\PaymentType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.AbstractChargtType">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Charge\AbstractChargtType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.ChargeTemplateType">
+    <Position X="7.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>KAgAAAAEAFABAAMAGQAAAAYEAAgIAAAAAAAQACAAAAA=</HashCode>
+      <FileName>Charge\ChargeTemplateType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Charge.ChargeType">
+    <Position X="11" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>KAiAAAAEANABAAMAGQAAAAYECAgKAAAAAAAUACAAAAA=</HashCode>
+      <FileName>Charge\ChargeType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

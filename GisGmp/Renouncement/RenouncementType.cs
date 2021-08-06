@@ -10,29 +10,56 @@ namespace GisGmp.Renouncement
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Renouncement/2.4.0")]
     public class RenouncementType
     {
-        public RenouncementTypeApprover Approver { get; set; }
+        /// <summary>
+        /// Информация об утверждении постановления об отказе в возбуждении ИП
+        /// </summary>
+        public Approver Approver { get; set; }
 
-        public RenouncementTypeExecutor Executor { get; set; }
+        /// <summary>
+        /// Данные должностного лица (исполнителя), вынесшего постановление об отказе
+        /// </summary>
+        public Executor Executor { get; set; }
 
+        /// <summary>
+        /// Данные исполнительного документа, по которому вынесено постановление об отказе в возбуждении ИП
+        /// </summary>
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public DeedInfo DeedInfo { get; set; }
 
-        [XmlAttribute]
-        public string supplierBillID { get; set; }
+        /// <summary>
+        /// Уникальный идентификатор начисления (УИН)
+        /// </summary>
+        [XmlAttribute("supplierBillID")]
+        public string SupplierBillID { get; set; }
 
-        [XmlAttribute]
-        public string renouncementID { get; set; }
+        /// <summary>
+        /// Идентификатор извещения об отказе в возбуждении исполнительного производства
+        /// </summary>
+        [XmlAttribute("renouncementID")]
+        public string RenouncementID { get; set; }
 
-        [XmlAttribute(DataType = "date")]
-        public DateTime rulingDate { get; set; }
+        /// <summary>
+        /// Дата постановления об отказе в возбуждении ИП
+        /// </summary>
+        [XmlAttribute("rulingDate", DataType = "date")]
+        public DateTime RulingDate { get; set; }
 
-        [XmlAttribute]
-        public string rulingNum { get; set; }
+        /// <summary>
+        /// Номер постановления об отказе в возбуждении ИП
+        /// </summary>
+        [XmlAttribute("rulingNum")]
+        public string RulingNum { get; set; }
 
-        [XmlAttribute]
-        public string refusalGround { get; set; }
+        /// <summary>
+        /// Обстоятельства, послужившие основанием для отказа в возбуждении ИП
+        /// </summary>
+        [XmlAttribute("refusalGround")]
+        public string RefusalGround { get; set; }
 
-        [XmlAttribute]
-        public RenouncementTypeReasonCode reasonCode { get; set; }
+        /// <summary>
+        /// Код причины отказа (пункт ч. 1 ст. 31 Федерального закона от 02.10.2007 N 229-ФЗ)
+        /// </summary>
+        [XmlAttribute("reasonCode")]
+        public ReasonCode ReasonCode { get; set; }
     }
 }

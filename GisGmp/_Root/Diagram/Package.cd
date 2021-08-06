@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GisGmp.Services.ImportIncomes.ImportIncomesResponse">
+    <Position X="3.75" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ImportIncomes\ImportIncomesResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ImportCharges.ImportPackageResponseType" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ImportCharges\ImportPackageResponseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Common.ResponseType" Collapsed="true">
+    <Position X="20" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ResponseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportCharges.ExportChargesResponse" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportCharges\ExportChargesResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportClarification.ExportClarificationResponse">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportClarification\ExportClarificationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportIncomes.ExportIncomesResponse">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Services\ExportIncomes\ExportIncomesResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportNotice.ExportNoticeResponse">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Services\ExportNotice\ExportNoticeResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportNoticeNSI.ExportNoticeNSIResponse">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Services\ExportNoticeNSI\ExportNoticeNSIResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportNSI.ExportNSIResponse" Collapsed="true">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportNSI\ExportNSIResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportPayments.ExportPaymentsResponse" Collapsed="true">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportPayments\ExportPaymentsResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportQuittances.ExportQuittancesResponse" Collapsed="true">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportQuittances\ExportQuittancesResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ExportRefunds.ExportRefundsResponse" Collapsed="true">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ExportRefunds\ExportRefundsResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ForcedAckmowledgement.ForcedAcknowledgementResponse" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ForcedAckmowledgement\ForcedAcknowledgementResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ImportChargestemplate.ChargeCreationResponse" Collapsed="true">
+    <Position X="29.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ImportChargestemplate\ChargeCreationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.ImportPaymentCheck.PaymentCheckResponse" Collapsed="true">
+    <Position X="32" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ImportPaymentCheck\PaymentCheckResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.Services.ImportСertificates.ImportCertificateResponse" Collapsed="true">
+    <Position X="34.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ImportСertificates\ImportCertificateResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SubscriptionService.SubscriptionServiceResponse" Collapsed="true">
+    <Position X="36.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\SubscriptionService\SubscriptionServiceResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

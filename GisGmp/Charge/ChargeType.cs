@@ -6,28 +6,46 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Charge
 {
+    /// <summary>
+    /// Данные нового начисления
+    /// </summary>
     [XmlInclude(typeof(ImportedChargeType))]
     [Serializable]
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Charge/2.4.0")]
     public class ChargeType : AbstractChargtType
-{
-public ChargeType()
+    {
+        public ChargeType()
         {
             chargeOffense = "1";
         }
 
+        /// <summary>
+        /// Поле номер 1003: Идентификаторы начислений, на основании которых выставлено данное начисление
+        /// </summary>
         [XmlArrayItem("SupplierBillID", IsNullable = false)]
         public string[] LinkedChargesIdentifiers { get; set; }
 
+        /// <summary>
+        /// Данные организации, являющейся получателем средств
+        /// </summary>
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
         public Payee Payee { get; set; }
 
         public Payer Payer { get; set; }
 
+        /// <summary>
+        /// Дополнительные реквизиты платежа, предусмотренные приказом Минфина России от 12 ноября 2013 г. №107н
+        /// </summary>
         public BudgetIndexType BudgetIndex { get; set; }
 
+        /// <summary>
+        /// Дополнительная информация, необходимая для осуществления исполнительного производства
+        /// </summary>
         public ExecutiveProcedureInfoType ExecutiveProcedureInfo { get; set; }
 
+        /// <summary>
+        /// Дополнительные условия оплаты
+        /// </summary>
         public OffenseType AdditionalOffense { get; set; }
 
         [XmlElement("DiscountFixed", typeof(ChargeTypeDiscountDiscountFixed), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
@@ -35,9 +53,15 @@ public ChargeType()
         [XmlElement("MultiplierSize", typeof(ChargeTypeDiscountMultiplierSize), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public DiscountType Item { get; set; }
 
+        /// <summary>
+        /// Поле номер 202: Дополнительные поля начисления
+        /// </summary>
         [XmlElement("AdditionalData", Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public AdditionalDataType[] AdditionalData { get; set; }
 
+        /// <summary>
+        /// УИН
+        /// </summary>
         [XmlAttribute]
         public string supplierBillID { get; set; }
 
