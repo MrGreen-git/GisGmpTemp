@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Organization
 {
+    /// <summary>
+    /// Организация принявшая платеж
+    /// </summary>
     [Serializable]
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
     public class PaymentOrgType

@@ -3,6 +3,9 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Services.ForcedAckmowledgement
 {
+    /// <summary>
+    /// Отмена принудительного квитирования начисления с платежами
+    /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0")]
     public class AnnulmentReconcile
@@ -11,7 +14,10 @@ namespace GisGmp.Services.ForcedAckmowledgement
         [XmlElement("PaymentNotLoaded", typeof(AnnulmentReconcilePaymentNotLoaded))]
         public object[] Items { get; set; }
 
-        [XmlAttribute]
-        public string supplierBillId { get; set; }
+        /// <summary>
+        /// УИН
+        /// </summary>
+        [XmlAttribute("supplierBillId")]
+        public string SupplierBillId { get; set; }
     }
 }

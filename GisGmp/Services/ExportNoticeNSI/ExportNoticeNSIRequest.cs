@@ -3,19 +3,64 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Services.ExportNoticeNSI
 {
+    /// <summary>
+    /// Предоставление из ГИС ГМП уведомлений о нормативно-справочной информации по подписке
+    /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/ExportNoticeNSI/2.4.0")]
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/ExportNoticeNSI/2.4.0", IsNullable = false)]
     public class ExportNoticeNSIRequest
     {
-        public Destination Destination { get; set; }
+        /// <summary/>
+        protected ExportNoticeNSIRequest() { }
 
-        public NoticeNSI NoticeNSI { get; set; }
+        /// <summary/>
+        public ExportNoticeNSIRequest(string id, DateTime timestamp, Destination destination, NoticeNSI noticeNSI)
+        {
+            Id = id;
+            Timestamp = timestamp;
+            Destination = destination;
+            NoticeNSI = noticeNSI;
+        }
 
+        /// <summary>
+        /// Идентификаторы получателя уведомлений по подписке
+        /// </summary>
+        public Destination Destination 
+        {
+            get => DestinationField; 
+            set => DestinationField = value;
+        }
+
+        Destination DestinationField;
+
+        /// <summary>
+        /// Уведомление об изменении нормативно-справочной информации
+        /// </summary>
+        public NoticeNSI NoticeNSI 
+        {
+            get => NoticeNSIField;
+            set => NoticeNSIField = value;
+        }
+
+        NoticeNSI NoticeNSIField;
+
+        /// <summary>
+        /// Идентификатор запроса
+        /// </summary>
         [XmlAttribute(DataType = "ID")]
-        public string Id { get; set; }
+        public string Id 
+        {
+            get => IdField;
+            set => IdField = value;
+        }
 
-        [XmlAttribute]
-        public DateTime timestamp { get; set; }
+        string IdField;
+
+        /// <summary>
+        /// Дата и время формирования сообщения
+        /// </summary>
+        [XmlAttribute("timestamp")]
+        public DateTime Timestamp { get; set; }
     }
 }

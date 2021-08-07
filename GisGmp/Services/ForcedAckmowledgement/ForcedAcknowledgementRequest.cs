@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Services.ForcedAckmowledgement
 {
+    /// <summary>
+    /// Запрос на проведение (отмену) принудительного квитирования/установление (отмену факта установления) извещению о приеме к исполнению распоряжения статуса "Услуга предоставлена"
+    /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0")]
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0", IsNullable = false)]
@@ -15,7 +18,10 @@ namespace GisGmp.Services.ForcedAckmowledgement
         [XmlElement("ServiceProvided", typeof(ServiceProvided))]
         public object Item { get; set; }
 
-        [XmlAttribute]
-        public string originatorId { get; set; }
+        /// <summary>
+        /// УРН участника косвенного взаимодействия, сформировавшего запрос
+        /// </summary>
+        [XmlAttribute("originatorId")]
+        public string OriginatorId { get; set; }
     }
 }

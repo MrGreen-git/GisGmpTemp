@@ -3,38 +3,65 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Services.ExportQuittances
 {
+    /// <summary>
+    /// Результат сопоставления начисления с платежом
+    /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-quittances/2.4.0")]
     public class ComparisonResult
     {
-        [XmlAttribute]
-        public string paymentId { get; set; }
+        /// <summary>
+        /// УИП, с которым сопоставлено начисление
+        /// </summary>
+        [XmlAttribute("paymentId")]
+        public string PaymentId { get; set; }
 
-        [XmlAttribute]
-        public ulong comparisonWeight { get; set; }
+        /// <summary>
+        /// Вес сопоставления начисления с платежом
+        /// </summary>
+        [XmlAttribute("comparisonWeight")]
+        public ulong ComparisonWeight { get; set; }
 
-        [XmlAttribute]
-        public DateTime comparisonDate { get; set; }
+        /// <summary>
+        /// Дата сопоставления
+        /// </summary>
+        [XmlAttribute("comparisonDate")]
+        public DateTime ComparisonDate { get; set; }
 
         [XmlIgnore]
-        public bool comparisonDateSpecified { get; set; }
+        public bool ComparisonDateSpecified { get; set; }
 
-        [XmlAttribute]
-        public ulong amountPayment { get; set; }
+        /// <summary>
+        /// Сумма, указанная в платеже
+        /// </summary>
+        [XmlAttribute("amountPayment")]
+        public ulong AmountPayment { get; set; }
 
         [XmlIgnore]
-        public bool amountPaymentSpecified { get; set; }
+        public bool AmountPaymentSpecified { get; set; }
 
-        [XmlAttribute]
-        public string kbk { get; set; }
+        /// <summary>
+        /// КБК, указанный в платеже. Присутствует в результате сопоставления в случае несовпадения значений этого реквизита в данных платежа и начисления.
+        /// </summary>
+        [XmlAttribute("kbk")]
+        public string Kbk { get; set; }
 
-        [XmlAttribute]
-        public string oktmo { get; set; }
+        /// <summary>
+        /// Код по ОКТМО, указанный в платеже. Присутствует в результате сопоставления в случае несовпадения значений этого реквизита в данных платежа и начисления.
+        /// </summary>
+        [XmlAttribute("oktmo")]
+        public string Oktmo { get; set; }
 
-        [XmlAttribute]
-        public string accountNumber { get; set; }
+        /// <summary>
+        /// Номер счета получателя средств, указанный в платеже. Присутствует в результате сопоставления в случае несовпадения значений этого реквизита в данных платежа и начисления.
+        /// </summary>
+        [XmlAttribute("accountNumber")]
+        public string AccountNumber { get; set; }
 
-        [XmlAttribute]
-        public string bik { get; set; }
+        /// <summary>
+        /// БИК банка получателя средств, указанный в платеже. Присутствует в результате сопоставления в случае несовпадения значений этого реквизита в данных платежа и начисления.
+        /// </summary>
+        [XmlAttribute("bik")]
+        public string Bik { get; set; }
     }
 }
