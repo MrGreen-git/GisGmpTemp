@@ -2,7 +2,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace GisGmp.SubscriptionService
+namespace GisGmp.Services.SubscriptionService
 {
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/2.4.0")]
@@ -11,22 +11,22 @@ namespace GisGmp.SubscriptionService
         [XmlElement("SubscriptionProtocol")]
         public SubscriptionProtocolType[] SubscriptionProtocol { get; set; }
 
-        [XmlAttribute]
-        public DateTime dispatchDate { get; set; }
+        [XmlAttribute("dispatchDate")]
+        public DateTime DispatchDate { get; set; }
 
         [XmlIgnore]
-        public bool dispatchDateSpecified { get; set; }
+        public bool DispatchDateSpecified { get; set; }
 
-        [XmlAttribute(DataType = "date")]
-        public DateTime expiryDate { get; set; }
+        [XmlAttribute("expiryDate", DataType = "date")]
+        public DateTime ExpiryDate { get; set; }
 
         [XmlIgnore]
-        public bool expiryDateSpecified { get; set; }
+        public bool ExpiryDateSpecified { get; set; }
+
+        [XmlAttribute("subscriptionCode")]
+        public string SubscriptionCode { get; set; }
 
         [XmlAttribute]
-        public string subscriptionCode { get; set; }
-
-        [XmlAttribute]
-        public string subscriptionIdentifier { get; set; }
+        public string SubscriptionIdentifier { get; set; }
     }
 }

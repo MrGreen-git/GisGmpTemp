@@ -1,8 +1,8 @@
-﻿using GisGmp.CommonNSI;
+﻿using GisGmp.Common.NSI;
 using System;
 using System.Xml.Serialization;
 
-namespace GisGmp.SubscriptionService
+namespace GisGmp.Service.SubscriptionService
 {
     [Serializable]
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Common-nsi/2.4.0")]

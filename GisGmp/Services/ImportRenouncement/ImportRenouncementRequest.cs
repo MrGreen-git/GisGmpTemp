@@ -3,7 +3,7 @@ using GisGmp.Package;
 using System;
 using System.Xml.Serialization;
 
-namespace GisGmp.Service.ImportRenouncement
+namespace GisGmp.Services.ImportRenouncement
 {
     /// <summary>
     /// Прием извещения об отказе в возбуждении исполнительного производства

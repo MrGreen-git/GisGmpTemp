@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GisGmp.Services.ExportIncomes;
+using System;
 
 namespace GisGmp
 {
@@ -8,12 +7,12 @@ namespace GisGmp
     {
         public ExportIncomesRequest CreateExportIncomesRequest()
         {
-            return new ExportNoticeRequest();
+            throw new NotImplementedException();
         }
 
         public ExportIncomesResponse CreateExportIncomesResponse()
         {
-            return new ExportIncomesResponse();
+            throw new NotImplementedException();
         }
     }
 }

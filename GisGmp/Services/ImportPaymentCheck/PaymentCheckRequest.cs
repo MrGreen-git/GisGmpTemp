@@ -2,7 +2,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace GisGmp.ImportPaymentCheck
+namespace GisGmp.Services.ImportPaymentCheck
 {
     /// <summary>
     /// Прием запроса проверки значений реквизитов распоряжения о переводе денежных средств

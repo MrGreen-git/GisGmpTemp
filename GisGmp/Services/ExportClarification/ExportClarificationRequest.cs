@@ -11,7 +11,7 @@ namespace GisGmp.Services.ExportClarification
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-clarification/2.4.0")]
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-clarification/2.4.0", IsNullable = false)]
-    public class ExportClarificationsRequest : ExportRequestType
+    public class ExportClarificationRequest : ExportRequestType
     {
         /// <summary/>
 

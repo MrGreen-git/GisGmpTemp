@@ -1,4 +1,6 @@
 ﻿using GisGmp.Services.ExportCharges;
+using GisGmp.Services.ExportClarification;
+using GisGmp.Services.ExportIncomes;
 using GisGmp.Services.ExportNotice;
 using GisGmp.Services.ExportNoticeNSI;
 using GisGmp.Services.ExportNSI;
@@ -8,10 +10,14 @@ using GisGmp.Services.ExportRefunds;
 using GisGmp.Services.ForcedAckmowledgement;
 using GisGmp.Services.ImportCharges;
 using GisGmp.Services.ImportChargestemplate;
+using GisGmp.Services.ImportClarification;
+using GisGmp.Services.ImportIncomes;
+using GisGmp.Services.ImportPaymentCheck;
 using GisGmp.Services.ImportPayments;
 using GisGmp.Services.ImportRefunds;
+using GisGmp.Services.ImportRenouncement;
 using GisGmp.Services.ImportСertificates;
-using GisGmp.SubscriptionService;
+using GisGmp.Services.SubscriptionService;
 using System;
 using System.IO;
 using System.Xml;
@@ -149,7 +155,7 @@ namespace GisGmp
                 case ExportIncomesRequest _: AddPrefix("ser4", "com", "sc"); break;
                 case ExportIncomesResponse _: AddPrefix("ser4", "inc", "pmnt", "org", "com"); break;
 
-                case ExportСlarificationsRequest _: AddPrefix("ser5i", "clrf", "chg", "com", "sc", "xsi"); break;
+                case ExportClarificationRequest _: AddPrefix("ser5i", "clrf", "chg", "com", "sc", "xsi"); break;
                 case ExportClarificationResponse _: AddPrefix("ser5o", "clrf", "pmnt", "org", "com"); break;
 
                 case ExportQuittancesRequest _:

@@ -5,7 +5,7 @@ namespace GisGmp.Subscription
 {
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://roskazna.ru/gisgmp/xsd/Subscription/2.4.0")]
-    public enum SubscriptionParametersTypeStatus
+    public enum Status
     {
 
         [XmlEnum("1")]

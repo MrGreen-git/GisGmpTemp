@@ -1,21 +1,51 @@
-﻿using GisGmp.SubscriptionService;
+﻿using GisGmp.Services.SubscriptionService;
 
 namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
-        public SubscriptionServiceRequest CreateSubscriptionServiceRequest()
+        /// <summary/>
+        public SubscriptionServiceRequest CreateSubscriptionServiceRequest(bool exportSubscriptions)
         {
-            return new SubscriptionServiceRequest();
+            return new SubscriptionServiceRequest(
+                config: RequestConfig,
+                exportSubscriptions: exportSubscriptions
+                );
         }
 
-        public string SubscriptionService()
-            => ReadyRequest(CreateSubscriptionServiceRequest());
-
-
-        public SubscriptionServiceResponse CreateSubscriptionServiceResponse()
+        /// <summary/>
+        public SubscriptionServiceRequest CreateSubscriptionServiceRequest(CreateSubscription createSubscription)
         {
-            return new SubscriptionServiceResponse();
+            return new SubscriptionServiceRequest(
+                config: RequestConfig,
+                createSubscription: createSubscription
+                );
+        }
+
+        /// <summary/>
+        public string SubscriptionService(bool exportSubscriptions)
+            => ReadyRequest(CreateSubscriptionServiceRequest(exportSubscriptions));
+
+        /// <summary/>
+        public string SubscriptionService(CreateSubscription createSubscription)
+            => ReadyRequest(CreateSubscriptionServiceRequest(createSubscription));
+
+        /// <summary/>
+        public SubscriptionServiceResponse CreateSubscriptionServiceResponse(CreateSubscriptionResult[] createSubscriptionResult)
+        {
+            return new SubscriptionServiceResponse(
+                config: ResponseConfig,
+                createSubscriptionResult: createSubscriptionResult
+                );
+        }
+
+        /// <summary/>
+        public SubscriptionServiceResponse CreateSubscriptionServiceResponse(Subscriptions[] subscriptions)
+        {
+            return new SubscriptionServiceResponse(
+                config: ResponseConfig,
+                subscriptions: subscriptions
+                );
         }
     }
 }

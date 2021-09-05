@@ -1,10 +1,8 @@
 ﻿using GisGmp.Common;
-using GisGmp.ImportPaymentCheck;
-using GisGmp.Services.ExportPayments;
 using System;
 using System.Xml.Serialization;
 
-namespace GisGmp.ImportPaymentCheck
+namespace GisGmp.Services.ImportPaymentCheck
 {
     /// <summary>
     /// Ответ на запрос проверки значений реквизитов распоряжения о переводе денежных средств
