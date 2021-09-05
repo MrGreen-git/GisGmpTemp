@@ -32,7 +32,7 @@ namespace GisGmp.Services.ImportСertificates
         public ImportCertificateEntryType[] RequestEntry 
         {
             get => RequestEntryField;
-            set => RequestEntryField = value;
+            set => RequestEntryField = Validator.ArrayObj(value: value, name: nameof(RequestEntry), required: true, min: 1, max: 100);
         }
 
         ImportCertificateEntryType[] RequestEntryField;

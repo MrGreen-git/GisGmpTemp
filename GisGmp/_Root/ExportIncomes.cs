@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GisGmp._Root
+namespace GisGmp
 {
-    class ExportIncomes
+    public partial class GisGmpBuilder
     {
+        public ExportIncomesRequest CreateExportIncomesRequest()
+        {
+            return new ExportNoticeRequest();
+        }
+
+        public ExportIncomesResponse CreateExportIncomesResponse()
+        {
+            return new ExportIncomesResponse();
+        }
     }
 }

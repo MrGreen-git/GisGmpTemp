@@ -8,19 +8,53 @@ namespace GisGmp.Charge
     [XmlRoot("AdditionalOffense", Namespace = "http://roskazna.ru/gisgmp/xsd/Charge/2.4.0", IsNullable = false)]
     public class OffenseType
     {
-        [XmlAttribute]
-        public DateTime offenseDate { get; set; }
+        /// <summary/>
+        protected OffenseType() { }
 
-        [XmlAttribute]
-        public string offensePlace { get; set; }
+        /// <summary/>
+        public OffenseType(
+            DateTime offenseDate,
+            string offensePlace,
+            string legalAct,
+            string digitalLink,
+            string departmentName
+            ) 
+        { 
+            OffenseDate = offenseDate;
+            OffensePlace = offensePlace;
+            LegalAct = legalAct;
+            DigitalLink = digitalLink;
+            DepartmentName = departmentName;
+        }
 
-        [XmlAttribute]
-        public string legalAct { get; set; }
+        /// <summary>
+        /// Дата и время нарушения
+        /// </summary>
+        [XmlAttribute("offenseDate")]
+        public DateTime OffenseDate { get; set; }
 
-        [XmlAttribute]
-        public string digitalLink { get; set; }
+        /// <summary>
+        /// Место нарушения
+        /// </summary>
+        [XmlAttribute("offensePlace")]
+        public string OffensePlace { get; set; }
+        
+        /// <summary>
+        /// Статья нарушения
+        /// </summary>
+        [XmlAttribute("legalAct")]
+        public string LegalAct { get; set; }
 
-        [XmlAttribute]
-        public string departmentName { get; set; }
+        /// <summary>
+        /// Ссылка на фото (видео) материалов нарушения
+        /// </summary>
+        [XmlAttribute("digitalLink")]
+        public string DigitalLink { get; set; }
+
+        /// <summary>
+        /// Данные о подразделении, вынесшем постановление
+        /// </summary>
+        [XmlAttribute("departmentName")]
+        public string DepartmentName { get; set; }
     }
 }

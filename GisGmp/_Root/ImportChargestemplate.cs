@@ -5,18 +5,26 @@ namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
-        public ChargeCreationRequest CreateImportChargesTemplateRequest()
+        /// <summary/>
+        public ChargeCreationRequest CreateImportChargesTemplateRequest(ChargeTemplateType chargeTemplateType)
         {
-            return new ChargeCreationRequest();
+            return new ChargeCreationRequest(
+                config: RequestConfig,
+                chargeTemplate: chargeTemplateType
+                );
         }
 
-        public string ImportChargesTemplate()
-            => ReadyRequest(CreateImportChargesTemplateRequest());
+        /// <summary/>
+        public string ImportChargesTemplate(ChargeTemplateType chargeTemplateType)
+            => ReadyRequest(CreateImportChargesTemplateRequest(chargeTemplateType));
 
-
+        /// <summary/>
         public ChargeCreationResponse CreateImportChargesTemplateResponse(ChargeType charge)
         {
-            return new ChargeCreationResponse();
+            return new ChargeCreationResponse(
+                config: ResponseConfig,
+                charge: charge
+                );
         }
     }
 }

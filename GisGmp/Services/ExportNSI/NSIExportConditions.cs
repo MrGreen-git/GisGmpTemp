@@ -10,5 +10,7 @@ namespace GisGmp.Services.ExportNSI
         [XmlElement("PayeeData", typeof(PayeeData))]
         [XmlElement("oktmo", typeof(string))]
         public object Item { get; set; }
+
+        public PayeeData PayeeData { get; set; }
     }
 }

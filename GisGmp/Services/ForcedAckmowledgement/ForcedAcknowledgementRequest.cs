@@ -18,6 +18,12 @@ namespace GisGmp.Services.ForcedAckmowledgement
         [XmlElement("ServiceProvided", typeof(ServiceProvided))]
         public object Item { get; set; }
 
+
+        public AnnulmentReconcile AnnulmentReconcile { get; set; }
+        public AnnulmentServiceProvided AnnulmentServiceProvided { get; set; }
+        public Reconcile Reconcile { get; set; }
+        public ServiceProvided ServiceProvided { get; set; }
+
         /// <summary>
         /// УРН участника косвенного взаимодействия, сформировавшего запрос
         /// </summary>

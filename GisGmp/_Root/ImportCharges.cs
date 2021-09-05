@@ -1,21 +1,48 @@
-﻿using GisGmp.Services.ImportCharges;
+﻿using GisGmp.Common;
+using GisGmp.Package;
+using GisGmp.Services.ImportCharges;
 
 namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
-        public ImportChargesRequest CreateImportChargesRequest()
+        /// <summary/>
+        public ImportChargesRequest CreateImportChargesRequest(ImportedChargeType[] importedChargeTypes)
         {
-            return new ImportChargesRequest();
+            return new ImportChargesRequest(
+                config: RequestConfig,
+                package: new ChargesPackage(
+                    importedCharges: importedChargeTypes
+                    )
+                );
         }
 
-        public string ImportCharges()
-            => ReadyRequest(CreateImportChargesRequest());
-
-
-        public ImportChargesResponse CreateImportChargesResponse()
+        /// <summary/>
+        public ImportChargesRequest CreateImportChargesRequest(ImportedChangeType[] importedChangeTypes)
         {
-            return new ImportChargesResponse();
+            return new ImportChargesRequest(
+                config: RequestConfig,
+                package: new ChargesPackage(
+                    importedChanges: importedChangeTypes
+                    )
+                );
+        }
+
+        /// <summary/>
+        public string ImportCharges(ImportedChargeType[] importedChargeTypes)
+            => ReadyRequest(CreateImportChargesRequest(importedChargeTypes));
+
+        /// <summary/>
+        public string ImportCharges(ImportedChangeType[] importedChangeTypes)
+            => ReadyRequest(CreateImportChargesRequest(importedChangeTypes));
+
+        /// <summary/>
+        public ImportChargesResponse CreateImportChargesResponse(ImportProtocolType[] importProtocol)
+        {
+            return new ImportChargesResponse(
+                config: ResponseConfig,
+                importProtocol: importProtocol
+                );
         }
     }
 }

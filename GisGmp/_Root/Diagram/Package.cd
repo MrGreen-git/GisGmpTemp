@@ -17,7 +17,7 @@
   <Class Name="GisGmp.Services.ExportCharges.ExportChargesResponse" Collapsed="true">
     <Position X="7.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAFAAAAAABAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAACAAAAAFAAAAAABAAACAIAAAAAAAAAAA=</HashCode>
       <FileName>Services\ExportCharges\ExportChargesResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,7 @@
   <Class Name="GisGmp.Services.ForcedAckmowledgement.ForcedAcknowledgementResponse" Collapsed="true">
     <Position X="27.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAACAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ForcedAckmowledgement\ForcedAcknowledgementResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,14 +101,14 @@
   <Class Name="GisGmp.Services.ImportСertificates.ImportCertificateResponse" Collapsed="true">
     <Position X="34.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ImportCertificates\ImportCertificateResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GisGmp.SubscriptionService.SubscriptionServiceResponse" Collapsed="true">
     <Position X="36.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAgAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Services\SubscriptionService\SubscriptionServiceResponse.cs</FileName>
     </TypeIdentifier>
   </Class>

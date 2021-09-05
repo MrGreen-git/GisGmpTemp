@@ -1,10 +1,14 @@
-﻿using System;
+﻿using GisGmp.Services.ImportCharges;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GisGmp.Services.ImportPayments
 {
-    class ImportPaymentsResponse
+    /// <summary>
+    /// Ответ на запрос приема информации об уплате (информации из распоряжения плательщика)
+    /// </summary>
+    public class ImportPaymentsResponse : ImportPackageResponseType
     {
     }
 }

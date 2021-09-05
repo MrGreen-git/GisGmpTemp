@@ -3,6 +3,9 @@ using System.Xml.Serialization;
 
 namespace GisGmp.Package
 {
+    /// <summary>
+    /// Пакет содержащий импортируемые уточнении вида и принадлежности платежа
+    /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
     [XmlRoot(Namespace = "http://roskazna.ru/gisgmp/xsd/Package/2.4.0", IsNullable = false)]
