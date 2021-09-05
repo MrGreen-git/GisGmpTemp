@@ -20,15 +20,24 @@ namespace GisGmp.Package
         [XmlIgnore]
         public ItemChoiceType1 ItemElementName { get; set; }
 
+        /// <summary>
+        /// Изменяемые поля
+        /// </summary>
         [XmlElement("Change")]
         public ChangeType[] Change { get; set; }
 
+        /// <summary>
+        /// Сведения о статусе и основаниях изменения
+        /// </summary>
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public ChangeStatus ChangeStatus { get; set; }
 
-        [XmlAttribute]
-        public string originatorId { get; set; }
+        [XmlAttribute("originatorId")]
+        public string OriginatorId { get; set; }
 
+        /// <summary>
+        /// Идентификатор изменяемого извещения в пакете
+        /// </summary>
         [XmlAttribute(DataType = "ID")]
         public string Id { get; set; }
     }

@@ -14,9 +14,31 @@ namespace GisGmp.Charge
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Charge/2.4.0")]
     public class ChargeType : AbstractChargtType
     {
-        public ChargeType()
+        /// <summary/>
+        protected ChargeType() { }
+
+        /// <summary />
+        public ChargeType(
+            SupplierBillIDType supplierBillID,
+            DateTime billDate,
+            ulong totalAmount,
+            string purpose,
+            KBKType kbk,
+            OKTMOType oktmo,
+            Payee payee,
+            ChargePayer payer,
+            BudgetIndexType budgetIndex
+            )
         {
-            chargeOffense = "1";
+            SupplierBillID = supplierBillID;
+            BillDate = billDate;
+            TotalAmount = totalAmount;
+            Purpose = purpose;
+            Kbk = kbk;
+            Oktmo = oktmo;
+            Payee = payee;
+            Payer = payer;
+            BudgetIndex = budgetIndex;
         }
 
         /// <summary>
@@ -31,7 +53,7 @@ namespace GisGmp.Charge
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
         public Payee Payee { get; set; }
 
-        public Payer Payer { get; set; }
+        public ChargePayer Payer { get; set; }
 
         /// <summary>
         /// Дополнительные реквизиты платежа, предусмотренные приказом Минфина России от 12 ноября 2013 г. №107н
@@ -62,55 +84,27 @@ namespace GisGmp.Charge
         /// <summary>
         /// УИН
         /// </summary>
-        [XmlAttribute]
-        public string supplierBillID { get; set; }
+        [XmlAttribute("supplierBillID")]
+        public string SupplierBillID { get; set; }
 
-        [XmlAttribute]
-        public DateTime billDate { get; set; }
+        /// <summary>
+        /// Поле номер 1011: Количество дней от даты начисления, подлежащей уплате плательщиком, по
+        /// истечении которых необходимо повторно предоставлять уведомление о начислении по подписке в случае, если оно не
+        /// оплачено или сумма платежей меньше суммы к оплате, указанной в начислении
+        /// </summary>
+        [XmlAttribute("noticeTerm", DataType = "integer")]
+        public string NoticeTerm { get; set; }
 
-        [XmlAttribute(DataType = "date")]
-        public DateTime validUntil { get; set; }
-
-        [XmlIgnore]
-        public bool validUntilSpecified { get; set; }
-
-        [XmlAttribute]
-        public ulong totalAmount { get; set; }
-
-        [XmlAttribute]
-        public string purpose { get; set; }
-
-        [XmlAttribute]
-        public string kbk { get; set; }
-
-        [XmlAttribute]
-        public string oktmo { get; set; }
-
-        [XmlAttribute(DataType = "date")]
-        public DateTime deliveryDate { get; set; }
-
-        [XmlIgnore]
-        public bool deliveryDateSpecified { get; set; }
-
-        [XmlAttribute]
-        public string legalAct { get; set; }
-
-        [XmlAttribute(DataType = "date")]
-        public DateTime paymentTerm { get; set; }
-
-        [XmlIgnore]
-        public bool paymentTermSpecified { get; set; }
-
-        [XmlAttribute]
-        public string origin { get; set; }
-
-        [XmlAttribute(DataType = "integer")]
-        public string noticeTerm { get; set; }
-
-        [XmlAttribute]
+        /// <summary>
+        /// Код по ОКВЭД
+        /// </summary>
+        [XmlAttribute("OKVED")]
         public string OKVED { get; set; }
 
-        [XmlAttribute(DataType = "integer")]
-        public string chargeOffense { get; set; }
+        /// <summary>
+        /// Признак административного правонарушения, зафиксированного специальными техническими средствами, работающими в автоматическом режиме
+        /// </summary>
+        [XmlAttribute("chargeOffense", DataType = "integer")]
+        public string ChargeOffense { get; set; }
     }
 }

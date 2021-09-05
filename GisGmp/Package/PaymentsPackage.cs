@@ -19,14 +19,7 @@ namespace GisGmp.Package
         [XmlIgnore]
         public ImportedPaymentType[] ImportedPayments
         {
-            get => Items.GetType() == typeof(ImportedPaymentType[]) ? (ImportedPaymentType[])Items : null;
-            set => Items = value;
-        }
-
-        [XmlIgnore]
-        public ImportedChangeType[] ImportedChanges
-        {
-            get => Items.GetType() == typeof(ImportedChangeType[]) ? (ImportedChangeType[])Items : null;
+            get => Items as ImportedPaymentType[];
             set => Items = value;
         }
     }

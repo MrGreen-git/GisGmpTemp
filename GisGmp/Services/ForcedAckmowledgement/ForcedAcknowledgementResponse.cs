@@ -12,5 +12,8 @@ namespace GisGmp.Services.ForcedAckmowledgement
         [XmlElement("Done", typeof(Done))]
         [XmlElement("Quittance", typeof(Quittance))]
         public object[] Items { get; set; }
+
+        public Done Done { get; set; }
+        public Quittance Quittance { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace GisGmp.Services.ImportCharges
         public ChargesPackage ChargesPackage 
         {
             get => ChargesPackageField;
-            set => ChargesPackageField = value;
+            set => ChargesPackageField = Validator.IsNull(value: value, name: nameof(ChargesPackage));
         }
 
         ChargesPackage ChargesPackageField;

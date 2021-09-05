@@ -12,5 +12,9 @@ namespace GisGmp.SubscriptionService
         [XmlElement("CreateSubscriptionResult", typeof(CreateSubscriptionResult))]
         [XmlElement("Subscriptions", typeof(Subscriptions))]
         public object[] Items { get; set; }
+
+
+        public CreateSubscriptionResult CreateSubscriptionResult { get; set; }
+        public Subscriptions Subscriptions { get; set; }
     }
 }

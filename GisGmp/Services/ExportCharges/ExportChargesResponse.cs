@@ -17,6 +17,7 @@ namespace GisGmp.Services.ExportCharges
         protected ExportChargesResponse() { }
 
 
+
         #region XmlAttribute
         /// <summary>
         /// <para>Признак конца выборки:</para>
@@ -49,11 +50,21 @@ namespace GisGmp.Services.ExportCharges
         #endregion
 
 
-
         [XmlElement("ChargeInfo", typeof(ChargeInfo))]
         [XmlElement("ChargeOffense", typeof(ChargeOffense))]
         public object[] Items { get; set; }
 
+        public ChargeInfo ChargeInfo
+        {
+            get;
+            set;
+        }
 
+        public ChargeOffense ChargeOffense
+        {
+            get;
+            set;
+        }
+            
     }
 }

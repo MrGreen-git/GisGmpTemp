@@ -10,10 +10,11 @@ namespace GisGmp
     {
         public ImportIncomesRequest CreateImportIncomesRequest()
         {
-            return new ImportIncomesRequest(
-                config: RequestConfig,
-                package: 
-                );
+            //return new ImportIncomesRequest(
+            //    config: RequestConfig,
+            //    package: 
+            //    );
+            return null;
         }
 
         public string ImportPayments()
@@ -22,7 +23,8 @@ namespace GisGmp
 
         public ImportIncomesResponse CreateImportIncomesResponse()
         {
-            return new ImportIncomesResponse();
+            //return new ImportIncomesResponse();
+            return null;
         }
     }
 }

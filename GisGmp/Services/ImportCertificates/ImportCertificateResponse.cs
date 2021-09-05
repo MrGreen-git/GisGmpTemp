@@ -1,4 +1,5 @@
 ﻿using GisGmp.Common;
+using GisGmp.Services.ImportCharges;
 using System;
 using System.Xml.Serialization;
 
@@ -10,7 +11,7 @@ namespace GisGmp.Services.ImportСertificates
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/import-certificates/2.4.0")]
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/import-certificates/2.4.0", IsNullable = false)]
-    public class ImportCertificateResponse : ResponseType
+    public class ImportCertificateResponse : ImportPackageResponseType
     {
         /// <summary/>
         protected ImportCertificateResponse() { }
@@ -21,21 +22,7 @@ namespace GisGmp.Services.ImportСertificates
         /// <param name="config"></param>
         /// <param name="importProtocol">Результат обработки сущности в пакете | required: true, min: 1, max 100</param>
         public ImportCertificateResponse(ResponseType config, ImportProtocolType[] importProtocol)
-            : base(config) => ImportProtocol = importProtocol;
+            : base(config, importProtocol) { }
 
-
-        #region XmlElement
-        /// <summary>
-        /// Результат обработки сущности в пакете | required: true, min: 1, max 100
-        /// </summary>
-        [XmlElement("ImportProtocol")]
-        public ImportProtocolType[] ImportProtocol
-        {
-            get => ImportProtocolField;
-            set => ImportProtocolField = value;
-        }
-
-        ImportProtocolType[] ImportProtocolField;
-        #endregion
     }
 }
