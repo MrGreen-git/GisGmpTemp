@@ -5,7 +5,7 @@ namespace GisGmp.Refund
 {
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://roskazna.ru/gisgmp/xsd/Refund/2.4.0")]
-    public enum RefundTypeBudgetLevel
+    public enum BudgetLevel
     {
 
         [XmlEnum("1")]

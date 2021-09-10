@@ -12,10 +12,17 @@ namespace GisGmp
         {
             if (typeof(T) != typeof(S)) throw new Exception("Class Clone.Field: Разные типы");
 
-            typeof(S)
+            Type type = typeof(S);
+            do
+            {
+                type
                 .GetFields(BindingFlags.Instance | BindingFlags.NonPublic)
                 .ToList()
                 .ForEach(x => x.SetValue(obj, x.GetValue(src)));
+
+                type = type.BaseType;
+            }
+            while (type != null);
         }
     }
 }

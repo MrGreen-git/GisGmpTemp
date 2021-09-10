@@ -7,7 +7,7 @@ namespace GisGmp
     {
         public ExportNoticeNSIRequest CreateExportNoticeNSIRequest()
         {
-            return new ExportNoticeNSIRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportNoticeNSI()
@@ -16,7 +16,7 @@ namespace GisGmp
 
         public ExportNoticeNSIResponse CreateExportNoticeNSIResponse()
         {
-            return new ExportNoticeNSIResponse();
+            throw new NotImplementedException();
         }
     }
 }

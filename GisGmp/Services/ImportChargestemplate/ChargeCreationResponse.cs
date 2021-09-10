@@ -10,6 +10,20 @@ namespace GisGmp.Services.ImportChargestemplate
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/import-chargestemplate/2.4.0", IsNullable = false)]
     public class ChargeCreationResponse : ResponseType
     {
-        public ChargeType Charge { get; set; }
+        /// <summary/>
+        protected ChargeCreationResponse() { }
+
+        /// <summary/>
+        public ChargeCreationResponse(ResponseType config, ChargeType charge)
+            : base(config) => Charge = charge;
+
+        /// <summary/>
+        public ChargeType Charge
+        {
+            get => ChargeField;
+            set => ChargeField = Validator.IsNull(value: value, name: nameof(Charge));
+        }
+
+        ChargeType ChargeField;
     }
 }

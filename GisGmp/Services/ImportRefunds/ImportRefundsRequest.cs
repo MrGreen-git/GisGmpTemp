@@ -10,7 +10,21 @@ namespace GisGmp.Services.ImportRefunds
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/import-refunds/2.4.0", IsNullable = false)]
     public class ImportRefundsRequest : RequestType
     {
+        /// <remarks/>
+        protected ImportRefundsRequest() { }
+
+        /// <remarks/>
+        public ImportRefundsRequest(RequestType config, RefundsPackage package)
+            : base(config) => RefundsPackage = package;
+
+        /// <remarks/>
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
-        public RefundsPackage RefundsPackage { get; set; }
+        public RefundsPackage RefundsPackage
+        {
+            get => RefundsPackageField;
+            set => RefundsPackageField = Validator.IsNull(value: value, name: nameof(RefundsPackage));
+        }
+
+        RefundsPackage RefundsPackageField;
     }
 }

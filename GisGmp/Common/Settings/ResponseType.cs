@@ -24,6 +24,14 @@ namespace GisGmp.Common
             Timestamp = response.Timestamp;
         }
 
+        /// <summary/>
+        public ResponseType(string id, string rqId, string recipientIdentifier, DateTime timestamp)
+        {
+            Id = id;
+            RqId = rqId;
+            RecipientIdentifier = recipientIdentifier;
+            Timestamp = timestamp;
+        }
 
         /// <summary>
         /// Идентификатор ответа

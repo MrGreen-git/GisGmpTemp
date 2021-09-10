@@ -1,4 +1,5 @@
 ﻿using GisGmp.Services.ExportNotice;
+using System;
 
 namespace GisGmp
 {
@@ -6,7 +7,7 @@ namespace GisGmp
     {
         public ExportNoticeRequest CreateExportNoticeRequest()
         {
-            return new ExportNoticeRequest();
+            throw new NotImplementedException();
         }
 
         //public string ExportNotice()
@@ -15,7 +16,7 @@ namespace GisGmp
 
         public ExportNoticeResponse CreateExportNoticeResponse()
         {
-            return new ExportNoticeResponse();
+            throw new NotImplementedException();
         }
     }
 }

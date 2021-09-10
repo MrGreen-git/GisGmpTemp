@@ -1,31 +1,29 @@
 ﻿using Microsoft.XmlDiffPatch;
-using System.Xml;
 
-namespace GisGmp.Tests
+namespace GisGmp.Tests;
+
+/// <summary>
+/// Вспомогательные методы для тестов
+/// </summary>
+public static class Tools
 {
     /// <summary>
-    /// Вспомогательные методы для тестов
+    /// Проверкака правильно ли происходит сериализация объекта
     /// </summary>
-    public static class Tools
+    /// <typeparam name="T"></typeparam>
+    /// <param name="obj">Объект запрос/ответ</param>
+    /// <param name="nameObj">Название объекта</param>
+    /// <param name="pathRoot">Путь к корневой папке с папкой Sample в которой эталон SnameObj.xml</param>
+    /// <returns></returns>
+    public static bool CheckObjToXml<T>(T obj, string nameObj, string pathRoot) where T : class
     {
-        /// <summary>
-        /// Проверкака правильно ли происходит сериализация объекта
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="obj">Объект запрос/ответ</param>
-        /// <param name="nameObj">Название объекта</param>
-        /// <param name="pathRoot">Путь к корневой папке с папкой Sample в которой эталон SnameObj.xml</param>
-        /// <returns></returns>
-        public static bool CheckObjToXml<T>(T obj, string nameObj, string pathRoot) where T : class
-        {
-            XmlDocument doc = GisGmpBuilder.SerializerObject(obj, true);
-            doc.Save(@$"{pathRoot}\{nameObj}.xml");
+        XmlDocument doc = SerializerObject(obj, true);
+        doc.Save(@$"{pathRoot}\{nameObj}.xml");
 
-            using FileStream diffFile = new FileStream(@$"{pathRoot}\Sample\Diff{nameObj}.xml", FileMode.OpenOrCreate);
-            using XmlWriter diffWriter = XmlWriter.Create(diffFile);
-            bool IsIdentical = new XmlDiff().Compare(@$"{pathRoot}\Sample\S{nameObj}.xml", @$"{pathRoot}\{nameObj}.xml", false, diffWriter);
+        using FileStream diffFile = new(@$"{pathRoot}\Sample\Diff{nameObj}.xml", FileMode.OpenOrCreate);
+        using XmlWriter diffWriter = XmlWriter.Create(diffFile);
+        bool IsIdentical = new XmlDiff().Compare(@$"{pathRoot}\Sample\S{nameObj}.xml", @$"{pathRoot}\{nameObj}.xml", false, diffWriter);
 
-            return IsIdentical;
-        }
+        return IsIdentical;
     }
 }

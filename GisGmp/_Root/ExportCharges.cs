@@ -7,7 +7,7 @@ namespace GisGmp
     {
         public ExportChargesRequest CreateExportChargesRequest()
         {
-            return new ExportChargesRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportCharges()
@@ -16,7 +16,7 @@ namespace GisGmp
 
         public ExportChargesResponse CreateExportChargesResponse()
         {
-            return new ExportChargesResponse();
+            throw new NotImplementedException();
         }
     }
 }

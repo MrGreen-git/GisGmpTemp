@@ -10,6 +10,9 @@ namespace GisGmp.Services.ImportCharges
     [XmlRoot("ImportChargesResponse", Namespace = "urn://roskazna.ru/gisgmp/xsd/services/import-charges/2.4.0", IsNullable = false)]
     public class ImportPackageResponseType : ResponseType
     {
+        public ImportPackageResponseType(ResponseType config, ImportProtocolType[] importProtocol)
+            : base(config) => ImportProtocol = importProtocol;
+
         [XmlElement("ImportProtocol")]
         public ImportProtocolType[] ImportProtocol { get; set; }
     }

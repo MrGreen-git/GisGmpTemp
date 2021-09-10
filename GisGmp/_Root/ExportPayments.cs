@@ -1,4 +1,5 @@
 ﻿using GisGmp.Services.ExportPayments;
+using System;
 
 namespace GisGmp
 {
@@ -6,7 +7,7 @@ namespace GisGmp
     {
         public ExportPaymentsRequest CreateExportPaymentsRequest()
         {
-            return new ExportPaymentsRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportPayments()
@@ -15,7 +16,7 @@ namespace GisGmp
 
         public ExportPaymentsResponse CreateExportPaymentsResponse()
         {
-            return new ExportPaymentsResponse();
+            throw new NotImplementedException();
         }
     }
 }

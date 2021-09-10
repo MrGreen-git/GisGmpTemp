@@ -12,6 +12,13 @@ namespace GisGmp.Organization
     [XmlRoot(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0", IsNullable = false)]
     public class Payee : OrganizationType
     {
+        /// <summary/>
+        protected Payee() { }
+
+        /// <summary/>
+        public Payee(OrgAccount orgAccount, OrganizationType organization)
+            : base(organization) => OrgAccount = orgAccount;
+
         /// <summary>
         /// Реквизиты счета организации
         /// </summary>

@@ -1,7 +1,7 @@
 <ns0:SubscriptionServiceRequest xmlns:sub="http://roskazna.ru/gisgmp/xsd/Subscription/2.4.0"
 	xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
 	xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/SubscriptionService/2.4.0"
-	Id="U_7994af15-f7f2-4a10-a055-5aacf6057d4f" timestamp="2021-07-30T16:03:25.932+03:00"
+	Id="U_7994af15-f7f2-4a10-a055-5aacf6057d4f" timestamp="2021-07-30T16:03:25.932+05:00"
 	senderIdentifier="000009" senderRole="7">
 	<ns0:CreateSubscription subscriptionStatus="1" routingCode="45382000">
 		<ns0:SubscriptionCode>NC0001</ns0:SubscriptionCode>

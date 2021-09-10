@@ -1,27 +1,24 @@
-﻿using Xunit;
+﻿namespace GisGmp.Tests;
 
-namespace GisGmp.Tests
+public class ChargeCreation
 {
-    public class ChargeCreation
+    static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ChargeCreation)}";
+
+    [Fact]
+    public void ChargeCreationRequest()
     {
-        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ChargeCreation)}";
+        //Arrange
+        //Act
+        //Assert              
+        Assert.True(false);
+    }
 
-        [Fact]
-        public void ChargeCreationRequest()
-        {
-            //Arrange
-            //Act
-            //Assert              
-            Assert.True(false);
-        }
-
-        [Fact]
-        public void ChargeCreationResponse()
-        {
-            //Arrange
-            //Act
-            //Assert              
-            Assert.True(false);
-        }
+    [Fact]
+    public void ChargeCreationResponse()
+    {
+        //Arrange
+        //Act
+        //Assert              
+        Assert.True(false);
     }
 }

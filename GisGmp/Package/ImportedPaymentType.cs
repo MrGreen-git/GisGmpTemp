@@ -8,20 +8,26 @@ namespace GisGmp.Package
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Package/2.4.0")]
     public class ImportedPaymentType : PaymentType
     {
+        /// <summary/>
+        protected ImportedPaymentType() { }
+
+        /// <summary/>
+        public ImportedPaymentType(string id, PaymentType payment) : base(payment) => Id = id;
+        
         /// <summary>
-        /// УРН участника косвенного взаимодействия, сформировавшего запрос
+        /// УРН участника косвенного взаимодействия, сформировавшего сущность | not required
         /// </summary>
         [XmlAttribute("originatorId")]
         public string OriginatorId { get; set; }
 
         /// <summary>
-        /// Идентификатор платежа в пакете
+        /// Идентификатор запроса | required
         /// </summary>
         [XmlAttribute(DataType = "ID")]
         public string Id { get; set; }
 
         /// <summary>
-        /// Способ оплаты начисления.
+        /// Способ оплаты | not required
         /// </summary>
         [XmlAttribute("paymentMethod")]
         public PaymentMethod PaymentMethod { get; set; }
@@ -30,7 +36,7 @@ namespace GisGmp.Package
         public bool PaymentMethodSpecified { get; set; }
 
         /// <summary>
-        /// КПР
+        /// Код проверки реквизитов (КПР) | not required
         /// </summary>
         [XmlAttribute("requisiteCheckCode")]
         public string RequisiteCheckCode { get; set; }

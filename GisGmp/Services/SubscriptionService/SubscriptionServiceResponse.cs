@@ -25,7 +25,7 @@ namespace GisGmp.Services.SubscriptionService
         public object[] Items { get; set; }
 
 
-        public CreateSubscriptionResult CreateSubscriptionResult { get; set; }
-        public Subscriptions Subscriptions { get; set; }
+        //public CreateSubscriptionResult CreateSubscriptionResult { get; set; }
+        //public Subscriptions Subscriptions { get; set; }
     }
 }

@@ -22,13 +22,13 @@ namespace GisGmp.Package
             {
                 if(
                     new []{
-                        typeof(ImportedChangeType[]),
-                        typeof(ImportedChargeType[]),
-                        typeof(ImportedClarificationType[]),
-                        typeof(ImportedIncomeType[]),
-                        typeof(ImportedPaymentType[]),
-                        typeof(ImportedRefundType[]),
-                        typeof(ImportedRenouncementType[])
+                        typeof(ImportedChangeType),
+                        typeof(ImportedChargeType),
+                        typeof(ImportedClarificationType),
+                        typeof(ImportedIncomeType),
+                        typeof(ImportedPaymentType),
+                        typeof(ImportedRefundType),
+                        typeof(ImportedRenouncementType)
                     }.Any(type => type == value.GetType())
                 ) throw new Exception($"{nameof(PackageType)}.{nameof(Items)} Недопустимый тип");
 

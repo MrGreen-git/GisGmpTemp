@@ -1,7 +1,5 @@
-﻿using GisGmp.Common;
-using GisGmp.Quittance;
-using GisGmp.SearchConditions;
-using GisGmp.Services.ExportQuittances;
+﻿using GisGmp.Services.ExportQuittances;
+using System;
 
 namespace GisGmp
 {
@@ -9,7 +7,7 @@ namespace GisGmp
     {
         public ExportQuittancesRequest CreateExportQuittancesRequest()
         {
-            return new ExportQuittancesRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportQuittances()
@@ -18,7 +16,7 @@ namespace GisGmp
 
         public ExportQuittancesResponse CreateExportQuittancesResponse()
         {
-            return new ExportQuittancesResponse();
+            throw new NotImplementedException();
         }
     }
 }

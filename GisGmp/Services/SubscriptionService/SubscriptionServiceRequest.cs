@@ -24,6 +24,6 @@ namespace GisGmp.Services.SubscriptionService
         [XmlElement("ExportSubscriptions", typeof(bool))]
         public object Item { get; set; }
 
-        public CreateSubscription CreateSubscription { get; set; }
+        //public CreateSubscription CreateSubscription { get; set; }
     }
 }

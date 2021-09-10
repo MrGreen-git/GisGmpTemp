@@ -9,7 +9,7 @@ namespace GisGmp.Services.ImportRefunds
     public class ImportRefundsResponse : ImportPackageResponseType
     {
         /// <summary/>
-        protected ImportRefundsResponse() { }
+        //protected ImportRefundsResponse() { }
 
         public ImportRefundsResponse(ResponseType config, ImportProtocolType[] importProtocol)
             : base(config, importProtocol) { }

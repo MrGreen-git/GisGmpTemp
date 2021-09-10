@@ -13,7 +13,7 @@ namespace GisGmp.Services.ImportCharges
     public class ImportChargesResponse : ImportPackageResponseType
     {
         /// <summary/>
-        protected ImportChargesResponse() { }
+        //protected ImportChargesResponse() { }
 
         /// <summary/>
         public ImportChargesResponse(ResponseType config, ImportProtocolType[] importProtocol)

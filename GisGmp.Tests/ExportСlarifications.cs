@@ -1,27 +1,24 @@
-﻿using Xunit;
+﻿namespace GisGmp.Tests;
 
-namespace GisGmp.Tests
+public class ExportСlarifications
 {
-    public class ExportСlarifications
+    static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ExportСlarifications)}";
+
+    [Fact]
+    public void ExportСlarificationsRequest()
     {
-        static readonly string pathRoot = $@"..\..\..\XmlDocument\{nameof(ExportСlarifications)}";
+        //Arrange
+        //Act
+        //Assert              
+        Assert.True(false);
+    }
 
-        [Fact]
-        public void ExportСlarificationsRequest()
-        {
-            //Arrange
-            //Act
-            //Assert              
-            Assert.True(false);
-        }
-
-        [Fact]
-        public void ExportСlarificationsResponse()
-        {
-            //Arrange
-            //Act
-            //Assert              
-            Assert.True(false);
-        }
+    [Fact]
+    public void ExportСlarificationsResponse()
+    {
+        //Arrange
+        //Act
+        //Assert              
+        Assert.True(false);
     }
 }

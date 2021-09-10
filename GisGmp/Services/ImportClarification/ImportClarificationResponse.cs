@@ -1,7 +1,5 @@
-﻿using GisGmp.Services.ImportCharges;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GisGmp.Common;
+using GisGmp.Services.ImportCharges;
 
 namespace GisGmp.Services.ImportClarification
 {
@@ -10,5 +8,9 @@ namespace GisGmp.Services.ImportClarification
     /// </summary>
     public class ImportClarificationResponse : ImportPackageResponseType
     {
+        public ImportClarificationResponse(ResponseType config, ImportProtocolType[] importProtocol)
+            : base(config, importProtocol)
+        { 
+        }
     }
 }

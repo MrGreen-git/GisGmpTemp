@@ -1,4 +1,5 @@
 ﻿using GisGmp.Services.ExportNSI;
+using System;
 
 namespace GisGmp
 {
@@ -6,7 +7,7 @@ namespace GisGmp
     {
         public ExportNSIRequest CreateExportNSIRequest()
         {
-            return new ExportNSIRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportNSI()
@@ -15,7 +16,7 @@ namespace GisGmp
 
         public ExportNSIResponse CreateExportNSIResponse()
         {
-            return new ExportNSIResponse();
+            throw new NotImplementedException();
         }
     }
 }

@@ -2,6 +2,7 @@
 using GisGmp.Organization;
 using GisGmp.Package;
 using System;
+using System.ComponentModel;
 using System.Xml.Serialization;
 
 namespace GisGmp.Refund
@@ -11,31 +12,116 @@ namespace GisGmp.Refund
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Refund/2.4.0")]
     public class RefundType
     {
+        /// <summary />
+        protected RefundType() { }
+
+        /// <summary>
+        public RefundType(RefundType refund) => Clone.Field(this, refund);
+
+        /// <summary />
+        public RefundType(
+            string refundId,
+            DateTime refundDocDate,
+            BudgetLevel budgetLevel,
+            RefundPayee refundPayee,
+            RefundApplication refundApplication,
+            RefundBasis refundBasis,
+            RefundPayer refundPayer)
+        {
+            RefundId = refundId;
+            RefundDocDate = refundDocDate;
+            BudgetLevel = budgetLevel;
+            RefundPayee = refundPayee;
+            RefundApplication = refundApplication;
+            RefundBasis = refundBasis;
+            RefundPayer = refundPayer;
+        }
+
         [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Organization/2.4.0")]
-        public RefundPayer RefundPayer { get; set; }
+        public RefundPayer RefundPayer
+        {
+            get => RefundPayerField;
+            set => RefundPayerField = Validator.IsNull(value: value, name: nameof(RefundPayer));
+        }
 
-        public RefundTypeRefundApplication RefundApplication { get; set; }
+        RefundPayer RefundPayerField;
 
-        public RefundTypeRefundBasis RefundBasis { get; set; }
+        public RefundApplication RefundApplication
+        {
+            get => RefundApplicationField;
+            set => RefundApplicationField = Validator.IsNull(value: value, name: nameof(RefundApplication));
+        }
 
-        public RefundTypeRefundPayee RefundPayee { get; set; }
+        RefundApplication RefundApplicationField;
+
+        public RefundBasis RefundBasis
+        {
+            get => RefundBasisField;
+            set => RefundBasisField = Validator.IsNull(value: value, name: nameof(RefundBasis));
+        }
+
+        RefundBasis RefundBasisField;
+
+        public RefundPayee RefundPayee
+        {
+            get => RefundPayeeField;
+            set => RefundPayeeField = Validator.IsNull(value: value, name: nameof(RefundPayee));
+        }
+
+        RefundPayee RefundPayeeField;
+
+
 
         [XmlElement("AdditionalData", Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
-        public AdditionalDataType[] AdditionalData { get; set; }
+        public AdditionalDataType[] AdditionalData
+        {
+            get => AdditionalDataField;
+            set => AdditionalDataField = Validator.ArrayObj(value: value, name: nameof(AdditionalData), required: false, min: 0, max: 10);
+        }
 
-        [XmlAttribute]
-        public string refundId { get; set; }
+        AdditionalDataType[] AdditionalDataField;
 
-        [XmlAttribute]
-        public DateTime refundDocDate { get; set; }
+        [XmlIgnore]
+        public RefundIdType RefundId
+        {
+            get => RefundIdField;
+            set => RefundIdField = Validator.IsNull(value: value, name: nameof(RefundId));
+        }
 
-        [XmlAttribute]
-        public RefundTypeBudgetLevel budgetLevel { get; set; }
+        RefundIdType RefundIdField;
 
-        [XmlAttribute]
-        public string kbk { get; set; }
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlAttribute("refundId")]
+        public string WrapperRefundId { get => RefundId; set => RefundId = value; }
 
-        [XmlAttribute]
-        public string oktmo { get; set; }
+
+        [XmlAttribute("refundDocDate")]
+        public DateTime RefundDocDate { get; set; }
+
+        [XmlAttribute("budgetLevel")]
+        public BudgetLevel BudgetLevel
+        {
+            get => BudgetLevelField;
+            set => BudgetLevelField = Validator.IsNull(value: value, name: nameof(BudgetLevel));
+        }
+
+        BudgetLevel BudgetLevelField;
+
+        
+        [XmlIgnore]
+        public KBKType Kbk { get; set; }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlAttribute("kbk")]
+        public string WrapperKbk { get => Kbk; set => Kbk = value; }
+
+
+        [XmlIgnore]
+        public OKTMOType Oktmo { get; set; }
+
+        /// <summary />
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlAttribute("oktmo")]
+        public string WrapperOktmo { get => Oktmo; set => Oktmo = value; }
     }
 }

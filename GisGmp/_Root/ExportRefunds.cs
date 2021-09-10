@@ -1,4 +1,5 @@
 ﻿using GisGmp.Services.ExportRefunds;
+using System;
 
 namespace GisGmp
 {
@@ -6,7 +7,7 @@ namespace GisGmp
     {
         public ExportRefundsRequest CreateExportRefundsRequest()
         {
-            return new ExportRefundsRequest();
+            throw new NotImplementedException();
         }
 
         public string ExportRefunds()
@@ -15,7 +16,7 @@ namespace GisGmp
 
         public ExportRefundsResponse CreateExportRefundsResponse()
         {
-            return new ExportRefundsResponse();
+            throw new NotImplementedException();
         }
     }
 }
