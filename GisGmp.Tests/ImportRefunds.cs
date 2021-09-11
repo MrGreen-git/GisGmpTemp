@@ -8,7 +8,7 @@ public class ImportRefunds
     public void ImportRefundsRequest()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new ()
+        GisGmpBuilder gisgmp = new () 
         {
             TestEnable = true,
             //

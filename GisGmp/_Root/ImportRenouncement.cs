@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GisGmp.Package;
+using GisGmp.Services.ImportRenouncement;
 
-namespace GisGmp._Root
+namespace GisGmp
 {
-    class ImportRenouncement
+    public partial class GisGmpBuilder
     {
+        /// <summary/>
+        public ImportRenouncementRequest CreateImportRenouncementRequest(ImportedRenouncementType[] importedRenouncementTypes)
+        {
+            return new ImportRenouncementRequest(
+                config: RequestConfig,
+                package: new RenouncementPackage(
+                    importedRenouncements: importedRenouncementTypes
+                    )
+                );
+        }
     }
 }
