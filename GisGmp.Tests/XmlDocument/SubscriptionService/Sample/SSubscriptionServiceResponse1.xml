@@ -3,7 +3,7 @@
 	xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
 	xmlns:sub="http://roskazna.ru/gisgmp/xsd/Subscription/2.4.0"
 	Id="U_49655ef1-07fe-41f9-9538-c1bcdffb2b95" RqId="G_5e8e6ede-db3a-4fd4-af74-4e76268368b0"
-	recipientIdentifier="000009" timestamp="2021-07-30T16:04:25.932+03:00">
+	recipientIdentifier="000009" timestamp="2021-07-30T16:04:25.932+05:00">
 	<ns0:Subscriptions subscriptionCode="NC0001"
 		subscriptionName="Уведомления о начислениях по определенным значениям идентификатора плательщика (ТЕСТОВЫЕ ДАННЫЕ!)"
 		subscriptionOperation="Уведомления о поступлении извещения о начислении (ТЕСТОВЫЕ ДАННЫЕ!)">

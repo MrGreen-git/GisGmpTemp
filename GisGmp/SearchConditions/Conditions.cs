@@ -20,7 +20,7 @@ namespace GisGmp.SearchConditions
         [XmlIgnore]
         public ItemChoiceType ItemElementName { get; set; }
 
-        [XmlAttribute]
-        public string kind { get; set; }
+        [XmlAttribute("kind")]
+        public string Kind { get; set; }
     }
 }

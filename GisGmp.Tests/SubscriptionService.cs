@@ -9,7 +9,7 @@ public class SubscriptionService
     public void SubscriptionServiceRequest1()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new ()
+        GisGmpBuilder gisgmp = new()
         {
             TestEnable = true,
             //
@@ -30,13 +30,13 @@ public class SubscriptionService
     public void SubscriptionServiceResponse1()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new ()
+        GisGmpBuilder gisgmp = new()
         {
             TestEnable = true,
             //
             TestId = "U_49655ef1-07fe-41f9-9538-c1bcdffb2b95",
             RqId = "G_5e8e6ede-db3a-4fd4-af74-4e76268368b0",
-            TestTimestamp = new (day: 30, month: 09, year: 2020, hour: 16, minute: 04, second: 25, millisecond: 932, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 16, minute: 04, second: 25, millisecond: 932, kind: DateTimeKind.Local),
             RecipientIdentifier = "000009"
         };
 
@@ -73,14 +73,14 @@ public class SubscriptionService
             TestEnable = true,
             //
             TestId = "U_7994af15-f7f2-4a10-a055-5aacf6057d4f",
-            TestTimestamp = new (day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 25, millisecond: 932, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 25, millisecond: 932, kind: DateTimeKind.Local),
             SenderIdentifier = "000009",
             SenderRole = "7"
         };
 
         //Act
         var request = gisgmp.CreateSubscriptionServiceRequest(
-            createSubscription: new (
+            createSubscription: new(
                 subscriptionStatus: SubscriptionStatus.Item1,
                 itemElementName: ItemChoiceType2.SubscriptionCode,
                 item: "NC0001")
@@ -93,7 +93,7 @@ public class SubscriptionService
                         parameterId: "P_e5792842-b9b1-4515-859f-a309afeaa9d7",
                         parameterValue: new ParameterValue[]
                         {
-                            new (
+                            new(
                                 parameterCode: "payerIdentifier", 
                                 value: "1010000000000164921814")
                         })
@@ -108,13 +108,13 @@ public class SubscriptionService
     public void SubscriptionServiceResponse2()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new ()
+        GisGmpBuilder gisgmp = new()
         {
             TestEnable = true,
             //
             TestId = "G_3df3e555-1dcd-48e1-8483-bb358a128b38",
             RqId = "U_7994af15-f7f2-4a10-a055-5aacf6057d4f",
-            TestTimestamp = new (day: 30, month: 09, year: 2020, hour: 16, minute: 04, second: 25, millisecond: 932, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 16, minute: 04, second: 25, millisecond: 932, kind: DateTimeKind.Local),
             RecipientIdentifier = "000009"
         };
 
@@ -122,16 +122,16 @@ public class SubscriptionService
         var response = gisgmp.CreateSubscriptionServiceResponse(
             createSubscriptionResult: new CreateSubscriptionResult[]
             {
-                new (
+                new(
                     subscriptionProtocol: new SubscriptionProtocolType[]
                     {
-                        new (
+                        new(
                             code: "0",
                             description: "Успешно (ТЕСТОВЫЕ ДАННЫЕ!)",
                             parameterId: "P_e5792842-b9b1-4515-859f-a309afeaa9d7")
                     })
                 {
-                    DispatchDate = new (day: 30, month: 09, year: 2020, hour: 16, minute: 03, second: 52, millisecond: 932, kind: DateTimeKind.Local),
+                    DispatchDate = new (day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 52, millisecond: 932, kind: DateTimeKind.Local),
                     DispatchDateSpecified = true,
                     SubscriptionCode = "NC0001",
                     SubscriptionIdentifier = "000009NC0001",

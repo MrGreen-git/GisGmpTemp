@@ -66,8 +66,28 @@ public class ImportRefunds
     public void ImportRefundsResponse()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "I_c6609858-a388-4a14-9f73-d83377b571eb",
+            RqId = "I_07d5a0d1-5183-4efc-86a8-93b4d341872c",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            RecipientIdentifier = "aaa111"
+        };
+
         //Act
+        var response = gisgmp.CreateImportRefundsResponse(
+            importProtocol: new ImportProtocolType[]
+            {
+                    new(
+                        entityID: "I_46488813-8080-49f4-b60f-7f87af897c6a",
+                        code: "0",
+                        description: "Успешно (ТЕСТОВЫЕ ДАННЫЕ!)"
+                        )
+            });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ImportRefundsResponse)}", pathRoot));
     }
 }

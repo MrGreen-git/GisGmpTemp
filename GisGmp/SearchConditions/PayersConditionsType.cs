@@ -25,6 +25,6 @@ namespace GisGmp.SearchConditions
         public string[] KBKlist { get; set; }
 
         [XmlElement("Beneficiary")]
-        public PayersConditionsTypeBeneficiary[] Beneficiary { get; set; }
+        public Beneficiary[] Beneficiary { get; set; }
     }
 }

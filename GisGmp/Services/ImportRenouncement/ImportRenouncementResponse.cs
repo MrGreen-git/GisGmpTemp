@@ -13,7 +13,7 @@ namespace GisGmp.Services.ImportRenouncement
     public class ImportRenouncementResponse : ImportPackageResponseType
     {
         /// <summary/>
-        //protected ImportRenouncementResponse() { }
+        protected ImportRenouncementResponse() { }
 
         public ImportRenouncementResponse(ResponseType config, ImportProtocolType[] importProtocol)
             : base(config, importProtocol) { }

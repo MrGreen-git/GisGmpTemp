@@ -7,5 +7,6 @@ global using GisGmp.Package;
 global using GisGmp.Refund;
 global using GisGmp.Services.SubscriptionService;
 global using GisGmp.Subscription;
+global using GisGmp.Renouncement;
 global using static GisGmp.GisGmpBuilder;
 global using static GisGmp.Tests.Tools;

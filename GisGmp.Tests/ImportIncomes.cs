@@ -72,8 +72,27 @@ public class ImportIncomes
     public void ImportIncomesResponse()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "I_1bb7dbca-d28f-48b1-7b39-b4a5f16d5e5c",
+            RqId = "G_fce0c522-b08d-44bc-55d8-738f10e9d068",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 16, minute: 03, second: 25, millisecond: 932, kind: DateTimeKind.Local),
+            RecipientIdentifier = "aaa111"
+        };
+
         //Act
+        var response = gisgmp.CreateImportIncomesResponse(
+            importProtocol: new ImportProtocolType[]
+            {
+                new (
+                    entityID: "I_22ccd2c6-a33a-3ea2-959d-8e198ba673a9",
+                    code: "0",
+                    description: "Успешно (ТЕСТОВЫЕ ДАННЫЕ!)")
+            });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ImportIncomesResponse)}", pathRoot));
     }
 }

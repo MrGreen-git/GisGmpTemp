@@ -73,7 +73,7 @@ public class ImportPayments
             //
             TestId = "I_1aa5aaca-d28f-48b1-9b39-b3a5f16d4e5c",
             RqId = "I_13032ed0-4a7a-49ed-ad46-2a7206d3bca7",
-            TestTimestamp = new (day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new (day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
             RecipientIdentifier = "3eb646"
         };
 

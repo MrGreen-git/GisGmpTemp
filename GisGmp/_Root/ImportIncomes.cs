@@ -1,4 +1,5 @@
 ﻿
+using GisGmp.Common;
 using GisGmp.Package;
 using GisGmp.Services.ImportIncomes;
 using GisGmp.Services.ImportPayments;
@@ -22,10 +23,12 @@ namespace GisGmp
             => ReadyRequest(CreateImportIncomesRequest(importedIncomeTypes));
 
 
-        public ImportIncomesResponse CreateImportIncomesResponse()
+        public ImportIncomesResponse CreateImportIncomesResponse(ImportProtocolType[] importProtocol)
         {
-            //return new ImportIncomesResponse();
-            return null;
+            return new ImportIncomesResponse(
+                config: ResponseConfig,
+                importProtocol: importProtocol
+                );
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GisGmp.Package;
+﻿using GisGmp.Common;
+using GisGmp.Package;
 using GisGmp.Services.ImportRenouncement;
 
 namespace GisGmp
@@ -13,6 +14,15 @@ namespace GisGmp
                 package: new RenouncementPackage(
                     importedRenouncements: importedRenouncementTypes
                     )
+                );
+        }
+
+        /// <summary/>
+        public ImportRenouncementResponse CreateImportRenouncementResponse(ImportProtocolType[] importProtocol)
+        {
+            return new ImportRenouncementResponse(
+                config: ResponseConfig,
+                importProtocol: importProtocol
                 );
         }
     }

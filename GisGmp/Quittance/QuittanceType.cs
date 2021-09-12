@@ -8,75 +8,176 @@ namespace GisGmp.Quittance
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Quittance/2.4.0")]
     public class QuittanceType
     {
+        /// <summary/>
+        protected QuittanceType() { }
+
+        /// <summary/>
+        public QuittanceType(
+            string supplierBillID,
+            DateTime creationDate,
+            AcknowledgmentStatusType billStatus,
+            string paymentId
+            )
+        {
+            SupplierBillID = supplierBillID;
+            CreationDate = creationDate;
+            BillStatus = billStatus;
+            PaymentId = paymentId;
+        }
+
+        /// <summary>
+        /// Дополнительные условия оплаты | not required
+        /// </summary>
         [XmlElement("DiscountFixed", typeof(DiscountFixed), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         [XmlElement("DiscountSize", typeof(DiscountSize), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         [XmlElement("MultiplierSize", typeof(MultiplierSize), Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public DiscountType Item { get; set; }
 
+        /// <summary>
+        /// Условия оплаты с фиксированной суммой скидки
+        /// </summary>
+        [XmlIgnore]
+        public DiscountFixed DiscountFixed 
+        {
+            get => Item as DiscountFixed;
+            set => Item = value;
+        }
+
+        /// <summary>
+        /// Условия оплаты со скидкой (процент)
+        /// </summary>
+        [XmlIgnore]
+        public DiscountSize DiscountSize
+        {
+            get => Item as DiscountSize;
+            set => Item = value;
+        }
+
+        /// <summary>
+        /// Условия оплаты с применением понижающего размер коэффициента
+        /// </summary>
+        [XmlIgnore]
+        public MultiplierSize MultiplierSize
+        {
+            get => Item as MultiplierSize;
+            set => Item = value;
+        }
+
+        /// <summary>
+        /// Сведения о возврате денежных средств | not required
+        /// </summary>
         [XmlElement("Refund")]
-        public QuittanceTypeRefund[] Refund { get; set; }
+        public Refund[] Refund { get; set; }
 
-        [XmlAttribute]
-        public string supplierBillID { get; set; }
+        /// <summary>
+        /// УИН | required
+        /// </summary>
+        [XmlAttribute("supplierBillID")]
+        public string SupplierBillID { get; set; }
 
-        [XmlAttribute]
-        public ulong totalAmount { get; set; }
-
-        [XmlIgnore]
-        public bool totalAmountSpecified { get; set; }
-
-        [XmlAttribute]
-        public DateTime creationDate { get; set; }
-
-        [XmlAttribute]
-        public AcknowledgmentStatusType billStatus { get; set; }
-
-        [XmlAttribute]
-        public long balance { get; set; }
+        /// <summary>
+        /// Сумма, указанная в начислении | not required
+        /// </summary>
+        [XmlAttribute("totalAmount")]
+        public ulong TotalAmount { get; set; }
 
         [XmlIgnore]
-        public bool balanceSpecified { get; set; }
+        public bool TotalAmountSpecified { get; set; }
 
-        [XmlAttribute]
-        public string paymentId { get; set; }
+        /// <summary>
+        /// Дата квитирования (создания квитанции) | required
+        /// </summary>
+        [XmlAttribute("creationDate")]
+        public DateTime CreationDate { get; set; }
 
+        /// <summary>
+        /// Статус, присвоенный начислению при создании квитанции | required
+        /// </summary>
+        [XmlAttribute("billStatus")]
+        public AcknowledgmentStatusType BillStatus { get; set; }
+
+        /// <summary>
+        /// Разность между суммой, указанной в начислении, и суммой платежей с учетом возвратов | not required
+        /// </summary>
         [XmlAttribute]
-        public ulong amountPayment { get; set; }
+        public long Balance { get; set; }
 
         [XmlIgnore]
-        public bool amountPaymentSpecified { get; set; }
+        public bool BalanceSpecified { get; set; }
 
-        [XmlAttribute]
-        public string payeeINN { get; set; }
+        /// <summary>
+        /// УПНО, присвоенный участником, принявшим платеж | required
+        /// </summary>
+        [XmlAttribute("paymentId")]
+        public string PaymentId { get; set; }
 
-        [XmlAttribute]
-        public string payeeKPP { get; set; }
-
-        [XmlAttribute]
-        public string kbk { get; set; }
-
-        [XmlAttribute]
-        public string oktmo { get; set; }
-
-        [XmlAttribute]
-        public string payerIdentifier { get; set; }
-
-        [XmlAttribute]
-        public string accountNumber { get; set; }
-
-        [XmlAttribute]
-        public string bik { get; set; }
-
-        [XmlAttribute]
-        public bool isRevoked { get; set; }
+        /// <summary>
+        /// Сумма, указанная в платеже | not required
+        /// </summary>
+        [XmlAttribute("amountPayment")]
+        public ulong AmountPayment { get; set; }
 
         [XmlIgnore]
-        public bool isRevokedSpecified { get; set; }
+        public bool AmountPaymentSpecified { get; set; }
 
-        [XmlAttribute]
-        public bool paymentPortal { get; set; }
+        /// <summary>
+        /// ИНН получателя средств | not required
+        /// </summary>
+        [XmlAttribute("payeeINN")]
+        public string PayeeINN { get; set; }
+
+        /// <summary>
+        /// КПП получателя средств | not required
+        /// </summary>
+        [XmlAttribute("payeeKPP")]
+        public string PayeeKPP { get; set; }
+
+        /// <summary>
+        /// КБК | not required
+        /// </summary>
+        [XmlAttribute("kbk")]
+        public string Kbk { get; set; }
+
+        /// <summary>
+        /// Код ОКТМО | not required
+        /// </summary>
+        [XmlAttribute("oktmo")]
+        public string Oktmo { get; set; }
+
+        /// <summary>
+        /// Идентификатор плательщика | not required
+        /// </summary>
+        [XmlAttribute("payerIdentifier")]
+        public string PayerIdentifier { get; set; }
+
+        /// <summary>
+        /// Номер счета получателя средств | not required
+        /// </summary>
+        [XmlAttribute("accountNumber")]
+        public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// БИК структурного подразделения кредитной организации или подразделения Банка России, в котором открыт счет | not required
+        /// </summary>
+        [XmlAttribute("bik")]
+        public string Bik { get; set; }
+
+        /// <summary>
+        /// Признак аннулирования квитанции | not required
+        /// </summary>
+        [XmlAttribute("isRevoked")]
+        public bool IsRevoked { get; set; }
 
         [XmlIgnore]
-        public bool paymentPortalSpecified { get; set; }
+        public bool IsRevokedSpecified { get; set; }
+
+        /// <summary>
+        /// Признак уплаты с использованием ЕПГУ, РПГУ и иных порталов, интегрированных с ЕСИА | not required
+        /// </summary>
+        [XmlAttribute("paymentPortal")]
+        public bool PaymentPortal { get; set; }
+
+        [XmlIgnore]
+        public bool PaymentPortalSpecified { get; set; }
     }
 }

@@ -1,0 +1,3 @@
+<ns0:ImportRenouncementResponse xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:pkg="http://roskazna.ru/gisgmp/xsd/Package/2.4.0" xmlns:dv="http://roskazna.ru/gisgmp/xsd/Renouncement/2.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="I_27651c94-6127-412a-b948-ba64b21db005" RqId="I_58d5a0d1-5183-4efc-86a8-93b4d547872c" recipientIdentifier="304A7C" timestamp="2021-04-29T18:15:51" xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/import-Renouncement/2.4.0">
+  <com:ImportProtocol entityID="I_46488813-8080-49f4-b60f-7f87af897c6a" code="0" description="Успешно (ТЕСТОВЫЕ ДАННЫЕ!)" />
+</ns0:ImportRenouncementResponse>
