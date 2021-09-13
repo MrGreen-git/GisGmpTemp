@@ -28,31 +28,31 @@ namespace GisGmp.Charge
         }
 
         /// <summary>
-        /// Дата и время нарушения
+        /// Поле номер 1401: Дата и время нарушения | required
         /// </summary>
         [XmlAttribute("offenseDate")]
         public DateTime OffenseDate { get; set; }
 
         /// <summary>
-        /// Место нарушения
+        /// Поле номер 1402: Место нарушения | required
         /// </summary>
         [XmlAttribute("offensePlace")]
         public string OffensePlace { get; set; }
-        
+
         /// <summary>
-        /// Статья нарушения
+        /// Поле номер 1403: Статья нарушения | required
         /// </summary>
         [XmlAttribute("legalAct")]
         public string LegalAct { get; set; }
 
         /// <summary>
-        /// Ссылка на фото (видео) материалов нарушения
+        /// Поле номер 1404: Ссылка на фото (видео) материалы фиксации нарушения | required
         /// </summary>
         [XmlAttribute("digitalLink")]
         public string DigitalLink { get; set; }
 
         /// <summary>
-        /// Данные о подразделении, вынесшем постановление
+        /// Поле номер 1406: Данные о подразделении, вынесшем постановлен | required
         /// </summary>
         [XmlAttribute("departmentName")]
         public string DepartmentName { get; set; }

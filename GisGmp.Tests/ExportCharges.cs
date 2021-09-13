@@ -1,4 +1,7 @@
-﻿using GisGmp.Services.ExportCharges;
+﻿using GisGmp.Charge;
+using GisGmp.Organization;
+using GisGmp.SearchConditions;
+using GisGmp.Services.ExportCharges;
 
 namespace GisGmp.Tests;
 
@@ -25,9 +28,11 @@ public class ExportCharges
 
         //Act
         var request = gisgmp.CreateExportChargesRequest(
-            chargesKind: ExportChargesKind.CHARGESTATUS,
-            supplierBillID: new SupplierBillIDType[] { "32117072411021588933" }
-            );
+            chargesKind: ExportChargesKind.ChargeStatus,
+            supplierBillID: new SupplierBillIDType[] 
+            { 
+                new("32117072411021588933")           
+            });
 
         //Assert              
         Assert.True(CheckObjToXml(request, $@"{nameof(ExportChargesRequest)}", pathRoot));
@@ -51,41 +56,37 @@ public class ExportCharges
         var response = gisgmp.CreateExportChargesResponse(false,
             new ChargeInfo[]
             {
-                    new(
-                        amountToPay: 0,
-                        changeStatusInfo: new(meaning: "1"),
-                        supplierBillID: "32117072411021588933",
-                        billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
-                        totalAmount: 500000,
-                        purpose: "Ïëàòà çà ïðåäîñòàâëåíèå ñâåäåíèé èç Åäèíîãî ãîñóäàðñòâåííîãî ðååñòðà íåäâèæèìîñòè (ÒÅÑÒÎÂÛÅ ÄÀÍÍÛÅ!)",
-                        kbk: "32111301031016000130",
-                        oktmo: "45348000",
-                        payee: new Payee()
-                        {
-                            Name = "ÔÃÁÓ «ÔÊÏ Ðîñðååñòðà» ïî ã Ìîñêâà",
-                            Inn = "7705401341",
-                            Kpp = "770542151",
-                            OrgAccount = new(
-                                bank: new(
-                                    bik: "024501901",
-                                    correspondentBankAccount: "40102810045370000002"),
-                                accountNumber: "03100643000000019500"),
-                        },
-                        payer: new ChargePayer(
-                            payerIdentifier: "1010000000008751379232",
-                            payerName: "Òåñòîâûé ïëàòåëüùèê"
-                            ),
-                        budgetIndex: new(
-                            status: Status.Item01,
-                            paytReason: PaytReason.Item0,
-                            taxPeriod: "0",
-                            taxDocNumber: "0",
-                            taxDocDate: "0"
-                            )
-                        )
-                    {
-                        AcknowledgmentStatus = AcknowledgmentStatusType.Item1
-                    }
+                new(
+                    amountToPay: 0,
+                    changeStatusInfo: new(meaning: "1"),
+                    supplierBillID: "32117072411021588933",
+                    billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
+                    totalAmount: 500000,
+                    purpose: "Ïëàòà çà ïðåäîñòàâëåíèå ñâåäåíèé èç Åäèíîãî ãîñóäàðñòâåííîãî ðååñòðà íåäâèæèìîñòè (ÒÅÑÒÎÂÛÅ ÄÀÍÍÛÅ!)",
+                    kbk: "32111301031016000130",
+                    oktmo: "45348000",
+                    payee: new(
+                        organization: new(
+                            name: "ÔÃÁÓ «ÔÊÏ Ðîñðååñòðà» ïî ã Ìîñêâà",
+                            inn: "7705401341",
+                            kpp: "770542151"),
+                         orgAccount: new(
+                            bank: new(
+                                bik: "024501901",
+                                correspondentBankAccount: "40102810045370000002"),
+                            accountNumber: "03100643000000019500")),
+                    payer: new(
+                        payerIdentifier: "1010000000008751379232",
+                        payerName: "Òåñòîâûé ïëàòåëüùèê"),
+                    budgetIndex: new(
+                        status: "0", //Status.Item01,
+                        paytReason: "0", //PaytReason.Item0,
+                        taxPeriod: "0",
+                        taxDocNumber: "0",
+                        taxDocDate: "0"))
+                {
+                    AcknowledgmentStatus = AcknowledgmentStatusType.Item1
+                }
             });
 
         //Assert    

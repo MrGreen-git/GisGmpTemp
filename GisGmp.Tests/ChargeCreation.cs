@@ -1,7 +1,4 @@
-﻿using GisGmp.Charge;
-using GisGmp.Organization;
-
-namespace GisGmp.Tests;
+﻿namespace GisGmp.Tests;
 
 public class ChargeCreation
 {
@@ -16,43 +13,39 @@ public class ChargeCreation
             TestEnable = true,
             //
             TestId = "I_cf64ff59-fba3-49b5-977e-eeb035d012a3",
-            TestTimestamp = new DateTime(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
             SenderIdentifier = "3eb715",
             SenderRole = "17",
         };
 
         //Act
         var request = gisgmp.CreateImportChargesTemplateRequest(
-            new ChargeTemplateType(
+            chargeTemplateType: new(
                 billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                 totalAmount: 200000,
                 purpose: "Выдача национального водительского удостоверения на пластиковой основе (ТЕСТОВЫЕ ДАННЫЕ!)",
                 kbk: "18810807141011000110",
                 oktmo: "45381000",
-                payee: new()
-                {
-                    Name = "Министерство внутренних дел Российской Федерации",
-                    Inn = "7706074737",
-                    Kpp = "770601001",
-                    OrgAccount = new(
+                payee: new(
+                    orgAccount: new(
                         bank: new(
                             name: "ОПЕРАЦИОННЫЙ ДЕПАРТАМЕНТ БАНКА РОССИИ//Межрегиональное операционное управление Федерального казначейства г. Москва",
                             bik: "024501901",
                             correspondentBankAccount: "40102810045370000002"),
-                        accountNumber: "03100643000000019500")
-                },
+                        accountNumber: "03100643000000019500"),
+                    organization: new(
+                        name: "Министерство внутренних дел Российской Федерации",
+                        inn: "7706074737",
+                        kpp: "770601001")),
                 payer: new(
                     payerIdentifier: "1240000000000431133252",
-                    payerName: "Тестовый плательщик"
-                    ),
+                    payerName: "Тестовый плательщик"),
                 budgetIndex: new(
-                    status: Status.Item01,
-                    paytReason: PaytReason.Item0,
+                    status: "01",//Status.Item01,
+                    paytReason: "0",//PaytReason.Item0,
                     taxPeriod: "0",
                     taxDocNumber: "0",
-                    taxDocDate: "0"
-                    )
-                )
+                    taxDocDate: "0"))
             {
                 Origin = "TEMP",
                 Item = new MultiplierSize()
@@ -83,39 +76,33 @@ public class ChargeCreation
 
         //Act
         var response = gisgmp.CreateImportChargesTemplateResponse(
-            new ChargeType(
+            charge: new(
                 supplierBillID: "0355431000000000011629713",
                 billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                 totalAmount: 200000,
                 purpose: "Выдача национального водительского удостоверения на пластиковой основе (ТЕСТОВЫЕ ДАННЫЕ!)",
                 kbk: "18810807141011000110",
                 oktmo: "45381000",
-                payee: new Payee()
-                {
-                    Name = "Министерство внутренних дел Российской Федерации",
-                    Inn = "7706074737",
-                    Kpp = "770601001",
-                    OrgAccount = new(
+                payee: new(
+                    orgAccount: new(
                         bank: new(
                             name: "ОПЕРАЦИОННЫЙ ДЕПАРТАМЕНТ БАНКА РОССИИ//Межрегиональное операционное управление Федерального казначейства г. Москва",
                             bik: "024501901",
-                            correspondentBankAccount: "40102810045370000002"
-                            ),
-                        accountNumber: "03100643000000019500"
-                        )
-                },
+                            correspondentBankAccount: "40102810045370000002"),
+                        accountNumber: "03100643000000019500"),
+                    organization: new(
+                        name: "Министерство внутренних дел Российской Федерации",
+                        inn: "7706074737",
+                        kpp: "770601001")),
                 payer: new(
                     payerIdentifier: "1240000000000431133252",
-                    payerName: "Тестовый плательщик"
-                    ),
+                    payerName: "Тестовый плательщик"),
                 budgetIndex: new(
-                    status: Status.Item01,
-                    paytReason: PaytReason.Item0,
+                    status: "0", //Status.Item01,
+                    paytReason: "0", //PaytReason.Item0,
                     taxPeriod: "0",
                     taxDocNumber: "01",
-                    taxDocDate: "0"
-                    )
-                )
+                    taxDocDate: "0"))
             {
                 Origin = "TEMP",
                 Item = new MultiplierSize()

@@ -1,4 +1,6 @@
-﻿namespace GisGmp.Tests;
+﻿using GisGmp.Common.NSI;
+
+namespace GisGmp.Tests;
 
 public class ExportNSI
 {
@@ -22,8 +24,9 @@ public class ExportNSI
         //Act
         var request = gisgmp.CreateExportNSIRequest(
             new NSIExportConditions(
-                payeeData: new PayeeData(inn: "7705401341", kpp: "770542151")
-                )
+                payeeData: new(
+                    inn: "7705401341", 
+                    kpp: "770542151"))
             );
 
         //Assert              
@@ -65,12 +68,12 @@ public class ExportNSI
     public void ExportNSIRequest2()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new GisGmpBuilder()
+        GisGmpBuilder gisgmp = new()
         {
             TestEnable = true,
             //
-            Test_Id = "U_7994af15-f7f2-4a10-a055-5aacf6057d4f",
-            Test_Timestamp = new DateTime(day: 12, month: 06, year: 2020, hour: 10, minute: 19, second: 43, millisecond: 684, kind: DateTimeKind.Local),
+            TestId = "U_7994af15-f7f2-4a10-a055-5aacf6057d4f",
+            TestTimestamp = new(day: 12, month: 06, year: 2020, hour: 10, minute: 19, second: 43, millisecond: 684, kind: DateTimeKind.Local),
             SenderIdentifier = "3637ed",
             SenderRole = "7"
         };
@@ -81,20 +84,20 @@ public class ExportNSI
             );
 
         //Assert              
-        Assert.True(Tools.CheckObjToXml(request, $@"{nameof(ExportNSIRequest2)}", pathRoot));
+        Assert.True(CheckObjToXml(request, $@"{nameof(ExportNSIRequest2)}", pathRoot));
     }
 
     [Fact]
     public void ExportNSIResponse2()
     {
         //Arrange
-        GisGmpBuilder gisgmp = new GisGmpBuilder()
+        GisGmpBuilder gisgmp = new()
         {
             TestEnable = true,
             //
-            Test_Id = "G_3df3e555-1dcd-48e1-8483-bb358a128b38",
+            TestId = "G_3df3e555-1dcd-48e1-8483-bb358a128b38",
             RqId = "U_7994af15-f7f2-4a10-a055-5aacf6057d4f",
-            Test_Timestamp = new DateTime(day: 12, month: 06, year: 2020, hour: 10, minute: 19, second: 45, millisecond: 713, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 12, month: 06, year: 2020, hour: 10, minute: 19, second: 45, millisecond: 713, kind: DateTimeKind.Local),
             RecipientIdentifier = "3637ed",
         };
 
@@ -104,12 +107,11 @@ public class ExportNSI
                 name: "город Каспийск (Тестовые данные!)",
                 oktmo: "82720000",
                 status: "1",
-                changeDate: new DateTime(day: 04, month: 04, year: 2020, hour: 18, minute: 13, second: 51)
-                )
+                changeDate: new(day: 04, month: 04, year: 2020, hour: 18, minute: 13, second: 51))
             );
 
         //Assert              
-        Assert.True(Tools.CheckObjToXml(response, $@"{nameof(ExportNSIResponse2)}", pathRoot));
+        Assert.True(CheckObjToXml(response, $@"{nameof(ExportNSIResponse2)}", pathRoot));
     }
     #endregion
 }
