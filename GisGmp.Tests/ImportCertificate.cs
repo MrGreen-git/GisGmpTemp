@@ -22,8 +22,8 @@ public class ImportCertificate
         var request = gisgmp.CreateImportCertificateRequest(
             new ImportCertificateEntryType[]
             {
-                new (
-                    id:  "I_6e188de4-8491-49ea-8ec6-a09a607d020a",
+                new(
+                    id: "I_6e188de4-8491-49ea-8ec6-a09a607d020a",
                     ownership: "3eb551")
             });
 
@@ -46,13 +46,13 @@ public class ImportCertificate
             //
             TestId = "G_3752f2cf-86f2-4214-afd0-1e21d80ef30d",
             RqId = "I_6e188de4-8491-49ea-8ec6-a09a607d020a",
-            TestTimestamp = new (day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
             RecipientIdentifier = "3eb551"
         };
 
         //Act
         var response = gisgmp.CreateImportCertificateResponse(
-            new ImportProtocolType[]
+            importProtocol: new ImportProtocolType[]
             {
                 new (
                     entityID: "I_6e188de4-8491-49ea-8ec6-a09a607d020a",

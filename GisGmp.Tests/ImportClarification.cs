@@ -15,7 +15,7 @@ namespace GisGmp.Tests
                 TestEnable = true,
                 //
                 TestId = "G_fce0c522-b08d-44bc-55d8-738f10e9d068",
-                TestTimestamp = new DateTime(day: 01, month: 07, year: 2021, hour: 16, minute: 03, second: 05, millisecond: 041, kind: DateTimeKind.Local),
+                TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 16, minute: 03, second: 05, millisecond: 041, kind: DateTimeKind.Local),
                 SenderIdentifier = "aaa111",
                 SenderRole = "70"
             };

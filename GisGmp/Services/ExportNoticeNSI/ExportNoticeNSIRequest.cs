@@ -24,7 +24,7 @@ namespace GisGmp.Services.ExportNoticeNSI
         }
 
         /// <summary>
-        /// Идентификаторы получателя уведомлений по подписке
+        /// Идентификаторы получателя уведомлений по подписке | required
         /// </summary>
         public Destination Destination 
         {
@@ -35,7 +35,7 @@ namespace GisGmp.Services.ExportNoticeNSI
         Destination DestinationField;
 
         /// <summary>
-        /// Уведомление об изменении нормативно-справочной информации
+        /// Уведомления о нормативно-справочной информации | required
         /// </summary>
         public NoticeNSI NoticeNSI 
         {
@@ -46,7 +46,7 @@ namespace GisGmp.Services.ExportNoticeNSI
         NoticeNSI NoticeNSIField;
 
         /// <summary>
-        /// Идентификатор запроса
+        /// Идентификатор запроса | required
         /// </summary>
         [XmlAttribute(DataType = "ID")]
         public string Id 
@@ -58,7 +58,7 @@ namespace GisGmp.Services.ExportNoticeNSI
         string IdField;
 
         /// <summary>
-        /// Дата и время формирования сообщения
+        /// Дата и время формирования ответа | required
         /// </summary>
         [XmlAttribute("timestamp")]
         public DateTime Timestamp { get; set; }

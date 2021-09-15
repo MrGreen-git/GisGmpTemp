@@ -11,12 +11,18 @@ namespace GisGmp.Services.ExportNoticeNSI
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/ExportNoticeNSI/2.4.0")]
     public class NoticeNSI
     {
+        /// <summary/>
+        protected NoticeNSI() { }
+
+        /// <summary/>
+        public NoticeNSI(string directoryCode) => DirectoryCode = directoryCode;
+
         [XmlElement("PayeeNSIInfo", typeof(PayeeNSIInfoType))]
         [XmlElement("oktmoNSIInfo", typeof(oktmoNSIInfoType))]
         public object[] Items { get; set; }
 
         /// <summary>
-        /// Код справочника
+        /// Код справочника | required
         /// </summary>
         [XmlAttribute("directoryCode")]
         public string DirectoryCode { get; set; }

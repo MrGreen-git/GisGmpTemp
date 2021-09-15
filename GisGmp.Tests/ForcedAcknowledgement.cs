@@ -11,64 +11,64 @@ public class ForcedAcknowledgement
     [Fact]
     public void ForcedAcknowledgementRequest()
     {
-        //Arrange
-        GisGmpBuilder gisgmp = new()
-        {
-            TestEnable = true,
-            //
-            TestId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
-            SenderIdentifier = "3eb551",
-            SenderRole = "3"
-        };
+        ////Arrange
+        //GisGmpBuilder gisgmp = new()
+        //{
+        //    TestEnable = true,
+        //    //
+        //    TestId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
+        //    TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+        //    SenderIdentifier = "3eb551",
+        //    SenderRole = "3"
+        //};
 
-        //Act
-        var request = gisgmp.CreateForcedAcknowledgementRequest(
-            new Reconcile(
-                supplierBillId: "18817072711544879499",
-                paymentId: new PaymentIdType[] 
-                { 
-                    new("10471020010005233009202000000001")
-                })
-            );
+        ////Act
+        //var request = gisgmp.CreateForcedAcknowledgementRequest(
+        //    new Reconcile(
+        //        supplierBillId: "18817072711544879499",
+        //        paymentId: new PaymentIdType[] 
+        //        { 
+        //            new("10471020010005233009202000000001")
+        //        })
+        //    );
 
-        //Assert              
-        Assert.True(CheckObjToXml(request, $@"{nameof(ForcedAcknowledgementRequest)}", pathRoot));
+        ////Assert              
+        //Assert.True(CheckObjToXml(request, $@"{nameof(ForcedAcknowledgementRequest)}", pathRoot));
     }
 
     [Fact]
     public void ForcedAcknowledgementResponse()
     {
-        //Arrange
-        GisGmpBuilder gisgmp = new()
-        {
-            TestEnable = true,
-            //
-            TestId = "G_52858add-199d-4d20-b1de-ed324630232a",
-            RqId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 14, second: 21),
-            RecipientIdentifier = "3eb551"
-        };
+        ////Arrange
+        //GisGmpBuilder gisgmp = new()
+        //{
+        //    TestEnable = true,
+        //    //
+        //    TestId = "G_52858add-199d-4d20-b1de-ed324630232a",
+        //    RqId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
+        //    TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 14, second: 21),
+        //    RecipientIdentifier = "3eb551"
+        //};
 
-        //Act
-        var response = gisgmp.CreateForcedAcknowledgementResponse(
-            quittances: new QuittanceType[]
-            {
-                new(
-                    supplierBillID: "18817072711544879499",
-                    creationDate: new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 56, millisecond: 284, kind: DateTimeKind.Local),
-                    billStatus: AcknowledgmentStatusType.Item5,
-                    paymentId: "10471020010005233009202000000001")
-                {
-                    TotalAmount = 50000,
-                    Balance = 0,
-                    PaymentId = "10471020010005233009202000000001",
-                    AmountPayment = 50000
-                }
-            });
+        ////Act
+        //var response = gisgmp.CreateForcedAcknowledgementResponse(
+        //    quittances: new QuittanceType[]
+        //    {
+        //        new(
+        //            supplierBillID: "18817072711544879499",
+        //            creationDate: new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 56, millisecond: 284, kind: DateTimeKind.Local),
+        //            billStatus: AcknowledgmentStatusType.Item5,
+        //            paymentId: "10471020010005233009202000000001")
+        //        {
+        //            TotalAmount = 50000,
+        //            Balance = 0,
+        //            PaymentId = "10471020010005233009202000000001",
+        //            AmountPayment = 50000
+        //        }
+        //    });
 
-        //Assert              
-        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse)}", pathRoot));
+        ////Assert              
+        //Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse)}", pathRoot));
     }
     #endregion
 

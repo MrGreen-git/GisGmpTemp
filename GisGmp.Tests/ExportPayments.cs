@@ -1,4 +1,7 @@
-﻿using GisGmp.Services.ExportPayments;
+﻿using GisGmp.Organization;
+using GisGmp.Payment;
+using GisGmp.SearchConditions;
+using GisGmp.Services.ExportPayments;
 
 namespace GisGmp.Tests;
 
@@ -9,28 +12,30 @@ public class ExportPayments
     [Fact]
     public void ExportPaymentsRequest()
     {
-        //Arrange
-        GisGmpBuilder gisgmp = new()
-        {
-            TestEnable = true,
-            //
-            TestId = "G_a108e1f7-e0f0-48d2-8e80-b64a423efe4e",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
-            SenderIdentifier = "3eb646",
-            SenderRole = "9",
+        ////Arrange
+        //GisGmpBuilder gisgmp = new()
+        //{
+        //    TestEnable = true,
+        //    //
+        //    TestId = "G_a108e1f7-e0f0-48d2-8e80-b64a423efe4e",
+        //    TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+        //    SenderIdentifier = "3eb646",
+        //    SenderRole = "9",
 
-            PageNumber = 1,
-            PageLength = 100
-        };
+        //    PageNumber = 1,
+        //    PageLength = 100
+        //};
 
-        //Act
-        var request = gisgmp.CreateExportPaymentsRequest(
-            paymentsKind: ExportPaymentsKind.PAYMENT,
-            uin: new SupplierBillIDType[] { new("32117072411021588933") }
-            );
+        ////Act
+        //var request = gisgmp.CreateExportPaymentsRequest(
+        //    paymentsKind: ExportPaymentsKind.Payment,
+        //    uin: new SupplierBillIDType[] 
+        //    { 
+        //        new("32117072411021588933") 
+        //    });
 
-        //Assert              
-        Assert.True(CheckObjToXml(request, $@"{nameof(ExportPaymentsRequest)}", pathRoot));
+        ////Assert              
+        //Assert.True(CheckObjToXml(request, $@"{nameof(ExportPaymentsRequest)}", pathRoot));
     }
 
     [Fact]
@@ -52,47 +57,46 @@ public class ExportPayments
             hasMore: false,
             paymentInfo: new PaymentInfo[]
             {
-                    new PaymentInfo(
-                        changeStatusInfo: new (meaning: "1"),
+                new(
+                    changeStatusInfo: new(
+                        meaning: "1"),
+                    payment: new(
                         paymentId: "10471020010005233009202000000001",
                         paymentDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
-                        paymentOrg: new PaymentOrgType(
-                            bank: new(bik: "047252006")),
-                        payee: new Payee()
-                        {
-                            Name = "ФГБУ «ФКП Росреестра» по г Москва",
-                            Inn = "7705401341",
-                            Kpp = "770542151",
-                            OrgAccount = new OrgAccount(
-                                bank: new BankType(bik: "044525000"),
-                                accountNumber: "40101810045250010041"
-                                )
-                        },
+                        paymentOrg: new(
+                            bank: new(
+                                bik: "047252006")),
+                        payee: new(
+                            organization: new(
+                                name: "ФГБУ «ФКП Росреестра» по г Москва",
+                                inn: "7705401341",
+                                kpp: "770542151"),
+                            orgAccount: new(
+                                bank: new(
+                                    bik: "044525000"),
+                                accountNumber: "40101810045250010041")),
                         purpose: "ФГБУ «ФКП Росреестра» по г Москва (ТЕСТОВЫЕ ДАННЫЕ!)",
                         amount: 500000,
-                        transKind: TransKindType.Item01
-                    )
+                        transKind: TransKindType.Item01)
                     {
                         SupplierBillID = "32117072411021588933",
                         Kbk = "32111301031016000130",
                         Oktmo = "45348000",
-                        Payer = new PaymentPayer(
+                        Payer = new(
                             payerIdentifier: "1010000000008751379232",
-                            payerName: "Тестовый плательщик"
-                        ),
-                        BudgetIndex = new BudgetIndexType(
-                            status: Status.Item01,
-                            paytReason: PaytReason.Item0,
+                            payerName: "Тестовый плательщик"),
+                        BudgetIndex = new(
+                            status: "0",//Status.Item01,
+                            paytReason: "0",//PaytReason.Item0,
                             taxPeriod: "0",
                             taxDocNumber: "0",
-                            taxDocDate: "0"
-                            ),
-                        AcknowledgmentInfo = new AcknowledgmentInfo(
-                            supplierBillID: "32117072411021588933"
-                            )
-                    }
-            }
-            );
+                            taxDocDate: "0")
+                    })
+                { 
+                    AcknowledgmentInfo = new(
+                        supplierBillID: "32117072411021588933")
+                }
+            });
 
         //Assert              
         Assert.True(CheckObjToXml(response, $@"{nameof(ExportPaymentsResponse)}", pathRoot));

@@ -80,14 +80,14 @@
   <Class Name="GisGmp.Payment.PaymentType" Collapsed="true">
     <Position X="12.25" Y="6.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAABAAAAAARAEAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAECAAAABAAAAABAAAAAABAIAAAAAAAAAAA=</HashCode>
       <FileName>Payment\PaymentType.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GisGmp.Refund.RefundType" Collapsed="true">
     <Position X="12.25" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEACMAAAAAAQAAAAAAACAACAAQAgAAgAA=</HashCode>
+      <HashCode>CBAAAAYAAAAEAiOACAAGAQAAAAAAAAACIAAAgAAAkAA=</HashCode>
       <FileName>Refund\RefundType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,7 +101,7 @@
   <Class Name="GisGmp.Payment.PaymentBaseType" Collapsed="true">
     <Position X="14.5" Y="6.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>IKgAAAAAAEAAAAMBAAAAAAIAAAIQgAAEAAAQACAAAAA=</HashCode>
+      <HashCode>IKgEAAAAAEEAAAEAAAACAACAAAIQAAAEIAAAAAIAEAA=</HashCode>
       <FileName>Payment\PaymentBaseType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -157,7 +157,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ImportPayments\ImportPaymentsRequest.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -303,7 +303,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAACAAAAAAAAAIAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAACAAAAAAABAIQAAAA4AAAAAAA=</HashCode>
       <FileName>Common\Settings\RequestType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -334,7 +334,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Services\ImportChargestemplate\ChargeCreationRequest.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -391,7 +391,7 @@
       <Property Name="IncomesPackage" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="GisGmp.ImportPaymentCheck.PaymentCheckRequest" Collapsed="true">
+  <Class Name="GisGmp.Services.ImportPaymentCheck.PaymentCheckRequest" Collapsed="true">
     <Position X="1.75" Y="9.5" Width="2.25" />
     <InheritanceLine Type="GisGmp.Common.RequestType" FixedToPoint="true">
       <Path>
@@ -425,7 +425,7 @@
       <Property Name="ChargesExportConditions" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="GisGmp.Services.ExportClarification.ExportClarificationsRequest" Collapsed="true">
+  <Class Name="GisGmp.Services.ExportClarification.ExportClarificationRequest" Collapsed="true">
     <Position X="3.25" Y="19" Width="2.25" />
     <InheritanceLine Type="GisGmp.Common.ExportRequestType" FixedToPoint="true">
       <Path>
@@ -436,7 +436,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
-      <FileName>Services\ExportClarification\ExportClarificationsRequest.cs</FileName>
+      <FileName>Services\ExportClarification\ExportClarificationRequest.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GisGmp.Common.ExportRequestType" Collapsed="true">
@@ -645,14 +645,14 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ImportRefunds\ImportRefundsRequest.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="RefundsPackage" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="GisGmp.Service.ImportRenouncement.ImportRenouncementRequest" Collapsed="true">
+  <Class Name="GisGmp.Services.ImportRenouncement.ImportRenouncementRequest" Collapsed="true">
     <Position X="1.75" Y="8.25" Width="2.25" />
     <InheritanceLine Type="GisGmp.Common.RequestType" FixedToPoint="true">
       <Path>
@@ -680,7 +680,7 @@
       <Property Name="RenouncementPackage" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="GisGmp.SubscriptionService.SubscriptionServiceRequest" Collapsed="true">
+  <Class Name="GisGmp.Services.SubscriptionService.SubscriptionServiceRequest" Collapsed="true">
     <Position X="1.75" Y="15.5" Width="2.25" />
     <InheritanceLine Type="GisGmp.Common.RequestType" FixedToPoint="true">
       <Path>
@@ -690,12 +690,9 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\SubscriptionService\SubscriptionServiceRequest.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="CreateSubscription" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Charge.ChargeTemplateType" Collapsed="true">
     <Position X="12.25" Y="3.25" Width="1.75" />
@@ -711,7 +708,7 @@
       <FileName>Charge\ChargeTemplateType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GisGmp.ImportPaymentCheck.PaymentTemplate" Collapsed="true">
+  <Class Name="GisGmp.Services.ImportPaymentCheck.PaymentTemplate" Collapsed="true">
     <Position X="6" Y="9.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAACAAAAAAQAAAACAAAAAAIAEAA=</HashCode>
@@ -721,7 +718,7 @@
   <Class Name="GisGmp.Common.ImportCertificateEntryType" Collapsed="true">
     <Position X="6" Y="14.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAQCAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAA=</HashCode>
       <FileName>Common\ImportCertificateEntryType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -772,7 +769,7 @@
   <Class Name="GisGmp.Quittance.QuittanceType" Collapsed="true">
     <Position X="10" Y="27.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>BAAAAEAAAAAYAAKAOIAACAIMMABAAIABAAARAQAAIAA=</HashCode>
+      <HashCode>QAAAAAAAAAAwgLAAHAgigQAEAAwAABElAAQAAAIAEAA=</HashCode>
       <FileName>Quittance\QuittanceType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -784,7 +781,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GisGmp.SubscriptionService.CreateSubscription" Collapsed="true">
-    <Position X="6" Y="15.5" Width="2.25" />
+    <Position X="6" Y="15.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAACAAAAAAAAAgEAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Services\SubscriptionService\CreateSubscription.cs</FileName>

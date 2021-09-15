@@ -14,9 +14,12 @@ namespace GisGmp
             => ReadyRequest(CreateExportPaymentsRequest());
 
 
-        public ExportPaymentsResponse CreateExportPaymentsResponse()
+        public ExportPaymentsResponse CreateExportPaymentsResponse(bool hasMore, PaymentInfo[] paymentInfo = default)
         {
-            throw new NotImplementedException();
+            return new ExportPaymentsResponse(
+                config: ResponseConfig,
+                hasMore: hasMore,
+                paymentInfo: paymentInfo);
         }
     }
 }

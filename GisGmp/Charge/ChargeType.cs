@@ -17,6 +17,8 @@ namespace GisGmp.Charge
         /// <summary/>
         protected ChargeType() { }
 
+        public ChargeType(ChargeType charge) => Clone.Field(this, charge);
+
         /// <summary />
         public ChargeType(
             SupplierBillIDType supplierBillID,

@@ -5,18 +5,27 @@ namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
-        public ExportNoticeNSIRequest CreateExportNoticeNSIRequest()
+        /// <summary/>
+        public ExportNoticeNSIRequest CreateExportNoticeNSIRequest(Destination destination, NoticeNSI noticeNSI)
         {
-            throw new NotImplementedException();
+            return new ExportNoticeNSIRequest(
+                id: Id,
+                timestamp: Timestamp,
+                destination: destination,
+                noticeNSI: noticeNSI);
         }
 
-        public string ExportNoticeNSI()
+        /// <summary/>
+        public string ExportNoticeNSI(Destination destination, NoticeNSI noticeNSI)
             => throw new NotImplementedException();
 
-
-        public ExportNoticeNSIResponse CreateExportNoticeNSIResponse()
+        /// <summary/>
+        public ExportNoticeNSIResponse CreateExportNoticeNSIResponse(string routingCode, bool exportNoticeNSIConfirmation)
         {
-            throw new NotImplementedException();
+            return new ExportNoticeNSIResponse(
+                config: ResponseConfig,
+                routingCode: routingCode,
+                exportNoticeNSIConfirmation: exportNoticeNSIConfirmation);
         }
     }
 }

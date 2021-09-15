@@ -28,7 +28,7 @@
       <FileName>Services\ExportClarification\ExportClarificationResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GisGmp.Services.ExportIncomes.ExportIncomesResponse">
+  <Class Name="GisGmp.Services.ExportIncomes.ExportIncomesResponse" Collapsed="true">
     <Position X="11.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAASAA=</HashCode>
@@ -87,11 +87,11 @@
   <Class Name="GisGmp.Services.ImportChargestemplate.ChargeCreationResponse" Collapsed="true">
     <Position X="29.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ImportChargestemplate\ChargeCreationResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GisGmp.ImportPaymentCheck.PaymentCheckResponse">
+  <Class Name="GisGmp.Services.ImportPaymentCheck.PaymentCheckResponse">
     <Position X="32" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>

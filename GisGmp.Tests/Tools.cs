@@ -1,4 +1,5 @@
 ﻿using Microsoft.XmlDiffPatch;
+using System.IO;
 
 namespace GisGmp.Tests;
 

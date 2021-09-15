@@ -14,9 +14,15 @@ namespace GisGmp
             => ReadyRequest(CreateExportRefundsRequest());
 
 
-        public ExportRefundsResponse CreateExportRefundsResponse()
+        
+
+        public ExportRefundsResponse CreateExportRefundsResponse(bool hasMore, Services.ExportRefunds.Refund[] refund)
         {
-            throw new NotImplementedException();
+            return new ExportRefundsResponse(
+                config: ResponseConfig,
+                hasMore: hasMore,
+                refund: refund
+                );
         }
     }
 }

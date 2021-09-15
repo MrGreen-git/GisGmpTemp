@@ -1,4 +1,6 @@
-﻿namespace GisGmp.Tests;
+﻿using System;
+
+namespace GisGmp.Tests;
 
 public class ChargeCreation
 {

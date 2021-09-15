@@ -14,7 +14,7 @@ public class SubscriptionService
             TestEnable = true,
             //
             TestId = "G_5e8e6ede-db3a-4fd4-af74-4e76268368b0",
-            TestTimestamp = new (day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 25, millisecond: 932, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 25, millisecond: 932, kind: DateTimeKind.Local),
             SenderIdentifier = "000009",
             SenderRole = "7"
         };
@@ -131,7 +131,7 @@ public class SubscriptionService
                             parameterId: "P_e5792842-b9b1-4515-859f-a309afeaa9d7")
                     })
                 {
-                    DispatchDate = new (day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 52, millisecond: 932, kind: DateTimeKind.Local),
+                    DispatchDate = new(day: 30, month: 07, year: 2021, hour: 16, minute: 03, second: 52, millisecond: 932, kind: DateTimeKind.Local),
                     DispatchDateSpecified = true,
                     SubscriptionCode = "NC0001",
                     SubscriptionIdentifier = "000009NC0001",

@@ -13,8 +13,20 @@ namespace GisGmp.Services.ExportCharges
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-charges/2.4.0", IsNullable = false)]
     public class ExportChargesResponse : ResponseType
     {
-        /// <summary />
+        // <summary />
         protected ExportChargesResponse() { }
+
+      
+        public ExportChargesResponse(ResponseType config, bool hasMore)
+            : base(config) => HasMore = hasMore;
+
+        
+        public ExportChargesResponse(ResponseType config, bool hasMore, ChargeInfo[] chargeInfo = default, bool? needReRequest = default)
+            : this(config, hasMore)
+        {
+            ChargeInfo = chargeInfo;
+            NeedReRequest = needReRequest;
+        }
 
 
 
@@ -54,16 +66,18 @@ namespace GisGmp.Services.ExportCharges
         [XmlElement("ChargeOffense", typeof(ChargeOffense))]
         public object[] Items { get; set; }
 
-        public ChargeInfo ChargeInfo
+        [XmlIgnore]
+        public ChargeInfo[] ChargeInfo
         {
-            get;
-            set;
+            get => Items as ChargeInfo[];
+            set => Items = value;
         }
 
-        public ChargeOffense ChargeOffense
+        [XmlIgnore]
+        public ChargeOffense[] ChargeOffense
         {
-            get;
-            set;
+            get => Items as ChargeOffense[];
+            set => Items = value;
         }
             
     }
