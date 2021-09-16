@@ -1,8 +1,5 @@
 ﻿using GisGmp.Common;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace GisGmp.Services.ImportCharges
@@ -13,7 +10,7 @@ namespace GisGmp.Services.ImportCharges
     public class ImportChargesResponse : ImportPackageResponseType
     {
         /// <summary/>
-        //protected ImportChargesResponse() { }
+        protected ImportChargesResponse() { }
 
         /// <summary/>
         public ImportChargesResponse(ResponseType config, ImportProtocolType[] importProtocol)

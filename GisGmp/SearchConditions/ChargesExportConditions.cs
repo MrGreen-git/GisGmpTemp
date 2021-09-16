@@ -10,9 +10,10 @@ namespace GisGmp.SearchConditions
     {
         protected ChargesExportConditions() { }
 
-        private ChargesExportConditions(ExportChargesKind kind) => Kind = kind.ToString();
+        private ChargesExportConditions(ExportChargesKind kind) => Kind = kind.GetXmlValue();
         public ChargesExportConditions(ExportChargesKind kind, ChargesConditionsType conditions) : this(kind) => Item = conditions;
         public ChargesExportConditions(ExportChargesKind kind, PayersConditionsType conditions) : this(kind) => Item = conditions;
         public ChargesExportConditions(ExportChargesKind kind, TimeConditionsType conditions) : this(kind) => Item = conditions;
+
     }
 }

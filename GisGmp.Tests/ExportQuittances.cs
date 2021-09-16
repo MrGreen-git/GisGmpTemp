@@ -15,7 +15,7 @@ public class ExportQuittances
         {
             TestEnable = true,
             TestId = "G_327e3906-5a3d-4c79-98f8-18bdd3f7228b",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
 
             SenderIdentifier = "3eacb7",
             SenderRole = "1",
@@ -44,7 +44,7 @@ public class ExportQuittances
         {
             TestEnable = true,
             TestId = "I_1cc3a1dc-263d-40ef-9f0a-51f8b51433a3",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
 
             RqId = "G_327e3906-5a3d-4c79-98f8-18bdd3f7228b",           
             RecipientIdentifier = "3eacb7"
@@ -58,15 +58,19 @@ public class ExportQuittances
             {
                 new(
                     supplierBillID: "32117072411021588933",
-                    creationDate: new(day: 30, month: 09, year: 2020, hour: 16, minute: 35, second: 56, millisecond: 284, kind: DateTimeKind.Local),
+                    creationDate: new(day: 30, month: 07, year: 2021, hour: 16, minute: 35, second: 56, millisecond: 284, kind: DateTimeKind.Local),
                     billStatus: AcknowledgmentStatusType.Item1,
                     paymentId: "10471020010005233009202000000001"
                     )
                 {
                     TotalAmount = 500000,
+                    TotalAmountSpecified = true, // TODO исправить
                     Balance = 0,
+                    BalanceSpecified = true, // TODO исправить
                     AmountPayment = 500000,
-                    IsRevoked = false
+                    AmountPaymentSpecified = true, //TODO исправить
+                    IsRevoked = false,
+                    IsRevokedSpecified = true // TODO исправить
                 }
             });
 

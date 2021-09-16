@@ -4,6 +4,9 @@ namespace GisGmp
 {
     public class PayerId : IConvertToString
     {
+        /// <summary/>
+        protected PayerId() { }
+
         public string Value { get; }
 
         //TODO [?]

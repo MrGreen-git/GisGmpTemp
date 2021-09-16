@@ -41,8 +41,7 @@ namespace GisGmp
         {
             return new ImportChargesResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
+                importProtocol: importProtocol);
         }
     }
 }

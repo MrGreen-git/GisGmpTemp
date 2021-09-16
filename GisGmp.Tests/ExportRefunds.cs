@@ -27,9 +27,9 @@ public class ExportRefunds
         ////Act
         //var request = gisgmp.CreateExportRefundsRequest(
         //    refundsKind: ExportRefundsKind.Refund,
-        //    uip: new UIP[] 
-        //    { 
-        //        new("10471020010005233009202000000012") 
+        //    uip: new UIP[]
+        //    {
+        //        new("10471020010005233009202000000012")
         //    });
 
         ////Assert              

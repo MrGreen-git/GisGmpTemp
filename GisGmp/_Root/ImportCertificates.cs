@@ -6,23 +6,18 @@ namespace GisGmp
     public partial class GisGmpBuilder
     {
         public ImportCertificateRequest CreateImportCertificateRequest(ImportCertificateEntryType[] certificateEntries)
-        {
-            return new ImportCertificateRequest(
+            => new ImportCertificateRequest(
                 config: RequestConfig,
-                entries: certificateEntries
-                );
-        }
-
+                entries: certificateEntries);
+        
         public string ImportCertificate(ImportCertificateEntryType[] certificateEntries)
-            => ReadyRequest(CreateImportCertificateRequest(certificateEntries));
-
+            => ReadyRequest(
+                request:CreateImportCertificateRequest(
+                    certificateEntries: certificateEntries));
 
         public ImportCertificateResponse CreateImportCertificateResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportCertificateResponse(
+            => new ImportCertificateResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
-        }
+                importProtocol: importProtocol);  
     }
 }

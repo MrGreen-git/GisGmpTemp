@@ -14,7 +14,7 @@ namespace GisGmp.Services.ImportСertificates
     public class ImportCertificateResponse : ImportPackageResponseType
     {
         /// <summary/>
-        //protected ImportCertificateResponse() { }
+        protected ImportCertificateResponse() { }
 
         /// <summary>
         /// Ответ на запрос приема информации о сертификате ключа проверки электронной подписи

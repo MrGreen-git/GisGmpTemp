@@ -99,7 +99,7 @@ namespace GisGmp.Quittance
         /// <summary>
         /// Разность между суммой, указанной в начислении, и суммой платежей с учетом возвратов | not required
         /// </summary>
-        [XmlAttribute]
+        [XmlAttribute("balance")]
         public long Balance { get; set; }
 
         [XmlIgnore]

@@ -1,4 +1,5 @@
 ﻿global using Xunit;
+global using System;
 global using System.Xml;
 global using GisGmp.Common;
 global using GisGmp.Services.ImportСertificates;

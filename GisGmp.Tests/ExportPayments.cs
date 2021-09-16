@@ -1,6 +1,4 @@
-﻿using GisGmp.Organization;
-using GisGmp.Payment;
-using GisGmp.SearchConditions;
+﻿using GisGmp.SearchConditions;
 using GisGmp.Services.ExportPayments;
 
 namespace GisGmp.Tests;
@@ -12,30 +10,30 @@ public class ExportPayments
     [Fact]
     public void ExportPaymentsRequest()
     {
-        ////Arrange
-        //GisGmpBuilder gisgmp = new()
-        //{
-        //    TestEnable = true,
-        //    //
-        //    TestId = "G_a108e1f7-e0f0-48d2-8e80-b64a423efe4e",
-        //    TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
-        //    SenderIdentifier = "3eb646",
-        //    SenderRole = "9",
+        //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_a108e1f7-e0f0-48d2-8e80-b64a423efe4e",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            SenderIdentifier = "3eb646",
+            SenderRole = "9",
 
-        //    PageNumber = 1,
-        //    PageLength = 100
-        //};
+            PageNumber = 1,
+            PageLength = 100
+        };
 
-        ////Act
-        //var request = gisgmp.CreateExportPaymentsRequest(
-        //    paymentsKind: ExportPaymentsKind.Payment,
-        //    uin: new SupplierBillIDType[] 
-        //    { 
-        //        new("32117072411021588933") 
-        //    });
+        //Act
+        var request = gisgmp.CreateExportPaymentsRequest(
+            paymentsKind: ExportPaymentsKind.Payment,
+            uin: new SupplierBillIDType[]
+            {
+                new("32117072411021588933")
+            });
 
-        ////Assert              
-        //Assert.True(CheckObjToXml(request, $@"{nameof(ExportPaymentsRequest)}", pathRoot));
+        //Assert              
+        Assert.True(CheckObjToXml(request, $@"{nameof(ExportPaymentsRequest)}", pathRoot));
     }
 
     [Fact]
@@ -48,7 +46,7 @@ public class ExportPayments
             //
             TestId = "I_17f81555-2452-42a3-8c8b-4679c2bdf2b7",
             RqId = "G_a108e1f7-e0f0-48d2-8e80-b64a423efe4e",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
             RecipientIdentifier = "3eb646",
         };
 
@@ -61,8 +59,8 @@ public class ExportPayments
                     changeStatusInfo: new(
                         meaning: "1"),
                     payment: new(
-                        paymentId: "10471020010005233009202000000001",
-                        paymentDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
+                        paymentId: "10471020010005233001202100000001",
+                        paymentDate: new(day: 30, month: 01, year: 2021, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                         paymentOrg: new(
                             bank: new(
                                 bik: "047252006")),
@@ -86,7 +84,7 @@ public class ExportPayments
                             payerIdentifier: "1010000000008751379232",
                             payerName: "Тестовый плательщик"),
                         BudgetIndex = new(
-                            status: "0",//Status.Item01,
+                            status: "01",//Status.Item01,
                             paytReason: "0",//PaytReason.Item0,
                             taxPeriod: "0",
                             taxDocNumber: "0",

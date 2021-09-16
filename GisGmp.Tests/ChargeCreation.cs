@@ -15,7 +15,7 @@ public class ChargeCreation
             TestEnable = true,
             //
             TestId = "I_cf64ff59-fba3-49b5-977e-eeb035d012a3",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
             SenderIdentifier = "3eb715",
             SenderRole = "17",
         };
@@ -23,7 +23,7 @@ public class ChargeCreation
         //Act
         var request = gisgmp.CreateImportChargesTemplateRequest(
             chargeTemplateType: new(
-                billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
+                billDate: new(day: 01, month: 07, year: 2021, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                 totalAmount: 200000,
                 purpose: "Выдача национального водительского удостоверения на пластиковой основе (ТЕСТОВЫЕ ДАННЫЕ!)",
                 kbk: "18810807141011000110",
@@ -72,7 +72,7 @@ public class ChargeCreation
             //
             TestId = "ID000000000000000000000000000001",
             RqId = "I_cf64ff59-fba3-49b5-977e-eeb035d012a3",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 14, second: 29, millisecond: 337, kind: DateTimeKind.Local),
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 14, second: 29, millisecond: 337, kind: DateTimeKind.Local),
             RecipientIdentifier = "3eb715",
         };
 
@@ -80,7 +80,7 @@ public class ChargeCreation
         var response = gisgmp.CreateImportChargesTemplateResponse(
             charge: new(
                 supplierBillID: "0355431000000000011629713",
-                billDate: new(day: 30, month: 09, year: 2020, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
+                billDate: new(day: 01, month: 07, year: 2021, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                 totalAmount: 200000,
                 purpose: "Выдача национального водительского удостоверения на пластиковой основе (ТЕСТОВЫЕ ДАННЫЕ!)",
                 kbk: "18810807141011000110",
@@ -100,7 +100,7 @@ public class ChargeCreation
                     payerIdentifier: "1240000000000431133252",
                     payerName: "Тестовый плательщик"),
                 budgetIndex: new(
-                    status: "0", //Status.Item01,
+                    status: "01", //Status.Item01,
                     paytReason: "0", //PaytReason.Item0,
                     taxPeriod: "0",
                     taxDocNumber: "01",

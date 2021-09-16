@@ -74,7 +74,7 @@ namespace GisGmp.Services.ExportCharges
         /// <para>Условия для предоставления необходимой для уплаты информации</para>
         /// <para>requred: true</para>
         /// </summary>
-        [XmlElement("ChargesExportConditions", Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.2.0")]
+        [XmlElement("ChargesExportConditions", Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0")]
         public ChargesExportConditions ChargesExportConditions
         {
             get => ChargesExportConditionsField;

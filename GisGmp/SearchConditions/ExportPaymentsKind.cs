@@ -7,6 +7,7 @@ namespace GisGmp.SearchConditions
     /// Тип запроса на предоставление информации об уплате
     /// </summary>
     [Serializable]
+    [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IncludeInSchema = false)]
     public enum ExportPaymentsKind
     {
         /// <summary>

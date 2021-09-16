@@ -12,6 +12,41 @@ namespace GisGmp.Services.ForcedAckmowledgement
     [XmlRoot(Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0", IsNullable = false)]
     public class ForcedAcknowledgementRequest : RequestType
     {
+        /// <summary/>
+        protected ForcedAcknowledgementRequest() { }
+
+        /// <summary/>
+        public ForcedAcknowledgementRequest(RequestType config, AnnulmentReconcile annulmentReconcile, URNType originatorId = default)
+            : base(config)
+        {
+            Item = annulmentReconcile;
+            OriginatorId = originatorId;
+        }
+
+        /// <summary/>
+        public ForcedAcknowledgementRequest(RequestType config, AnnulmentServiceProvided annulmentServiceProvided, URNType originatorId = default)
+            : base(config)
+        {
+            Item = annulmentServiceProvided;
+            OriginatorId = originatorId;
+        }
+
+        /// <summary/>
+        public ForcedAcknowledgementRequest(RequestType config, Reconcile reconcile, URNType originatorId = default)
+            : base(config)
+        {
+            Item = reconcile;
+            OriginatorId = originatorId;
+        }
+
+        /// <summary/>
+        public ForcedAcknowledgementRequest(RequestType config, ServiceProvided serviceProvided, URNType originatorId = default)
+            : base(config)
+        {
+            Item = serviceProvided;
+            OriginatorId = originatorId;
+        }
+
         [XmlElement("AnnulmentReconcile", typeof(AnnulmentReconcile))]
         [XmlElement("AnnulmentServiceProvided", typeof(AnnulmentServiceProvided))]
         [XmlElement("Reconcile", typeof(Reconcile))]
@@ -19,10 +54,33 @@ namespace GisGmp.Services.ForcedAckmowledgement
         public object Item { get; set; }
 
 
-        public AnnulmentReconcile AnnulmentReconcile { get; set; }
-        public AnnulmentServiceProvided AnnulmentServiceProvided { get; set; }
-        public Reconcile Reconcile { get; set; }
-        public ServiceProvided ServiceProvided { get; set; }
+        [XmlIgnore]
+        public AnnulmentReconcile AnnulmentReconcile
+        {
+            get => Item as AnnulmentReconcile;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public AnnulmentServiceProvided AnnulmentServiceProvided
+        {
+            get => Item?.GetType() == typeof(AnnulmentServiceProvided) ? (AnnulmentServiceProvided)Item : null;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public Reconcile Reconcile
+        {
+            get => Item?.GetType() == typeof(Reconcile) ? (Reconcile)Item : null;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public ServiceProvided ServiceProvided
+        {
+            get => Item?.GetType() == typeof(ServiceProvided) ? (ServiceProvided)Item : null;
+            set => Item = value;
+        }
 
         /// <summary>
         /// УРН участника косвенного взаимодействия, сформировавшего запрос

@@ -14,7 +14,8 @@ namespace GisGmp.SearchConditions
         protected ChargesConditionsType() { }
 
         /// <summary/>
-        public ChargesConditionsType(SupplierBillIDType[] supplierBillID) => SupplierBillID = supplierBillID;
+        public ChargesConditionsType(SupplierBillIDType[] supplierBillID) 
+            => SupplierBillID = supplierBillID;
 
         /// <summary/>
         public ChargesConditionsType(SupplierBillIDType[] supplierBillID, TimeIntervalType timeInterval = null)

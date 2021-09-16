@@ -46,7 +46,7 @@ public class ImportCharges
                         payerIdentifier: "1220000000007712579832",
                         payerName: "Тестовый плательщик"),
                     budgetIndex: new(
-                        status: "0", //Status.Item01,
+                        status: "01", //Status.Item01,
                         paytReason: "0", //PaytReason.Item0,
                         taxPeriod: "0",
                         taxDocNumber: "0",
