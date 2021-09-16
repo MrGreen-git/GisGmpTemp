@@ -7,25 +7,24 @@ namespace GisGmp
     {
         /// <summary/>
         public ExportNoticeNSIRequest CreateExportNoticeNSIRequest(Destination destination, NoticeNSI noticeNSI)
-        {
-            return new ExportNoticeNSIRequest(
+            => new ExportNoticeNSIRequest(
                 id: Id,
                 timestamp: Timestamp,
                 destination: destination,
                 noticeNSI: noticeNSI);
-        }
 
         /// <summary/>
-        public string ExportNoticeNSI(Destination destination, NoticeNSI noticeNSI)
-            => throw new NotImplementedException();
+        //public string ExportNoticeNSI(Destination destination, NoticeNSI noticeNSI)
+        //    => ReadyRequest(
+        //        request: CreateExportNoticeNSIRequest(
+        //            destination: destination,
+        //            noticeNSI: noticeNSI));
 
         /// <summary/>
         public ExportNoticeNSIResponse CreateExportNoticeNSIResponse(string routingCode, bool exportNoticeNSIConfirmation)
-        {
-            return new ExportNoticeNSIResponse(
+            => new ExportNoticeNSIResponse(
                 config: ResponseConfig,
                 routingCode: routingCode,
                 exportNoticeNSIConfirmation: exportNoticeNSIConfirmation);
-        }
     }
 }

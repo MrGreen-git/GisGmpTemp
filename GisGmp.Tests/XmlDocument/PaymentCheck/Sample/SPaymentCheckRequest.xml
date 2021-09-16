@@ -1,9 +1,9 @@
-<req:PaymentCheckRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:req="urn://roskazna.ru/gisgmp/xsd/services/import-paymentcheck/2.4.0" xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0" Id="I_13032ed0-4a7a-49ed-ad46-2a7206d3bca7" timestamp="2021-07-01T18:13:51.0" senderIdentifier="3eb646" senderRole="9">
-	<PaymentTemplate supplierBillID="0" kbk="18811630020016000140" oktmo="45348000">
+<req:PaymentCheckRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:req="urn://roskazna.ru/gisgmp/xsd/services/import-paymentcheck/2.4.0" xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0" Id="I_13032ed0-4a7a-49ed-ad46-2a7206d3bca7" timestamp="2021-07-01T18:13:51" senderIdentifier="3eb646" senderRole="9">
+	<req:PaymentTemplate supplierBillID="0" kbk="18811630020016000140" oktmo="45348000">
 		<org:Payee name="УВД по ЦАО ГУ МВД России по г. Москве" inn="7706012716" kpp="770901011">
 			<com:OrgAccount accountNumber="03100643000000019500">
 				<com:Bank bik="024501901" correspondentBankAccount="40102810045370000002"/>
 			</com:OrgAccount>
 		</org:Payee>
-	</PaymentTemplate>
+	</req:PaymentTemplate>
 </req:PaymentCheckRequest>

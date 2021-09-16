@@ -8,40 +8,36 @@ namespace GisGmp
     {
         /// <summary/>
         public ImportChargesRequest CreateImportChargesRequest(ImportedChargeType[] importedChargeTypes)
-        {
-            return new ImportChargesRequest(
+            => new ImportChargesRequest(
                 config: RequestConfig,
                 package: new ChargesPackage(
-                    importedCharges: importedChargeTypes
-                    )
-                );
-        }
+                    importedCharges: importedChargeTypes));
 
         /// <summary/>
         public ImportChargesRequest CreateImportChargesRequest(ImportedChangeType[] importedChangeTypes)
-        {
-            return new ImportChargesRequest(
+            => new ImportChargesRequest(
                 config: RequestConfig,
                 package: new ChargesPackage(
-                    importedChanges: importedChangeTypes
-                    )
-                );
-        }
+                    importedChanges: importedChangeTypes));
 
+        #region ReadyRequest
         /// <summary/>
         public string ImportCharges(ImportedChargeType[] importedChargeTypes)
-            => ReadyRequest(CreateImportChargesRequest(importedChargeTypes));
+            => ReadyRequest(
+                request: CreateImportChargesRequest(
+                    importedChargeTypes: importedChargeTypes));
 
         /// <summary/>
         public string ImportCharges(ImportedChangeType[] importedChangeTypes)
-            => ReadyRequest(CreateImportChargesRequest(importedChangeTypes));
+            => ReadyRequest(
+                request: CreateImportChargesRequest(
+                    importedChangeTypes: importedChangeTypes));
+        #endregion
 
         /// <summary/>
         public ImportChargesResponse CreateImportChargesResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportChargesResponse(
+            => new ImportChargesResponse(
                 config: ResponseConfig,
                 importProtocol: importProtocol);
-        }
     }
 }

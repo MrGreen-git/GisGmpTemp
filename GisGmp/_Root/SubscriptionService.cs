@@ -6,46 +6,40 @@ namespace GisGmp
     {
         /// <summary/>
         public SubscriptionServiceRequest CreateSubscriptionServiceRequest(bool exportSubscriptions)
-        {
-            return new SubscriptionServiceRequest(
+            => new SubscriptionServiceRequest(
                 config: RequestConfig,
-                exportSubscriptions: exportSubscriptions
-                );
-        }
+                exportSubscriptions: exportSubscriptions);
 
         /// <summary/>
         public SubscriptionServiceRequest CreateSubscriptionServiceRequest(CreateSubscription createSubscription)
-        {
-            return new SubscriptionServiceRequest(
+            => new SubscriptionServiceRequest(
                 config: RequestConfig,
-                createSubscription: createSubscription
-                );
-        }
+                createSubscription: createSubscription);
 
+        #region ReadyRequest
         /// <summary/>
         public string SubscriptionService(bool exportSubscriptions)
-            => ReadyRequest(CreateSubscriptionServiceRequest(exportSubscriptions));
+            => ReadyRequest(
+                request: CreateSubscriptionServiceRequest(
+                    exportSubscriptions: exportSubscriptions));
 
         /// <summary/>
         public string SubscriptionService(CreateSubscription createSubscription)
-            => ReadyRequest(CreateSubscriptionServiceRequest(createSubscription));
+            => ReadyRequest(
+                request: CreateSubscriptionServiceRequest(
+                    createSubscription: createSubscription));
+        #endregion
 
         /// <summary/>
         public SubscriptionServiceResponse CreateSubscriptionServiceResponse(CreateSubscriptionResult[] createSubscriptionResult)
-        {
-            return new SubscriptionServiceResponse(
+            => new SubscriptionServiceResponse(
                 config: ResponseConfig,
-                createSubscriptionResult: createSubscriptionResult
-                );
-        }
+                createSubscriptionResult: createSubscriptionResult);
 
         /// <summary/>
         public SubscriptionServiceResponse CreateSubscriptionServiceResponse(Subscriptions[] subscriptions)
-        {
-            return new SubscriptionServiceResponse(
+            => new SubscriptionServiceResponse(
                 config: ResponseConfig,
-                subscriptions: subscriptions
-                );
-        }
+                subscriptions: subscriptions);
     }
 }

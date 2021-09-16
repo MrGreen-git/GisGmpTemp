@@ -8,22 +8,15 @@ namespace GisGmp
     {
         /// <summary/>
         public ImportRenouncementRequest CreateImportRenouncementRequest(ImportedRenouncementType[] importedRenouncementTypes)
-        {
-            return new ImportRenouncementRequest(
+            => new ImportRenouncementRequest(
                 config: RequestConfig,
                 package: new RenouncementPackage(
-                    importedRenouncements: importedRenouncementTypes
-                    )
-                );
-        }
+                    importedRenouncements: importedRenouncementTypes));
 
         /// <summary/>
         public ImportRenouncementResponse CreateImportRenouncementResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportRenouncementResponse(
+            => new ImportRenouncementResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
-        }
+                importProtocol: importProtocol);
     }
 }

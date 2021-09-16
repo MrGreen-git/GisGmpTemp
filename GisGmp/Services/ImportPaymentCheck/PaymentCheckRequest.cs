@@ -15,11 +15,10 @@ namespace GisGmp.Services.ImportPaymentCheck
         /// <summary/>
         protected PaymentCheckRequest() { }
 
+        /// <summary/>
         public PaymentCheckRequest(RequestType config, PaymentTemplate template)
             : base(config) => PaymentTemplate = template;
 
-
-        PaymentTemplate PaymentTemplateField;
 
         /// <summary>
         /// Данные необходимые для приема информации об уплате
@@ -29,5 +28,7 @@ namespace GisGmp.Services.ImportPaymentCheck
             get => PaymentTemplateField;
             set => PaymentTemplateField = value;
         }
+
+        PaymentTemplate PaymentTemplateField;
     }
 }

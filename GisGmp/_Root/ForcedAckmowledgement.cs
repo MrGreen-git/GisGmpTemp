@@ -1,7 +1,5 @@
 ﻿using GisGmp.Quittance;
 using GisGmp.Services.ForcedAckmowledgement;
-using System;
-using System.Xml.Serialization;
 
 namespace GisGmp
 {
@@ -9,76 +7,68 @@ namespace GisGmp
     {
         /// <summary/>     
         public ForcedAcknowledgementRequest CreateForcedAcknowledgementRequest(AnnulmentReconcile annulmentReconcile)
-        {
-            return new ForcedAcknowledgementRequest(
+            => new ForcedAcknowledgementRequest(
                     config: RequestConfig,
                     originatorId: OriginatorId,
-                    annulmentReconcile: annulmentReconcile
-                );
-        }
+                    annulmentReconcile: annulmentReconcile);
 
         /// <summary/>
         public ForcedAcknowledgementRequest CreateForcedAcknowledgementRequest(AnnulmentServiceProvided annulmentServiceProvided)
-        {
-            return new ForcedAcknowledgementRequest(
+            => new ForcedAcknowledgementRequest(
                     config: RequestConfig,
                     originatorId: OriginatorId,
-                    annulmentServiceProvided: annulmentServiceProvided
-                );
-        }
+                    annulmentServiceProvided: annulmentServiceProvided);
 
         /// <summary/>
         public ForcedAcknowledgementRequest CreateForcedAcknowledgementRequest(Reconcile reconcile)
-        {
-            return new ForcedAcknowledgementRequest(
+            => new ForcedAcknowledgementRequest(
                     config: RequestConfig,
                     originatorId: OriginatorId,
-                    reconcile: reconcile
-                );
-        }
+                    reconcile: reconcile);
 
         /// <summary/>
         public ForcedAcknowledgementRequest CreateForcedAcknowledgementRequest(ServiceProvided serviceProvided)
-        {
-            return new ForcedAcknowledgementRequest(
+            => new ForcedAcknowledgementRequest(
                     config: RequestConfig,
                     originatorId: OriginatorId,
-                    serviceProvided: serviceProvided
-                );
-        }
+                    serviceProvided: serviceProvided);
 
+        #region ReadyRequest
         /// <summary/>
         public string ForcedAcknowledgement(AnnulmentReconcile annulmentReconcile)
-            => ReadyRequest(CreateForcedAcknowledgementRequest(annulmentReconcile));
+            => ReadyRequest(
+                request: CreateForcedAcknowledgementRequest(
+                    annulmentReconcile: annulmentReconcile));
 
         /// <summary/>
         public string ForcedAcknowledgement(AnnulmentServiceProvided annulmentServiceProvided)
-            => ReadyRequest(CreateForcedAcknowledgementRequest(annulmentServiceProvided));
+            => ReadyRequest(
+                request: CreateForcedAcknowledgementRequest(
+                    annulmentServiceProvided: annulmentServiceProvided));
 
         /// <summary/>
         public string ForcedAcknowledgement(Reconcile reconcile)
-            => ReadyRequest(CreateForcedAcknowledgementRequest(reconcile));
+            => ReadyRequest(
+                request: CreateForcedAcknowledgementRequest(
+                    reconcile: reconcile));
 
         /// <summary/>
         public string ForcedAcknowledgement(ServiceProvided serviceProvided)
-            => ReadyRequest(CreateForcedAcknowledgementRequest(serviceProvided));
+            => ReadyRequest(
+                request: CreateForcedAcknowledgementRequest(
+                    serviceProvided: serviceProvided));
+        #endregion
 
         /// <summary/>
         public ForcedAcknowledgementResponse CreateForcedAcknowledgementResponse(bool[] done)
-        {
-            return new ForcedAcknowledgementResponse(
+            => new ForcedAcknowledgementResponse(
                 config: ResponseConfig,
-                done: done
-                );
-        }
+                done: done);
 
         /// <summary/>
         public ForcedAcknowledgementResponse CreateForcedAcknowledgementResponse(QuittanceType[] quittances)
-        {
-            return new ForcedAcknowledgementResponse(
+            => new ForcedAcknowledgementResponse(
                 config: ResponseConfig,
-                quittances: quittances
-                );
-        }
+                quittances: quittances);
     }
 }

@@ -4,6 +4,6 @@
  xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
  xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- Id="G_52858add-199d-4d20-b1de-ed324630232a" RqId="G_e5c906a5-0ceb-4320-97e5-233f32dd8925" recipientIdentifier="3eb551" timestamp="2021-07-01T18:13:51.0">
-       <ns0:Quittance supplierBillID="18817072711544879499" totalAmount="50000" creationDate="2021-07-30T18:13:56.284+03:00" billStatus="5" balance="0" paymentId="10471020010005233009202100000001" amountPayment="50000"/>
+ Id="G_52858add-199d-4d20-b1de-ed324630232a" RqId="G_e5c906a5-0ceb-4320-97e5-233f32dd8925" recipientIdentifier="3eb551" timestamp="2021-07-01T18:13:51">
+       <ns0:Quittance supplierBillID="18817072711544879499" totalAmount="50000" creationDate="2021-07-30T18:13:56.284+05:00" billStatus="5" balance="0" paymentId="10471020010005233009202100000001" amountPayment="50000"/>
  </ns0:ForcedAcknowledgementResponse>

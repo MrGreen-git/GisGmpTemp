@@ -1,7 +1,6 @@
 ﻿using GisGmp.Common;
 using GisGmp.Package;
 using GisGmp.Services.ImportRefunds;
-using System;
 
 namespace GisGmp
 {
@@ -9,42 +8,36 @@ namespace GisGmp
     {
         /// <summary/>
         public ImportRefundsRequest CreateImportRefundsRequest(ImportedRefundType[] importedRefundTypes)
-        {
-            return new ImportRefundsRequest(
+            => new ImportRefundsRequest(
                 config: RequestConfig,
                 package: new RefundsPackage(
-                    importedRefunds: importedRefundTypes
-                    )
-                );
-        }
+                    importedRefunds: importedRefundTypes));
 
         /// <summary/>
         public ImportRefundsRequest CreateImportRefundsRequest(ImportedChangeType[] importedChangeTypes)
-        {
-            return new ImportRefundsRequest(
+            => new ImportRefundsRequest(
                 config: RequestConfig,
                 package: new RefundsPackage(
-                    importedChanges: importedChangeTypes
-                    )
-                );
-        }
+                    importedChanges: importedChangeTypes));
 
+        #region ReadyRequest
         /// <summary/>
         public string ImportRefunds(ImportedRefundType[] importedRefundTypes)
-            => ReadyRequest(CreateImportRefundsRequest(importedRefundTypes));
+            => ReadyRequest(
+                request: CreateImportRefundsRequest(
+                    importedRefundTypes: importedRefundTypes));
 
         /// <summary/>
         public string ImportRefunds(ImportedChangeType[] importedChangeTypes)
-            => ReadyRequest(CreateImportRefundsRequest(importedChangeTypes));
-
+            => ReadyRequest(
+                request: CreateImportRefundsRequest(
+                    importedChangeTypes: importedChangeTypes));
+        #endregion
 
         /// <summary/>
         public ImportRefundsResponse CreateImportRefundsResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportRefundsResponse(
+            => new ImportRefundsResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
-        }
+                importProtocol: importProtocol);
     }
 }

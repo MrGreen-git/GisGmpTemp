@@ -7,24 +7,22 @@ namespace GisGmp
     {
         /// <summary/>
         public ChargeCreationRequest CreateImportChargesTemplateRequest(ChargeTemplateType chargeTemplateType)
-        {
-            return new ChargeCreationRequest(
+            => new ChargeCreationRequest(
                 config: RequestConfig,
-                chargeTemplate: chargeTemplateType
-                );
-        }
+                chargeTemplate: chargeTemplateType);
 
+        #region ReadyRequest
         /// <summary/>
         public string ImportChargesTemplate(ChargeTemplateType chargeTemplateType)
-            => ReadyRequest(CreateImportChargesTemplateRequest(chargeTemplateType));
+            => ReadyRequest(
+                request: CreateImportChargesTemplateRequest(
+                    chargeTemplateType: chargeTemplateType));
+        #endregion
 
         /// <summary/>
         public ChargeCreationResponse CreateImportChargesTemplateResponse(ChargeType charge)
-        {
-            return new ChargeCreationResponse(
+            => new ChargeCreationResponse(
                 config: ResponseConfig,
-                charge: charge
-                );
-        }
+                charge: charge);
     }
 }

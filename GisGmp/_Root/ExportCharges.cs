@@ -7,9 +7,9 @@ namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
+        /// <summary/>
         public ExportChargesRequest CreateExportChargesRequest(ExportChargesKind chargesKind, SupplierBillIDType[] supplierBillID, TimeIntervalType timeInterval = default, EsiaUserInfoType esiaUserInfo = default, External? external = default)
-        {
-            return new ExportChargesRequest(
+            => new ExportChargesRequest(
                 config: ExportRequestConfig,
                 exportConditions: new ChargesExportConditions(
                     kind: chargesKind,
@@ -18,7 +18,6 @@ namespace GisGmp
                         timeInterval: timeInterval)),
                 esiaUserInfo: esiaUserInfo,
                 external: external);
-        }
 
         public ExportChargesRequest CreateExportChargesRequest(ExportChargesKind chargesKind, IPayerInnOrId[] payerInnOrId, TimeIntervalType timeInterval = null, KBKType[] kbk = null)
         {
@@ -33,9 +32,9 @@ namespace GisGmp
             throw new NotImplementedException();
         }
 
+        /// <summary/>
         public ExportChargesRequest CreateExportChargesRequest(ExportChargesKind chargesKind, TimeIntervalType timeInterval, Beneficiary[] beneficiary = default, KBKType[] kbk = default, EsiaUserInfoType esiaUserInfo = default, External? external = default)
-        {
-            return new ExportChargesRequest(
+            => new ExportChargesRequest(
                 config: ExportRequestConfig,
                 exportConditions: new ChargesExportConditions(
                     kind: chargesKind,
@@ -45,29 +44,42 @@ namespace GisGmp
                         kbkList: kbk)),
                 esiaUserInfo: esiaUserInfo,
                 external: external);
-        }
 
-
+        #region ReadyRequest
         /// <inheritdoc cref="CreateExportChargesRequest(ExportChargesKind, SupplierBillIDType[], TimeIntervalType, EsiaUserInfoType, External?)"/>
         public string ExportCharges(ExportChargesKind chargesKind, SupplierBillIDType[] supplierBillID, TimeIntervalType timeInterval = default, EsiaUserInfoType esiaUserInfo = default, External? external = default)
-            => ReadyRequest(CreateExportChargesRequest(chargesKind, supplierBillID, timeInterval, esiaUserInfo, external));
+            => ReadyRequest(
+                request: CreateExportChargesRequest(
+                    chargesKind: chargesKind,
+                    supplierBillID: supplierBillID,
+                    timeInterval: timeInterval,
+                    esiaUserInfo: esiaUserInfo,
+                    external: external));
 
         /// <summary/>
         public string ExportCharges(ExportChargesKind chargesKind, IPayerInnOrId[] payerInnOrId, TimeIntervalType timeInterval = null, KBKType[] kbk = null)
-            => ReadyRequest(CreateExportChargesRequest(chargesKind, payerInnOrId, timeInterval, kbk));
+            => ReadyRequest(
+                request: CreateExportChargesRequest(
+                    chargesKind: chargesKind,
+                    payerInnOrId: payerInnOrId,
+                    timeInterval: timeInterval,
+                    kbk: kbk));
 
         /// <inheritdoc craf="CreateExportChargesRequest(ExportChargesKind, TimeIntervalType, Beneficiary[], KBKType[], EsiaUserInfoType, External?)" />
         public string ExportCharges(ExportChargesKind chargesKind, TimeIntervalType timeInterval, Beneficiary[] beneficiary = null, KBKType[] kbk = null)
-            => ReadyRequest(CreateExportChargesRequest(chargesKind, timeInterval, beneficiary, kbk));
-
+            => ReadyRequest(
+                request: CreateExportChargesRequest(
+                    chargesKind: chargesKind,
+                    timeInterval: timeInterval,
+                    beneficiary: beneficiary,
+                    kbk: kbk));
+        #endregion
 
         public ExportChargesResponse CreateExportChargesResponse(bool hasMore, ChargeInfo[] chargeInfo = default, bool? needReRequest = default)
-        {
-            return new ExportChargesResponse(
+            => new ExportChargesResponse(
                 config: ResponseConfig,
                 hasMore: hasMore,
                 chargeInfo: chargeInfo,
                 needReRequest: needReRequest);
-        }
     }
 }

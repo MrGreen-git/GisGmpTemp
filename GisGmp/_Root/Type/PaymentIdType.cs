@@ -12,6 +12,9 @@ namespace GisGmp
     public class PaymentIdType : IConvertToString
     {
         /// <summary/>
+        protected PaymentIdType(){}
+
+        /// <summary/>
         public string Value { get; set; }
 
         /// <summary/>

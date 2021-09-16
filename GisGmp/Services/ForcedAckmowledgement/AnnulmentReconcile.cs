@@ -10,6 +10,13 @@ namespace GisGmp.Services.ForcedAckmowledgement
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0")]
     public class AnnulmentReconcile
     {
+        /// <summary/>
+        protected AnnulmentReconcile() { }
+
+        /// <summary/>
+        public AnnulmentReconcile(SupplierBillIDType uin)
+            => SupplierBillId = uin;
+
         [XmlElement("PaymentId", typeof(string))]
         [XmlElement("PaymentNotLoaded", typeof(AnnulmentReconcilePaymentNotLoaded))]
         public object[] Items { get; set; }

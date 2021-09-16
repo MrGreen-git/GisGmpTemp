@@ -9,11 +9,13 @@ namespace GisGmp
             => new ImportCertificateRequest(
                 config: RequestConfig,
                 entries: certificateEntries);
-        
+
+        #region ReadyRequest
         public string ImportCertificate(ImportCertificateEntryType[] certificateEntries)
             => ReadyRequest(
                 request:CreateImportCertificateRequest(
                     certificateEntries: certificateEntries));
+        #endregion
 
         public ImportCertificateResponse CreateImportCertificateResponse(ImportProtocolType[] importProtocol)
             => new ImportCertificateResponse(

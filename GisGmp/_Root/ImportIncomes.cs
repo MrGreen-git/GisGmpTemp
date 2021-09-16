@@ -1,35 +1,31 @@
-﻿
-using GisGmp.Common;
+﻿using GisGmp.Common;
 using GisGmp.Package;
 using GisGmp.Services.ImportIncomes;
-using GisGmp.Services.ImportPayments;
 
 namespace GisGmp
 {
-
     public partial class GisGmpBuilder
     {
+        /// <summary/>
         public ImportIncomesRequest CreateImportIncomesRequest(ImportedIncomeType[] importedIncomeTypes)
-        {
-            return new ImportIncomesRequest(
+            => new ImportIncomesRequest(
                 config: RequestConfig,
                 package: new IncomesPackage(
-                    importedIncomes: importedIncomeTypes
-                    )
-                );
-        }
+                    importedIncomes: importedIncomeTypes));
 
+        #region ReadyRequest
+        /// <summary/>
         public string ImportPayments(ImportedIncomeType[] importedIncomeTypes)
-            => ReadyRequest(CreateImportIncomesRequest(importedIncomeTypes));
+            => ReadyRequest(
+                request: CreateImportIncomesRequest(
+                    importedIncomeTypes: importedIncomeTypes));
+        #endregion
 
-
+        /// <summary/>
         public ImportIncomesResponse CreateImportIncomesResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportIncomesResponse(
+            => new ImportIncomesResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
-        }
+                importProtocol: importProtocol);
     }
 }
 

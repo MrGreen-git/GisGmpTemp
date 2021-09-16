@@ -9,7 +9,7 @@ public class ForcedAcknowledgement
 
     #region ForcedAcknowledgement #1
     [Fact]
-    public void ForcedAcknowledgementRequest()
+    public void ForcedAcknowledgementRequest1()
     {
         //Arrange
         GisGmpBuilder gisgmp = new()
@@ -17,7 +17,7 @@ public class ForcedAcknowledgement
             TestEnable = true,
             //
             TestId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 51),
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
             SenderIdentifier = "3eb551",
             SenderRole = "3"
         };
@@ -28,16 +28,16 @@ public class ForcedAcknowledgement
                 supplierBillId: "18817072711544879499",
                 paymentId: new PaymentIdType[]
                 {
-                    new("10471020010005233009202000000001")
+                    new("10471020010005233009202100000001")
                 })
             );
 
         //Assert              
-        Assert.True(CheckObjToXml(request, $@"{nameof(ForcedAcknowledgementRequest)}", pathRoot));
+        Assert.True(CheckObjToXml(request, $@"{nameof(ForcedAcknowledgementRequest1)}", pathRoot));
     }
 
     [Fact]
-    public void ForcedAcknowledgementResponse()
+    public void ForcedAcknowledgementResponse1()
     {
         //Arrange
         GisGmpBuilder gisgmp = new()
@@ -46,7 +46,7 @@ public class ForcedAcknowledgement
             //
             TestId = "G_52858add-199d-4d20-b1de-ed324630232a",
             RqId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
-            TestTimestamp = new(day: 30, month: 09, year: 2020, hour: 18, minute: 14, second: 21),
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
             RecipientIdentifier = "3eb551"
         };
 
@@ -56,19 +56,21 @@ public class ForcedAcknowledgement
             {
                 new(
                     supplierBillID: "18817072711544879499",
-                    creationDate: new(day: 30, month: 09, year: 2020, hour: 18, minute: 13, second: 56, millisecond: 284, kind: DateTimeKind.Local),
+                    creationDate: new(day: 30, month: 07, year: 2021, hour: 18, minute: 13, second: 56, millisecond: 284, kind: DateTimeKind.Local),
                     billStatus: AcknowledgmentStatusType.Item5,
-                    paymentId: "10471020010005233009202000000001")
+                    paymentId: "10471020010005233009202100000001")
                 {
                     TotalAmount = 50000,
+                    TotalAmountSpecified = true,
                     Balance = 0,
-                    PaymentId = "10471020010005233009202000000001",
+                    BalanceSpecified = true,
+                    AmountPaymentSpecified = true,
                     AmountPayment = 50000
                 }
             });
 
         //Assert              
-        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse)}", pathRoot));
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse1)}", pathRoot));
     }
     #endregion
 
@@ -77,9 +79,29 @@ public class ForcedAcknowledgement
     public void ForcedAcknowledgementRequest2()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51, millisecond: 0),
+            SenderIdentifier = "3eb551",
+            SenderRole = "3"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementRequest(
+            annulmentReconcile: new(
+                uin: new("18817072711544878492"))
+            {
+                Items = new PaymentIdType[]
+                {
+                    new("10471020010005233009202100000851")
+                }
+            });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse2)}", pathRoot));
     }
 
     [Fact]

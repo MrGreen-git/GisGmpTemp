@@ -15,9 +15,10 @@ namespace GisGmp.Services.ImportPaymentCheck
         /// <summary/>
         protected PaymentCheckResponse() { }
 
-        public PaymentCheckResponse(ResponseType config, ImportProtocolType[] importProtocol)
+        public PaymentCheckResponse(ResponseType config, ImportProtocol importProtocol)
             : base(config)
-        { 
+        {
+            ImportProtocol = importProtocol;
         }
 
         public ImportProtocol ImportProtocol { get; set; }

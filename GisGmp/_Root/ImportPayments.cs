@@ -8,41 +8,36 @@ namespace GisGmp
     {
         /// <summary/>
         public ImportPaymentsRequest CreateImportPaymentsRequest(ImportedPaymentType[] importedPaymentTypes)
-        {
-            return new ImportPaymentsRequest(
+            => new ImportPaymentsRequest(
                 config: RequestConfig,
                 package: new PaymentsPackage(
-                    importedPayments: importedPaymentTypes
-                    )
-                );
-        }
+                    importedPayments: importedPaymentTypes));
 
         /// <summary/>
         public ImportPaymentsRequest CreateImportPaymentsRequest(ImportedChangeType[] importedChangeTypes)
-        {
-            return new ImportPaymentsRequest(
+            => new ImportPaymentsRequest(
                 config: RequestConfig,
                 package: new PaymentsPackage(
-                    importedChanges: importedChangeTypes
-                    )
-                );
-        }
+                    importedChanges: importedChangeTypes));
 
+        #region ReadyRequest
         /// <summary/>
         public string ImportPayments(ImportedPaymentType[] importedPaymentTypes)
-            => ReadyRequest(CreateImportPaymentsRequest(importedPaymentTypes));
+            => ReadyRequest(
+                request: CreateImportPaymentsRequest(
+                    importedPaymentTypes: importedPaymentTypes));
 
         /// <summary/>
         public string ImportPayments(ImportedChangeType[] importedChangeTypes)
-            => ReadyRequest(CreateImportPaymentsRequest(importedChangeTypes));
+            => ReadyRequest(
+                request: CreateImportPaymentsRequest(
+                    importedChangeTypes: importedChangeTypes));
+        #endregion ReadyRequest
 
         /// <summary/>
         public ImportPaymentsResponse CreateImportPaymentsResponse(ImportProtocolType[] importProtocol)
-        {
-            return new ImportPaymentsResponse(
+            => new ImportPaymentsResponse(
                 config: ResponseConfig,
-                importProtocol: importProtocol
-                );
-        }
+                importProtocol: importProtocol);
     }
 }
