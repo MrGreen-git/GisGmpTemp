@@ -16,7 +16,7 @@ namespace GisGmp.SearchConditions
         public TimeConditionsType(TimeIntervalType timeInterval) => TimeInterval = timeInterval;
 
         /// <summary>
-        public TimeConditionsType(TimeIntervalType timeInterval, Beneficiary[] beneficiary = null, KBKType[] kbkList = null)
+        public TimeConditionsType(TimeIntervalType timeInterval, Beneficiary[] beneficiary = default, KBKType[] kbkList = default)
             : this(timeInterval)
         {
             Beneficiary = beneficiary;

@@ -15,13 +15,24 @@ namespace GisGmp.Services.ExportIncomes
         /// <summary/>
         protected ExportIncomesResponse() { }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="hasMore">Признак конца выборки</param>
         public ExportIncomesResponse(ResponseType config, bool hasMore)
             : base(config) => HasMore = hasMore;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="hasMore">Признак конца выборки</param>
+        /// <param name="incomeInfo"></param>
         public ExportIncomesResponse(ResponseType config, bool hasMore, IncomeInfo[] incomeInfo)
             : this(config, hasMore) => IncomeInfo = incomeInfo;
 
-        #region XmlAttribute
+
         /// <summary>
         /// <para>Признак конца выборки:</para>
         /// <para>false - достигнут конец выборки;</para>
@@ -30,9 +41,8 @@ namespace GisGmp.Services.ExportIncomes
         /// </summary>
         [XmlAttribute("hasMore")]
         public bool HasMore { get; set; }
-        #endregion
 
-        #region XmlElement
+
         /// <summary>
         /// Извещение о зачислении
         /// </summary>
@@ -44,6 +54,5 @@ namespace GisGmp.Services.ExportIncomes
         }
 
         IncomeInfo[] IncomeInfoField;
-        #endregion
     }
 }

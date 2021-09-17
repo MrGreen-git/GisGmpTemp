@@ -1,17 +1,21 @@
-﻿using System;
+﻿// Do
+using System;
 using System.Xml.Serialization;
 
 namespace GisGmp.Services.ForcedAckmowledgement
 {
     /// <summary>
-    /// Появляется при квитировании с отсутствующим платежом
+    /// Признак принудтельного квитирования начисления с отсутствующим в ГИС ГМП платежом
     /// </summary>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0")]
     public class PaymentNotLoaded
     {
+        /// <summary/>
+        protected PaymentNotLoaded() {  }
+
         /// <summary>
-        /// Сумма погашения, в копейках
+        /// Сумма погашения, в копейках |> not required
         /// </summary>
         [XmlAttribute("amountReconcile")]
         public ulong AmountReconcile { get; set; }
@@ -19,7 +23,8 @@ namespace GisGmp.Services.ForcedAckmowledgement
         [XmlIgnore]
         public bool AmountReconcileSpecified { get; set; }
 
-        [XmlText()]
+        /// <summary/>
+        [XmlText]
         public bool Value { get; set; }
     }
 }

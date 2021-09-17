@@ -21,7 +21,6 @@ namespace GisGmp.Services.ExportIncomes
             : base(config) => IncomesExportConditions = exportConditions;
 
 
-        #region XmlElement
         /// <summary>
         /// Условия для предоставления информации о зачислении
         /// </summary>
@@ -33,6 +32,5 @@ namespace GisGmp.Services.ExportIncomes
         }
 
         IncomesExportConditions IncomesExportConditionsField;
-        #endregion
     }
 }

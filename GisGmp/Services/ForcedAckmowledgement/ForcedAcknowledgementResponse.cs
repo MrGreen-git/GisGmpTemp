@@ -23,7 +23,7 @@ namespace GisGmp.Services.ForcedAckmowledgement
             : base(config) => Quittance = quittances;
 
         /// <summary>
-        /// Служебное свойство
+        /// |> required
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
         [XmlElement("Done", typeof(bool))]
@@ -36,7 +36,9 @@ namespace GisGmp.Services.ForcedAckmowledgement
 
         object[] _Items;
 
-        /// <summary />
+        /// <summary>
+        /// Признак успешного выполнения операций
+        /// </summary>
         [XmlIgnore]
         public bool[] Done
         {
@@ -44,7 +46,9 @@ namespace GisGmp.Services.ForcedAckmowledgement
             set => Items = (value == null && Items?.GetType() != typeof(bool[])) ? Items : Array.ConvertAll(value, b => (object)b);
         }
 
-        /// <summary />
+        /// <summary>
+        /// Результат квитирования (квитанция)
+        /// </summary>
         [XmlIgnore]
         public QuittanceType[] Quittance
         {
