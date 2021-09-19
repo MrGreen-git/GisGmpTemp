@@ -1,0 +1,8 @@
+<req:ExportClarificationRequest xmlns:clrf="http://roskazna.ru/gisgmp/xsd/Clarification/2.4.0" xmlns:chg="http://roskazna.ru/gisgmp/xsd/Charge/2.4.0" xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:sc="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="G_cfe0c895-b33d-33bc-28d8-697f21d9e561" timestamp="2020-09-30T18:13:51" senderIdentifier="3eacb7" senderRole="70" xmlns:req="urn://roskazna.ru/gisgmp/xsd/services/export-clarification/2.4.0">
+  <com:Paging pageNumber="1" pageLength="100" />
+  <sc:ClarificationsExportConditions kind="СLARIFICATION">
+    <sc:ClarificationsConditions>
+      <sc:ClarificationID>55100120320210000000000000000008</sc:ClarificationID>
+    </sc:ClarificationsConditions>
+  </sc:ClarificationsExportConditions>
+</req:ExportClarificationRequest>

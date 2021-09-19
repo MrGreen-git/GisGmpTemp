@@ -16,6 +16,10 @@ namespace GisGmp.Services.ImportClarification
         /// <summary/>
         protected ImportClarificationRequest() { }
 
+        /// <summary />
+        public ImportClarificationRequest(RequestType config, ClarificationsPackage package)
+            : base(config) => ClarificationsPackage = package;
+
         /// <summary>
         /// Информация о сертификате ключа проверки ЭП
         /// </summary>

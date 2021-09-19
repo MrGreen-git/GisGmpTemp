@@ -1,7 +1,7 @@
 <n1:ExportIncomesRequest xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0"
 	xmlns:sc="http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0"
 	xmlns:n1="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0"
-	Id="G_dae1c895-d47d-33ac-28d8-597f11d9e561" timestamp="2021-07-01T17:25:44.585+03:00"
+	Id="G_dae1c895-d47d-33ac-28d8-597f11d9e561" timestamp="2021-07-01T17:25:44.585+05:00"
 	senderIdentifier="aaa111" senderRole="70">
 	<com:Paging pageNumber="1" pageLength="100"/>
 	<sc:IncomesExportConditions kind="INCOME">

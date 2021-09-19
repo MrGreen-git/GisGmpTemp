@@ -15,13 +15,15 @@ namespace GisGmp.Services.ImportPaymentCheck
         /// <summary/>
         protected PaymentCheckResponse() { }
 
-        public PaymentCheckResponse(ResponseType config, ImportProtocol importProtocol)
+        public PaymentCheckResponse(ResponseType config, ImportProtocolType importProtocol)
             : base(config)
         {
             ImportProtocol = importProtocol;
         }
 
-        public ImportProtocol ImportProtocol { get; set; }
+        //public ImportProtocol ImportProtocol { get; set; }
+        [XmlElement(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")] //TODO исправить эту бредятину разработчиков
+        public ImportProtocolType ImportProtocol { get; set; }
     }
 }
 

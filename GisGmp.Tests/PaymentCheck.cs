@@ -62,13 +62,12 @@ public class PaymentCheck
 
         //Act
         var response = gisgmp.CreatePaymentCheckResponse(
-            importProtocol: new ImportProtocol() 
-                {
-                    EntityID = "I_09bcf2c6-a08a-4ea2-959d-8e198ba689d9",
-                    Code = "0",
-                    Description = "Успешно (ТЕСТОВЫЕ ДАННЫЕ!)",
-                    requisiteCheckCode = "63F8FC076978E444EDC0BBA8F6EF45EC5527CD7490C567896A3CE4A0F996FB5B2021-07-01T18:06:30+03:00"
-                
+            importProtocol: new ImportProtocolType(
+                entityID: "I_09bcf2c6-a08a-4ea2-959d-8e198ba689d9",
+                code: "0",
+                description: "Успешно (ТЕСТОВЫЕ ДАННЫЕ!)")
+            {
+                    RequisiteCheckCode = "63F8FC076978E444EDC0BBA8F6EF45EC5527CD7490C567896A3CE4A0F996FB5B2021-07-01T18:06:30+03:00"                
             });
 
         //Assert              

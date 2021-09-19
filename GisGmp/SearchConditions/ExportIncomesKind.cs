@@ -11,7 +11,7 @@ namespace GisGmp.SearchConditions
         /// <summary>
         /// INCOME
         /// </summary>
-        [XmlEnum("­INCOME")]
+        [XmlEnum("INCOME")]
         Income,
     }
 }

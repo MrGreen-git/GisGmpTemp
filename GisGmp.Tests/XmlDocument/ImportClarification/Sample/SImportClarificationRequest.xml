@@ -7,7 +7,7 @@
                                 xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0"
                                 xmlns:clrf="http://roskazna.ru/gisgmp/xsd/Clarification/2.4.0"
                                 Id="G_d6a23916-a3a5-4e04-bbfc-839872f9260d"
-                                timestamp="2021-03-11T13:27:53.045+03:00"
+                                timestamp="2021-03-11T13:27:53.045+05:00"
                                 senderIdentifier="3eacb7"
                                 senderRole="70">
 	<pkg:ClarificationsPackage>

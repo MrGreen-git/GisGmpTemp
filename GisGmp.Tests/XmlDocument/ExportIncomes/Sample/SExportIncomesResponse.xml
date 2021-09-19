@@ -4,9 +4,9 @@
 	xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
 	xmlns:n1="urn://roskazna.ru/gisgmp/xsd/services/export-incomes/2.4.0"
 	Id="I_54a39db1-8753-5522-1739-bc94254ccdb4" RqId="G_dae1c895-d47d-33ac-28d8-597f11d9e561"
-	recipientIdentifier="aaa111" timestamp="2021-07-01T17:25:45.031+03:00" hasMore="false">
+	recipientIdentifier="aaa111" timestamp="2021-07-01T17:25:45.031+05:00" hasMore="false">
 	<n1:IncomeInfo incomeId="49999300920200000000000000301067"
-		incomeDate="2020-09-30T15:01:30.511+03:00" edCode="ED101" edNo="0012345"
+		incomeDate="2020-09-30T15:01:30.511+05:00" edCode="ED101" edNo="0012345" edDate="2020-09-30"
 		supplierBillID="18817072416285972102" paymentId="10471020010005233009202000000001"
 		purpose="Штраф" amount="50000" kbk="18811630020016000140" oktmo="45348000" transKind="01"
 		isUncertain="0">

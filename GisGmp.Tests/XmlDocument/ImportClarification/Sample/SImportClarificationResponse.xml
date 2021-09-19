@@ -5,7 +5,7 @@
     xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0"
     xmlns:req="urn://roskazna.ru/gisgmp/xsd/services/import-clarification/2.4.0"
     Id="I_1bb7dbca-d28f-48b1-7b39-b4a5f16d5e5c" RqId="G_fce0c522-b08d-44bc-55d8-738f10e9d068"
-    recipientIdentifier="3eacb7" timestamp="2021-03-11T13:29:43.116+03:00">
+    recipientIdentifier="3eacb7" timestamp="2021-03-11T13:29:43.116+05:00">
     <com:ImportProtocol entityID="I_9df961f3-5900-4501-ab61-7b0f3064b6d6" code="0"
         description="Успешно"/>
 </req:ImportClarificationResponse>

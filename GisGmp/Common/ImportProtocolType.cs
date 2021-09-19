@@ -53,5 +53,11 @@ namespace GisGmp.Common
         }
 
         string DescriptionField;
+
+        /// <summary>
+        /// Расширен 
+        /// </summary>
+        [XmlAttribute("requisiteCheckCode")]
+        public string RequisiteCheckCode { get; set; }
     }
 }

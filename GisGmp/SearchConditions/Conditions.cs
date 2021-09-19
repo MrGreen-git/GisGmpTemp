@@ -14,11 +14,11 @@ namespace GisGmp.SearchConditions
         [XmlElement("PaymentsConditions", typeof(PaymentsConditionsType))]
         [XmlElement("RefundsConditions", typeof(RefundsConditionsType))]
         [XmlElement("TimeConditions", typeof(TimeConditionsType))]
-        [XmlChoiceIdentifier("ItemElementName")]
+        //[XmlChoiceIdentifier("ItemElementName")]
         public object Item { get; set; }
 
-        [XmlIgnore]
-        public ItemChoiceType ItemElementName { get; set; }
+        //[XmlIgnore]
+        //public ItemChoiceType ItemElementName { get; set; }
 
         [XmlAttribute("kind")]
         public string Kind { get; set; }

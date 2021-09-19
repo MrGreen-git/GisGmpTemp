@@ -23,7 +23,7 @@ namespace GisGmp
         #endregion
 
         /// <summary/>
-        public PaymentCheckResponse CreatePaymentCheckResponse(ImportProtocol importProtocol)
+        public PaymentCheckResponse CreatePaymentCheckResponse(ImportProtocolType importProtocol)
             => new PaymentCheckResponse(
                 config: ResponseConfig,
                 importProtocol: importProtocol);

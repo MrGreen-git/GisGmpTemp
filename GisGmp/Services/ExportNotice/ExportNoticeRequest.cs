@@ -66,7 +66,7 @@ namespace GisGmp.Services.ExportNotice
             ) : this(id, timestamp, destination) => RenouncementType = renouncementType;
 
         /// <summary>
-        /// Идентификаторы получателя уведомлений по подписке
+        /// Идентификаторы получателя уведомлений по подписке | required
         /// </summary>
         public Destination Destination 
         {
@@ -76,7 +76,9 @@ namespace GisGmp.Services.ExportNotice
 
         Destination DestinationField;
 
-        /// <summary/>
+        /// <summary>
+        /// required
+        /// </summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
         [XmlElement("NoticeCharge", typeof(NoticeCharge))]
         [XmlElement("NoticeChargeExecutive", typeof(NoticeChargeExecutiveType))]
@@ -89,51 +91,61 @@ namespace GisGmp.Services.ExportNotice
             set => ItemsField = value;
         }
 
-        object[] ItemsField; 
+        object[] ItemsField;
 
-        /// <summary/>
+        /// <summary>
+        /// Уведомления о начислении, уточнении или аннулировании начисления
+        /// </summary>
         [XmlIgnore]
         public NoticeCharge[] NoticeCharge
         {
-            get => (NoticeCharge[])ItemsField;
+            get => ItemsField as NoticeCharge[];
             set => ItemsField = value;
         }
 
-        /// <summary/>
+        /// <summary>
+        /// Уведомления о неуплате начисления в установленный законодательством срок
+        /// </summary>
         [XmlIgnore]
         public NoticeChargeExecutiveType[] NoticeChargeExecutive
         {
-            get => (NoticeChargeExecutiveType[])ItemsField;
+            get => ItemsField as NoticeChargeExecutiveType[];
             set => ItemsField = value;
         }
 
-        /// <summary/>
+        /// <summary>
+        /// Уведомления о поступившем платеже, уточнении или аннулировании платежа
+        /// </summary>
         [XmlIgnore]
         public NoticePayment[] NoticePayment
         { 
-            get => (NoticePayment[])ItemsField;
+            get => ItemsField as NoticePayment[];
             set => ItemsField = value;
         }
 
-        /// <summary/>
+        /// <summary>
+        /// Уведомления о формировании квитанции
+        /// </summary>
         [XmlIgnore]
         public NoticeQuittance[] NoticeQuittance
         {
-            get => (NoticeQuittance[])ItemsField;
+            get => ItemsField as NoticeQuittance[];
             set => ItemsField = value;
         }
 
-        /// <summary/>
+        /// <summary>
+        /// Уведомление о поступившем извещении об отказе в возбуждении исполнительного производства 
+        /// </summary>
         [XmlIgnore]
         public RenouncementType[] RenouncementType
         {
-            get => (RenouncementType[])ItemsField;
+            get => ItemsField as RenouncementType[];
             set => ItemsField = value;
         }
 
 
         /// <summary>
-        /// Идентификатор запроса
+        /// Идентификатор запроса | required
         /// </summary>
         [XmlAttribute(DataType = "ID")]
         public string Id 
@@ -145,7 +157,7 @@ namespace GisGmp.Services.ExportNotice
         string IdField;
 
         /// <summary>
-        /// Дата и время формирования сообщения
+        /// Дата и время формирования ответа | required
         /// </summary>
         [XmlAttribute("timestamp")]
         public DateTime Timestamp { get; set; }

@@ -59,7 +59,7 @@
   <Class Name="GisGmp.Clarification.ClarificationType" Collapsed="true">
     <Position X="12.25" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AABUAgAAQAEAICAAWAAgAAAECAEQAFQBCAAgAAIAgCA=</HashCode>
+      <HashCode>AABUAgAAQAEAICAAWABgAAAECAAQAFQBCAAgAAIAgCA=</HashCode>
       <FileName>Clarification\ClarificationType.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -438,6 +438,9 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Services\ExportClarification\ExportClarificationRequest.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ClarificationsExportConditions" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Common.ExportRequestType" Collapsed="true">
     <Position X="1.75" Y="16.75" Width="2.25" />
@@ -466,6 +469,9 @@
       <HashCode>AAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ExportIncomes\ExportIncomesRequest.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IncomesExportConditions" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Services.ExportNotice.ExportNoticeRequest" Collapsed="true">
     <Position X="2.75" Y="25" Width="2.25" />
@@ -557,6 +563,9 @@
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Services\ExportPayments\ExportPaymentsRequest.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PaymentsExportConditions" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Services.ExportQuittances.ExportQuittancesRequest" Collapsed="true">
     <Position X="3.25" Y="22" Width="2.25" />
@@ -571,6 +580,9 @@
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Services\ExportQuittances\ExportQuittancesRequest.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="QuittancesExportConditions" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Services.ExportRefunds.ExportRefundsRequest" Collapsed="true">
     <Position X="3.25" Y="23" Width="2.25" />
@@ -585,6 +597,9 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAQAAAA=</HashCode>
       <FileName>Services\ExportRefunds\ExportRefundsRequest.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RefundsExportConditions" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Services.ForcedAckmowledgement.ForcedAcknowledgementRequest" Collapsed="true">
     <Position X="1.75" Y="10.5" Width="2.5" />
@@ -681,7 +696,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="GisGmp.Services.SubscriptionService.SubscriptionServiceRequest" Collapsed="true">
-    <Position X="1.75" Y="15.5" Width="2.25" />
+    <Position X="1.75" Y="15.5" Width="3.5" />
     <InheritanceLine Type="GisGmp.Common.RequestType" FixedToPoint="true">
       <Path>
         <Point X="1.5" Y="1.812" />
@@ -780,17 +795,10 @@
       <FileName>Services\ExportNoticeNSI\NoticeNSI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GisGmp.SubscriptionService.CreateSubscription" Collapsed="true">
-    <Position X="6" Y="15.5" Width="3.75" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAACAAAAAAAAAgEAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Services\SubscriptionService\CreateSubscription.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GisGmp.Services.ForcedAckmowledgement.AnnulmentReconcile" Collapsed="true">
     <Position X="6" Y="10.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAACAAAAAAAAAAAAAAAABCAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ForcedAckmowledgement\AnnulmentReconcile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -804,7 +812,7 @@
   <Class Name="GisGmp.Services.ForcedAckmowledgement.Reconcile" Collapsed="true">
     <Position X="6" Y="12" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAACAAAAAAAAAAAAAAAABCAAAAAAAAAAAA=</HashCode>
       <FileName>Services\ForcedAckmowledgement\Reconcile.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -833,10 +841,52 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GisGmp.SearchConditions.ChargesExportConditions" Collapsed="true">
-    <Position X="7.5" Y="18" Width="2" />
+    <Position X="7.5" Y="18" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SearchConditions\ChargesExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.ClarificationsExportConditions" Collapsed="true">
+    <Position X="7.5" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\ClarificationsExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.IncomesExportConditions" Collapsed="true">
+    <Position X="7.5" Y="20" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\IncomesExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.PaymentsExportConditions" Collapsed="true">
+    <Position X="7.5" Y="21" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\PaymentsExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.QuittancesExportConditions" Collapsed="true">
+    <Position X="7.5" Y="22" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\QuittancesExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.RefundsExportConditions" Collapsed="true">
+    <Position X="7.5" Y="23" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\RefundsExportConditions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GisGmp.SearchConditions.Conditions" Collapsed="true">
+    <Position X="6.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchConditions\Conditions.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

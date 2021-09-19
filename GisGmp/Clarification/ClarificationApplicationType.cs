@@ -4,36 +4,55 @@ using System.Xml.Serialization;
 namespace GisGmp.Clarification
 {
     /// <summary>
-    /// Тип для хранения реквизитов платежного документа.
+    /// Реквизиты платежного документа
     /// </summary>
     [Serializable]
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Clarification/2.4.0")]
     public class ClarificationApplicationType
     {
+        /// <summary/>
+        protected ClarificationApplicationType() { }
+
+        /// <summary/>
+        public ClarificationApplicationType(
+            originalDetailType originalDetails,
+            setDetailType setDetails,
+            string ordinalNumber,
+            AppCode appCode,
+            DateTime appDate
+            ) 
+        { 
+            OriginalDetails = originalDetails;
+            SetDetails = setDetails;
+            OrdinalNumber = ordinalNumber;
+            AppCode = appCode;
+            AppDate = appDate;
+        }
+
         /// <summary>
-        /// Реквизиты уточняемого платежного документа.
+        /// Реквизиты уточняемого платежного документа |> required
         /// </summary>
         public originalDetailType OriginalDetails { get; set; }
 
         /// <summary>
-        /// Новые реквизиты платежного документа.
+        /// Новые реквизиты платежного документа |> required
         /// </summary>
         public setDetailType SetDetails { get; set; }
 
         /// <summary>
-        /// Указывается уникальный цифровой порядковый номер строки распоряжения в пределах оформляемого распоряжения.
+        /// Номер п/п |> required
         /// </summary>
         [XmlAttribute("ordinalNumber")]
         public string OrdinalNumber { get; set; }
 
         /// <summary>
-        /// Указывается наименование уточняемого документа.
+        /// Наименование |> not required
         /// </summary>
         [XmlAttribute("applicationName")]
         public string ApplicationName { get; set; }
 
         /// <summary>
-        /// Код платежного документа
+        /// Код платежного документа |> required
         /// </summary>
         [XmlAttribute("appCode")]
         public AppCode AppCode { get; set; }
@@ -42,13 +61,13 @@ namespace GisGmp.Clarification
         public bool AppCodeSpecified { get; set; }
 
         /// <summary>
-        /// Номер уточняемого платежного документа.
+        /// Номер платежного документа |> not required
         /// </summary>
-        [XmlAttribute]
+        [XmlAttribute("appNum")]
         public string AppNum { get; set; }
 
         /// <summary>
-        /// Дата уточняемого платежного документа.
+        /// Дата платежного документа |> required
         /// </summary>
         [XmlAttribute("appDate", DataType = "date")]
         public DateTime AppDate { get; set; }
@@ -57,19 +76,19 @@ namespace GisGmp.Clarification
         public bool AppDateSpecified { get; set; }
 
         /// <summary>
-        /// Указывается УИЗ извещения о зачислении, в отношении которого формируется уведомление об уточнении вида и принадлежности платежа.
+        /// УИЗ |> not required
         /// </summary>
         [XmlAttribute("incomeId")]
         public string IncomeId { get; set; }
 
         /// <summary>
-        /// Указывается номер распоряжения, полученного территориальным органом Федерального казначейства в качестве приложения к выписке из казначейского счета.
+        /// Номер |> not required
         /// </summary>
         [XmlAttribute("applicationNumber")]
         public string ApplicationNumber { get; set; }
 
         /// <summary>
-        /// Указывается дата распоряжения, полученного территориальным органом Федерального казначейства в качестве приложения к выписке из казначейского счета.
+        /// Дата |> not required
         /// </summary>
         [XmlAttribute("applicationDate", DataType = "date")]
         public DateTime ApplicationDate { get; set; }

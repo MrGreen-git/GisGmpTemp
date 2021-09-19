@@ -34,6 +34,7 @@ public class ExportRefunds
 
         ////Assert              
         //Assert.True(CheckObjToXml(request, $@"{nameof(ExportRefundsRequest)}", pathRoot));
+        Assert.True(false);
     }
 
     [Fact]
@@ -92,5 +93,6 @@ public class ExportRefunds
 
         ////Assert              
         //Assert.True(CheckObjToXml(response, $@"{nameof(ExportRefundsResponse)}", pathRoot));
+        Assert.True(false);
     }
 }

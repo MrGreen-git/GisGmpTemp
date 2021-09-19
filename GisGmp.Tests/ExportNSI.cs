@@ -31,6 +31,7 @@ public class ExportNSI
 
         ////Assert              
         //Assert.True(CheckObjToXml(request, $@"{nameof(ExportNSIRequest1)}", pathRoot));
+        Assert.True(false);
     }
 
     [Fact]
@@ -60,6 +61,7 @@ public class ExportNSI
 
         ////Assert              
         //Assert.True(CheckObjToXml(response, $@"{nameof(ExportNSIResponse1)}", pathRoot));
+        Assert.True(false);
     }
     #endregion
 
@@ -85,6 +87,7 @@ public class ExportNSI
 
         ////Assert              
         //Assert.True(CheckObjToXml(request, $@"{nameof(ExportNSIRequest2)}", pathRoot));
+        Assert.True(false);
     }
 
     [Fact]
@@ -112,6 +115,7 @@ public class ExportNSI
 
         ////Assert              
         //Assert.True(CheckObjToXml(response, $@"{nameof(ExportNSIResponse2)}", pathRoot));
+        Assert.True(false);
     }
     #endregion
 }

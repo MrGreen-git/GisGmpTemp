@@ -29,7 +29,7 @@ public class ExportCharges
 
         //Act
         var request = gisgmp.CreateExportChargesRequest(
-            chargesKind: ExportChargesKind.ChargeStatus,
+            kind: ExportChargesKind.ChargeStatus,
             supplierBillID: new SupplierBillIDType[] 
             { 
                 new("32117072411021588933")           

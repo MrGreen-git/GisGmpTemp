@@ -12,19 +12,21 @@ namespace GisGmp.SearchConditions
         protected PayersConditionsType() { }
 
         /// <summary/>
-        public PayersConditionsType(PayerId[] payerId, Beneficiary[] beneficiary
-            ) 
+        public PayersConditionsType(PayerId[] payerId, Beneficiary[] beneficiary, string[] kBKlist = default, TimeIntervalType timeInterval = default) 
         {
             PayerId = payerId;
             Beneficiary = beneficiary;
+            KBKlist = kBKlist;
+            TimeInterval = timeInterval;
         }
 
         /// <summary/>
-        public PayersConditionsType(INNType[] payerInn, Beneficiary[] beneficiary
-            )
+        public PayersConditionsType(INNType[] payerInn, Beneficiary[] beneficiary, string[] kBKlist = default, TimeIntervalType timeInterval = default)
         {
             PayerInn = payerInn;
             Beneficiary = beneficiary;
+            KBKlist = kBKlist;
+            TimeInterval = timeInterval;
         }
 
         /// <summary>

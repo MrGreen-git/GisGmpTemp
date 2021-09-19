@@ -106,6 +106,7 @@ public class ExportNoticeNSI
 
         ////Assert              
         //Assert.True(CheckObjToXml(request, $@"{nameof(ExportNoticeNSIRequest2)}", pathRoot));
+        Assert.True(false);
     }
 
     [Fact]

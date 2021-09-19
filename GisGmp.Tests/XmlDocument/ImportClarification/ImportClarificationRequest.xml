@@ -1,0 +1,24 @@
+<req:ImportClarificationRequest xmlns:clrf="http://roskazna.ru/gisgmp/xsd/Clarification/2.4.0" xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0" xmlns:chg="http://roskazna.ru/gisgmp/xsd/Charge/2.4.0" xmlns:rfd="http://roskazna.ru/gisgmp/xsd/Refund/2.4.0" xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0" xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:pkg="http://roskazna.ru/gisgmp/xsd/Package/2.4.0" Id="G_d6a23916-a3a5-4e04-bbfc-839872f9260d" timestamp="2021-03-11T13:27:53.045+05:00" senderIdentifier="3eacb7" senderRole="70" xmlns:req="urn://roskazna.ru/gisgmp/xsd/services/import-clarification/2.4.0">
+  <pkg:ClarificationsPackage>
+    <pkg:ImportedClarification clarificationNumber="202103310000001" clarificationDate="2021-03-11" clarificationId="55100120320210000000000000000008" paymentId="10471020010005233009202000000001" authorAccount="03511А37790" authorName="Управление Федеральной службы государственной регистрации, кадастра и картографии по Новосибирской области" codeUBP="001А3779" mainAuthorName="Федеральная служба государственной регистрации, кадастра и картографии" kbkGlavaCode="321" budgetLevel="1" okpo="74953678" finBodyAccount="03511А37790" financialBody="Министерство финансов Новосибирской области" tofkName="Управление Федерального казначейства по Новосибирской области" tofkCode="5100" payerName="ООО Альфа" payerIdentifier="2007703461103774301001" inn="7703461103" kpp="774301001" payerDocument="01-456" payerAccount="40702810500000000001" findingoutRequestNum="123456789012345" findingoutRequestDate="2021-03-12" originatorId="301D63" Id="I_9df961f3-5900-4501-ab61-7b0f3064b6d6">
+      <clrf:ClarificationApplication ordinalNumber="1" applicationName="1" appCode="PL" appNum="01232567890123456789" appDate="2021-03-10" incomeId="45100110320210000000000000000004" applicationNumber="000000000000001" applicationDate="2021-03-11">
+        <clrf:OriginalDetails payeeName="Управление Федеральной службы государственной регистрации, кадастра и картографии по Новосибирской области" inn="5406299278" kpp="540601001" payeeAccount="01234567891" oktmo="50701000" kbk="32110807020011000110" subsidy="1234567890" purpose="Государственная пошлина за государственную регистрацию прав, ограничений (обременений) прав на недвижимое имущество и сделок с ним" description="Описание тестовое" amount="35000" />
+        <clrf:SetDetails kbk="32110807020018000110" />
+      </clrf:ClarificationApplication>
+      <clrf:Signs>
+        <clrf:HeadPost>Смирнова А.М.</clrf:HeadPost>
+        <clrf:HeadName>Смирнова А.М.</clrf:HeadName>
+        <clrf:ExecutorPost>Петров А.Г.</clrf:ExecutorPost>
+        <clrf:ExecutorName>Петров А.Г.</clrf:ExecutorName>
+        <clrf:ExecutorNum>Петров А.Г.</clrf:ExecutorNum>
+        <clrf:SignDate>2021-03-11</clrf:SignDate>
+        <clrf:TOFKheadPost>Смирнова А.М.</clrf:TOFKheadPost>
+        <clrf:TOFKheadName>Смирнова А.М.</clrf:TOFKheadName>
+        <clrf:TOFKexecutorPost>Петров А.Г.</clrf:TOFKexecutorPost>
+        <clrf:TOFKexecutorName>Петров А.Г.</clrf:TOFKexecutorName>
+        <clrf:TOFKexecutorNum>Петров А.Г.</clrf:TOFKexecutorNum>
+        <clrf:TOFKsignDate>2021-03-11</clrf:TOFKsignDate>
+      </clrf:Signs>
+    </pkg:ImportedClarification>
+  </pkg:ClarificationsPackage>
+</req:ImportClarificationRequest>
