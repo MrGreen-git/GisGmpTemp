@@ -24,12 +24,12 @@ namespace GisGmp.Services.ExportNoticeNSI
         }
 
         /// <summary>
-        /// Код маршрутизации участника для предоставления информации по ВС с табличной маршрутизацией | required
+        /// Код маршрутизации участника для предоставления информации по ВС с табличной маршрутизацией |> required
         /// </summary>
         public string RoutingCode { get; set; }
 
         /// <summary>
-        /// Подтверждение приема сообщения с рассылкой уведомлений по подписке | required
+        /// Подтверждение приема сообщения с рассылкой уведомлений по подписке |> required
         /// </summary>
         public bool ExportNoticeNSIConfirmation { get; set; }
     }

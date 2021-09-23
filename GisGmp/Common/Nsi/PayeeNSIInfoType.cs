@@ -15,7 +15,6 @@ namespace GisGmp.Common.NSI
 
         /// <summary/>
         public PayeeNSIInfoType(
-            string[] kBKlist,
             string name,
             string inn,
             string kpp,
@@ -23,7 +22,6 @@ namespace GisGmp.Common.NSI
             DateTime updateDate
             ) 
         {  
-            KBKlist = kBKlist;
             Name = name;
             Inn = inn;
             Kpp = kpp;
@@ -32,7 +30,7 @@ namespace GisGmp.Common.NSI
         }
 
         /// <summary>
-        /// Перечень КБК | required
+        /// Перечень КБК |> not required
         /// </summary>
         [XmlArrayItem("kbk", IsNullable = false)]
         public string[] KBKlist { get; set; }
@@ -50,31 +48,31 @@ namespace GisGmp.Common.NSI
         public string Name { get; set; }
 
         /// <summary>
-        /// ИНН организации | required
+        /// ИНН организации |> required
         /// </summary>
         [XmlAttribute("inn")]
         public string Inn { get; set; }
 
         /// <summary>
-        /// КПП организации | required
+        /// КПП организации |> required
         /// </summary>
         [XmlAttribute("kpp")]
         public string Kpp { get; set; }
 
         /// <summary>
-        /// Код Главы по БК | not required
+        /// Код Главы по БК |> not required
         /// </summary>
         [XmlAttribute("kbkGlavaCode")]
         public string KbkGlavaCode { get; set; }
 
         /// <summary>
-        /// Код статуса организации | required
+        /// Код статуса организации |> required
         /// </summary>
         [XmlAttribute("orgStatus")]
         public OrgStatus OrgStatus { get; set; }
 
         /// <summary>
-        /// Дата и время обновления справочника | required
+        /// Дата и время обновления справочника |> required
         /// </summary>
         [XmlAttribute("updateDate")]
         public DateTime UpdateDate { get; set; }

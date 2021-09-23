@@ -52,7 +52,7 @@ public class ImportCharges
                         taxDocNumber: "0",
                         taxDocDate: "0"))
                 {
-                    OriginatorId = "3eb5fa",
+                    OriginatorId = "3eb5fa"                
                 }
             });
 

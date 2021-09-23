@@ -90,6 +90,7 @@ public class ExportCharges
                 {
                     AcknowledgmentStatus = AcknowledgmentStatusType.Item1,
                     AcknowledgmentStatusSpecified = true //TODO исправить
+                    
                 }
             });
 

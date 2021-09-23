@@ -4,11 +4,11 @@
  xmlns:nt="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0"
  xmlns:nc="http://roskazna.ru/gisgmp/xsd/NoticeCharge/2.4.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- Id="G_90274743-6807-4651-9e9d-8c380ca92577" timestamp="2021-04-29T18:13:51.0">
+ Id="G_90274743-6807-4651-9e9d-8c380ca92577" timestamp="2021-04-29T18:13:51">
     <nt:Destination recipientIdentifier="3eb5f9">
         <nt:RoutingCode>45382000</nt:RoutingCode>
     </nt:Destination>
-    <nt:NoticeChargeExecutive supplierBillID="18819062009512650975" billDate="2021-02-04T18:13:51.0" totalAmount="50000" purpose="Штраф за неоплаченную парковку"
+    <nt:NoticeChargeExecutive supplierBillID="18819062009512650975" billDate="2021-02-04T18:13:51" totalAmount="50000" purpose="Штраф за неоплаченную парковку"
         kbk="18811630000010000140" oktmo="45348000" amountToPay="50000">
         <org:Payee name="ЦАФАП ОДД ГИБДД ГУ МВД России по г. Москве" inn="7707089111" kpp="770731015">
             <com:OrgAccount accountNumber="03100643000000019500">

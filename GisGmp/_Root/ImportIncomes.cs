@@ -6,7 +6,6 @@ namespace GisGmp
 {
     public partial class GisGmpBuilder
     {
-        /// <summary/>
         public ImportIncomesRequest CreateImportIncomesRequest(ImportedIncomeType[] importedIncomeTypes)
             => new ImportIncomesRequest(
                 config: RequestConfig,

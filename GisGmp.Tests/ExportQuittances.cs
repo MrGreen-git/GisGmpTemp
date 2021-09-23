@@ -62,7 +62,7 @@ public class ExportQuittances
                     billStatus: AcknowledgmentStatusType.Item1,
                     paymentId: "10471020010005233009202000000001"
                     )
-                {
+                {                    
                     TotalAmount = 500000,
                     TotalAmountSpecified = true, // TODO исправить
                     Balance = 0,

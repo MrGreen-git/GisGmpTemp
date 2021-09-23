@@ -30,11 +30,13 @@ namespace GisGmp.Services.ForcedAckmowledgement
         /// <summary>
         /// Перечень идентификаторов платежей
         /// </summary>
+        [XmlIgnore]
         public string PaymentId { get; set; }
 
         /// <summary>
         /// Признак принудительного квитирования начисления с отсутствующим в ГИС ГМП платежом
         /// </summary>
+        [XmlIgnore]
         public AnnulmentReconcilePaymentNotLoaded PaymentNotLoaded {  get; set; }
 
         /// <summary>
