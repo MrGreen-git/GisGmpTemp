@@ -8,27 +8,38 @@ namespace GisGmp.SearchConditions
     [XmlRoot(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IsNullable = false)]
     public class PaymentsExportConditions : Conditions
     {
-        /// <summary/>
         protected PaymentsExportConditions() { }
 
-        /// <summary/>
-        private PaymentsExportConditions(ExportPaymentsKind kind) 
-            => Kind = kind.GetXmlValue();
+        private PaymentsExportConditions(ExportPaymentsKind kind) => Kind = kind.GetXmlValue();
 
-        /// <summary/>
-        public PaymentsExportConditions(ExportPaymentsKind kind, ChargesConditionsType conditions) 
-            : this(kind) => Item = conditions;
+        public PaymentsExportConditions(ExportPaymentsKind kind, ChargesConditionsType conditions) : this(kind) => ChargesConditions = conditions;
+        public PaymentsExportConditions(ExportPaymentsKind kind, PayersConditionsType conditions) : this(kind) => PayersConditions = conditions;
+        public PaymentsExportConditions(ExportPaymentsKind kind, PaymentsConditionsType conditions) : this(kind) => PaymentsConditions = conditions;
+        public PaymentsExportConditions(ExportPaymentsKind kind, TimeConditionsType conditions) : this(kind) => TimeConditions = conditions;
 
-        /// <summary/>
-        public PaymentsExportConditions(ExportPaymentsKind kind, PayersConditionsType conditions) 
-            : this(kind) => Item = conditions;
 
-        /// <summary/>
-        public PaymentsExportConditions(ExportPaymentsKind kind, PaymentsConditionsType conditions) 
-            : this(kind) => Item = conditions;
+        [XmlIgnore]
+        public ChargesConditionsType ChargesConditions {
+            get => Item as ChargesConditionsType;
+            set => Item = value;
+        }
 
-        /// <summary/>
-        public PaymentsExportConditions(ExportPaymentsKind kind, TimeConditionsType conditions) 
-            : this(kind) => Item = conditions;
+        [XmlIgnore]
+        public PayersConditionsType PayersConditions {
+            get => Item as PayersConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public PaymentsConditionsType PaymentsConditions {
+            get => Item as PaymentsConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public TimeConditionsType TimeConditions {
+            get => Item as TimeConditionsType;
+            set => Item = value;
+        }
     }
 }

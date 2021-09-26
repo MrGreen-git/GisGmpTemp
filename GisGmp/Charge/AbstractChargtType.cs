@@ -21,13 +21,12 @@ namespace GisGmp.Charge
         [XmlAttribute("billDate")]
         public DateTime BillDate { get; set; }
 
-
         /// <summary>
         /// Поле номер 1001: Дата, до которой(включительно) актуально выставленное начисление.
         /// <para>use: not required</para>
         /// </summary>
         [XmlAttribute("validUntil", DataType = "date")]
-        public DateTime ValidUntil { get; set; }
+        public DateTime ValidUntil { get; set; }   //TODO specified
 
         [XmlIgnore]
         public bool ValidUntilSpecified { get; set; }
@@ -60,14 +59,14 @@ namespace GisGmp.Charge
         /// <para>use: required</para>
         /// </summary>
         [XmlAttribute("oktmo")]
-        public string Oktmo { get; set; }  //TODO type
+        public string Oktmo { get; set; } //TODO type
 
         /// <summary>
         /// Поле номер 37: Дата отсылки(вручения) плательщику документа с начислением в случае, если этот документ был отослан(вручен) получателем средств плательщику
         /// <para>use: not required</para>
         /// </summary>
         [XmlAttribute("deliveryDate", DataType = "date")]
-        public DateTime DeliveryDate { get; set; }
+        public DateTime DeliveryDate { get; set; } //TODO specified
 
         [XmlIgnore]
         public bool DeliveryDateSpecified { get; set; }
@@ -86,7 +85,7 @@ namespace GisGmp.Charge
         /// <para>use: not required</para>
         /// </summary>
         [XmlAttribute("paymentTerm", DataType = "date")]
-        public DateTime PaymentTerm { get; set; }
+        public DateTime PaymentTerm { get; set; } //TODO specified
 
         [XmlIgnore]
         public bool PaymentTermSpecified { get; set; }
@@ -94,10 +93,10 @@ namespace GisGmp.Charge
         /// <summary>
         /// Поле номер 1002: Признак предварительного начисления
         /// <para>use: not required</para>
-        /// <para>pattern: "PRIOR"</para>
-        /// <para>pattern: "TEMP"</para>
+        /// <para>value: PRIOR</para>
+        /// <para>value: TEMP</para>
         /// </summary>
         [XmlAttribute("origin")]
-        public string Origin { get; set; }
+        public string Origin { get; set; } //TODO value enum
     }
 }

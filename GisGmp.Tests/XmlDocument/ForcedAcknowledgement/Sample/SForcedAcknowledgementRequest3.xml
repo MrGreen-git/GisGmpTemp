@@ -4,7 +4,7 @@
  xmlns:qt="http://roskazna.ru/gisgmp/xsd/Quittance/2.4.0"
  xmlns:ns0="urn://roskazna.ru/gisgmp/xsd/services/forced-ackmowledgement/2.4.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-Id="G_e5c652a5-0ceb-4581-93e5-233f32dd8127" timestamp="2021-07-30T18:13:51.0" senderIdentifier="3eb514"
+Id="G_e5c652a5-0ceb-4581-93e5-233f32dd8127" timestamp="2021-07-30T18:13:51" senderIdentifier="3eb514"
      senderRole="22">
     <ns0:ServiceProvided>
         <ns0:PaymentDataInfo paymentId="10471020010005233009202100005896"/>

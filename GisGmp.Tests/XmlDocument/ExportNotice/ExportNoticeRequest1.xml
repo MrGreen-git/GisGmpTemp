@@ -1,0 +1,12 @@
+<nt:ExportNoticeRequest xmlns:nc="http://roskazna.ru/gisgmp/xsd/NoticeCharge/2.4.0" xmlns:pmnt="http://roskazna.ru/gisgmp/xsd/Payment/2.4.0" xmlns:dv="http://roskazna.ru/gisgmp/xsd/Renouncement/2.4.0" xmlns:org="http://roskazna.ru/gisgmp/xsd/Organization/2.4.0" xmlns:com="http://roskazna.ru/gisgmp/xsd/Common/2.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="G_e1ed8ef7-19a6-44b9-ac0b-34a0e20b09bd" timestamp="2020-09-30T13:12:43.696+05:00" xmlns:nt="urn://roskazna.ru/gisgmp/xsd/services/ExportNotice/2.4.0">
+  <nt:Destination recipientIdentifier="3eb6e5">
+    <nt:RoutingCode>45382000</nt:RoutingCode>
+  </nt:Destination>
+  <nt:NoticeCharge supplierBillID="88818012505024915378" billDate="2020-09-30T10:12:30.313+05:00" totalAmount="5000" purpose="test" kbk="32111301031016000130" amountToPay="0">
+    <nc:Payer payerIdentifier="1220000000007712579832" payerName="Тестовый плательщик" />
+    <com:ChangeStatusInfo>
+      <com:Meaning>1</com:Meaning>
+    </com:ChangeStatusInfo>
+    <nc:EventNotification>1</nc:EventNotification>
+  </nt:NoticeCharge>
+</nt:ExportNoticeRequest>

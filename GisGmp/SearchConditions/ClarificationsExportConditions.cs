@@ -11,31 +11,45 @@ namespace GisGmp.SearchConditions
     [XmlRoot(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IsNullable = false)]
     public class ClarificationsExportConditions : Conditions
     {
-        /// <summary/>
         protected ClarificationsExportConditions() { }
 
-        /// <summary/>
-        private ClarificationsExportConditions(ExportClarificationsKind kind)
-            => Kind = kind.GetXmlValue();
+        private ClarificationsExportConditions(ExportClarificationsKind kind) => Kind = kind.GetXmlValue();
 
-        /// <summary/>
-        public ClarificationsExportConditions(ExportClarificationsKind kind, ClarificationsConditionsType conditions)
-            : this(kind) => Item = conditions;
+        public ClarificationsExportConditions(ExportClarificationsKind kind, ClarificationsConditionsType conditions) : this(kind) => ClarificationsConditions = conditions;
+        public ClarificationsExportConditions(ExportClarificationsKind kind, IncomesConditionsType conditions) : this(kind) => IncomesConditions = conditions;
+        public ClarificationsExportConditions(ExportClarificationsKind kind, PaymentsConditionsType conditions) : this(kind) => PaymentsConditions = conditions;
+        public ClarificationsExportConditions(ExportClarificationsKind kind, PayersConditionsType conditions) : this(kind) => PayersConditions = conditions;
+        public ClarificationsExportConditions(ExportClarificationsKind kind, TimeConditionsType conditions) : this(kind) => TimeConditions = conditions;
 
-        /// <summary/>
-        public ClarificationsExportConditions(ExportClarificationsKind kind, IncomesConditionsType conditions)
-            : this(kind) => Item = conditions;
 
-        /// <summary/>
-        public ClarificationsExportConditions(ExportClarificationsKind kind, PaymentsConditionsType conditions)
-            : this(kind) => Item = conditions;
+        [XmlIgnore]
+        public ClarificationsConditionsType ClarificationsConditions { 
+            get => Item as ClarificationsConditionsType;
+            set => Item = value;
+        }
 
-        /// <summary/>
-        public ClarificationsExportConditions(ExportClarificationsKind kind, PayersConditionsType conditions)
-            : this(kind) => Item = conditions;
+        [XmlIgnore]
+        public IncomesConditionsType IncomesConditions { 
+            get => Item as IncomesConditionsType;
+            set => Item = value;
+        }
 
-        /// <summary/>
-        public ClarificationsExportConditions(ExportClarificationsKind kind, TimeConditionsType conditions)
-            : this(kind) => Item = conditions;
+        [XmlIgnore]
+        public PaymentsConditionsType PaymentsConditions { 
+            get => Item as PaymentsConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public PayersConditionsType PayersConditions {
+            get => Item as PayersConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public TimeConditionsType TimeConditions { 
+            get => Item as TimeConditionsType;
+            set => Item = value;
+        }
     }
 }

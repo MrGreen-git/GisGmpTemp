@@ -11,9 +11,28 @@ namespace GisGmp.SearchConditions
         protected ChargesExportConditions() { }
 
         private ChargesExportConditions(ExportChargesKind kind) => Kind = kind.GetXmlValue();
-        public ChargesExportConditions(ExportChargesKind kind, ChargesConditionsType conditions) : this(kind) => Item = conditions;
-        public ChargesExportConditions(ExportChargesKind kind, PayersConditionsType conditions) : this(kind) => Item = conditions;
-        public ChargesExportConditions(ExportChargesKind kind, TimeConditionsType conditions) : this(kind) => Item = conditions;
 
+        public ChargesExportConditions(ExportChargesKind kind, ChargesConditionsType conditions) : this(kind) => ChargesConditions = conditions;
+        public ChargesExportConditions(ExportChargesKind kind, PayersConditionsType conditions) : this(kind) => PayersConditions = conditions;
+        public ChargesExportConditions(ExportChargesKind kind, TimeConditionsType conditions) : this(kind) => TimeConditions = conditions;
+
+
+        [XmlIgnore]
+        public ChargesConditionsType ChargesConditions {
+            get => Item as ChargesConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public PayersConditionsType PayersConditions { 
+            get => Item as PayersConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public TimeConditionsType TimeConditions { 
+            get => Item as TimeConditionsType;
+            set => Item = value;
+        }
     }
 }

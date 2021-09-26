@@ -8,18 +8,24 @@ namespace GisGmp.SearchConditions
     [XmlRoot(Namespace = "http://roskazna.ru/gisgmp/xsd/SearchConditions/2.4.0", IsNullable = false)]
     public class QuittancesExportConditions : Conditions
     {
-        /// <summary/>
         protected QuittancesExportConditions() { }
 
-        private QuittancesExportConditions(ExportQuittancesKind kind) 
-            => Kind = kind.GetXmlValue();
+        private QuittancesExportConditions(ExportQuittancesKind kind) => Kind = kind.GetXmlValue();
 
-        /// <summary/>
-        public QuittancesExportConditions(ExportQuittancesKind kind, ChargesConditionsType conditions) 
-            : this(kind) => Item = conditions;
+        public QuittancesExportConditions(ExportQuittancesKind kind, ChargesConditionsType conditions) : this(kind) => ChargesConditions = conditions;
+        public QuittancesExportConditions(ExportQuittancesKind kind, TimeConditionsType conditions) : this(kind) => TimeConditions = conditions;
 
-        /// <summary/>
-        public QuittancesExportConditions(ExportQuittancesKind kind, TimeConditionsType conditions) 
-            : this(kind) => Item = conditions;
+
+        [XmlIgnore]
+        public ChargesConditionsType ChargesConditions {
+            get => Item as ChargesConditionsType;
+            set => Item = value;
+        }
+
+        [XmlIgnore]
+        public TimeConditionsType TimeConditions {
+            get => Item as TimeConditionsType;
+            set => Item = value;
+        }
     }
 }

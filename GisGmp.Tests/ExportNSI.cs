@@ -1,4 +1,5 @@
 ﻿using GisGmp.Common.NSI;
+using GisGmp.Services.ExportNSI;
 
 namespace GisGmp.Tests;
 
@@ -10,28 +11,30 @@ public class ExportNSI
     [Fact]
     public void ExportNSIRequest1()
     {
-        ////Arrange
-        //GisGmpBuilder gisgmp = new()
-        //{
-        //    TestEnable = true,
-        //    //
-        //    TestId = "G_cfe0c598-b35d-34bc-28d8-697f21d9e251",
-        //    TestTimestamp = new(day: 12, month: 06, year: 2020, hour: 10, minute: 18, second: 43, millisecond: 684, kind: DateTimeKind.Local),
-        //    SenderIdentifier = "3637ed",
-        //    SenderRole = "7"
-        //};
+        //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_30c7731b-739d-47bd-befd-86b50e800803",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 12, minute: 13, second: 51, millisecond: 621, kind: DateTimeKind.Local),
+            SenderIdentifier = "3637ed",
+            SenderRole = "7"
+        };
 
-        ////Act
-        //var request = gisgmp.CreateExportNSIRequest(
-        //    new NSIExportConditions(
-        //        payeeData: new(
-        //            inn: "7705401341", 
-        //            kpp: "770542151"))
-        //    );
+        //Act
+        var request = gisgmp.CreateExportNSIRequest(
+            nSIExportConditions: new()
+            {
+                PayeeData = new() {
+                    Inn = "7705401341",
+                    Kpp = "770542151" }
+            },
+            urn: new("")
+            );
 
-        ////Assert              
-        //Assert.True(CheckObjToXml(request, $@"{nameof(ExportNSIRequest1)}", pathRoot));
-        Assert.True(false);
+        //Assert              
+        Assert.True(CheckObjToXml(request, $@"{nameof(ExportNSIRequest1)}", pathRoot));
     }
 
     [Fact]

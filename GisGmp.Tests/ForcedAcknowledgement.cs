@@ -94,23 +94,37 @@ public class ForcedAcknowledgement
             annulmentReconcile: new(
                 uin: new("18817072711544878492"))
             {
-                Items = new PaymentIdType[]
+                Items = new string[]
                 {
                     new("10471020010005233009202100000851")
                 }
             });
 
         //Assert              
-        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse2)}", pathRoot));
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementRequest2)}", pathRoot));
     }
 
     [Fact]
     public void ForcedAcknowledgementResponse2()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "I_e8c656a3-5ceb-5474-78e5-254f32dd8322",
+            RqId = "G_e5c906a5-0ceb-4320-97e5-233f32dd8925",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            RecipientIdentifier = "3eb551"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementResponse(
+            done: new bool[]{ 
+                true });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse2)}", pathRoot));
     }
     #endregion
 
@@ -119,18 +133,48 @@ public class ForcedAcknowledgement
     public void ForcedAcknowledgementRequest3()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_e5c652a5-0ceb-4581-93e5-233f32dd8127",
+            TestTimestamp = new(day: 30, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            SenderIdentifier = "3eb514",
+            SenderRole = "22"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementRequest(
+            serviceProvided: new(
+                paymentDataInfo: new PaymentDataInfo[] { 
+                    new(paymentId: "10471020010005233009202100005896")
+                }));
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementRequest3)}", pathRoot));
     }
 
     [Fact]
     public void ForcedAcknowledgementResponse3()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "I_e6c256a4-0ceb-5421-93e5-254f32dd8654",
+            RqId = "G_e5c652a5-0ceb-4581-93e5-233f32dd8127",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            RecipientIdentifier = "3eb514"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementResponse(
+            done: new bool[]{
+                true });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse3)}", pathRoot));
     }
     #endregion
 
@@ -139,18 +183,48 @@ public class ForcedAcknowledgement
     public void ForcedAcknowledgementRequest4()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_e7c906a4-6ceb-3520-78e5-951f32dd8861",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            SenderIdentifier = "3eb514",
+            SenderRole = "22"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementRequest(
+            annulmentServiceProvided: new(
+                paymentDataID: new PaymentDataID[]{ 
+                    new("10471020010005233009202100058962")
+                }));
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementRequest4)}", pathRoot));
     }
 
     [Fact]
     public void ForcedAcknowledgementResponse4()
     {
         //Arrange
+        GisGmpBuilder gisgmp = new()
+        {
+            TestEnable = true,
+            //
+            TestId = "G_e7c906a4-6ceb-3520-78e5-951f32dd8861",
+            RqId = "G_e7c936a2-3ceb-4520-69e5-287f32dd8879",
+            TestTimestamp = new(day: 01, month: 07, year: 2021, hour: 18, minute: 13, second: 51),
+            RecipientIdentifier = "3eb514"
+        };
+
         //Act
+        var response = gisgmp.CreateForcedAcknowledgementResponse(
+            done: new bool[]{
+                true });
+
         //Assert              
-        Assert.True(false);
+        Assert.True(CheckObjToXml(response, $@"{nameof(ForcedAcknowledgementResponse4)}", pathRoot));
     }
     #endregion
 }

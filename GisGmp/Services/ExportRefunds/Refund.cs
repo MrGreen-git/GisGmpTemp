@@ -12,6 +12,12 @@ namespace GisGmp.Services.ExportRefunds
     [XmlType(AnonymousType = true, Namespace = "urn://roskazna.ru/gisgmp/xsd/services/export-refunds/2.4.0")]
     public class Refund : RefundType
     {
+        /// <summary/>
+        protected Refund() { }
+
+        public Refund(ChangeStatusInfo changeStatusInfo, RefundType refund)
+            : base(refund) => ChangeStatusInfo = changeStatusInfo;
+
         /// <summary>
         /// Сведения о статусе начисления и основаниях его изменения
         /// </summary>
