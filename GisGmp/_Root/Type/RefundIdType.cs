@@ -8,15 +8,12 @@ namespace GisGmp
     /// </summary>
     public class RefundIdType : IConvertToString
     {
-        /// <summary/>
         protected RefundIdType() { }
 
-        /// <summary/>
         public string Value { get; }
 
-        readonly string[] patterns = { }; // TODO [regex]
+        readonly string[] patterns = { }; // TODO [regex] "\d{8}((0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])\d{4})\d{9}"
 
-        /// <summary/>
         public RefundIdType(string uir)
         {
             if (uir is null) throw new Exception($"{nameof(RefundIdType)} не может иметь значение null");
@@ -27,13 +24,10 @@ namespace GisGmp
             Value = uir;
         }
 
-        /// <summary/>
         public override string ToString() => Value;
 
-        /// <summary/>
         public static implicit operator RefundIdType(string uir) => new RefundIdType(uir);
 
-        /// <summary>
         public static implicit operator string(RefundIdType uir) => uir?.Value;
     }
 }

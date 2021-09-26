@@ -1,4 +1,7 @@
-﻿namespace GisGmp
+﻿using System;
+using System.Linq;
+
+namespace GisGmp
 {
     public static class ArrayObjectExtension
     {
@@ -25,6 +28,23 @@
             while (ind2 < array.Length) newArray[ind1++] = array[ind2++];
 
             return newArray;
+        }
+
+        public static T[] IsRequired<T>(this T[] value) where T : class
+            => value ?? throw new Exception($"Параметр обязателен для заполнения, текущее значение null");
+
+        public static T[] IsRange<T>(this T[] value, uint min, uint max) where T : class
+            => value is null
+                ? value
+                : value.Length < min || value.Length > max
+                    ? throw new Exception($"Допустимое кол-во элементов {min}..{max}, текущее кол-во {value.Length}")
+                    : !value.All(x => x != null)
+                           ? throw new Exception($"Элемент не может иметь значение null")
+                           : value;
+        
+        public static T[] IsPattern<T>(this T[] items) where T : class
+        {
+            return items;
         }
     }
 }

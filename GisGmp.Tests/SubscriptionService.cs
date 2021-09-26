@@ -1,4 +1,6 @@
-﻿namespace GisGmp.Tests;
+﻿using System.Runtime.InteropServices;
+
+namespace GisGmp.Tests;
 
 public class SubscriptionService
 {

@@ -39,7 +39,7 @@ public class ImportRefunds
                         refundApplication: new(
                             appNum: "256894",
                             appDate: new(day: 01, month: 07, year: 2021),
-                            paymentIdType: "10471020010005233009202000000012",
+                            paymentId: "10471020010005233009202000000012",
                             cashType: 1,
                             amount: 50000,
                             purpose: "Штраф за нарушение ПДД.Управление транспортным средством с нечитаемыми государственными регистрационными знаками"),

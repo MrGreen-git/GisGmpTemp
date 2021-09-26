@@ -28,6 +28,7 @@ public class ImportRenouncement
                     renouncement: new(
                         supplierBillID: "32117072411021588933",
                         renouncementID: "F304A7C290420210000005894",
+                        rulingDate: new(day: 25, month: 04, year: 2021),
                         rulingNum: "356П",
                         refusalGround: "Документ не соответствует требованиям, предъявляемым к исполнительным документам",
                         reasonCode: ReasonCode.Item4,
@@ -47,10 +48,7 @@ public class ImportRenouncement
                             idDocNo: "32117072411021588933",
                             idDocDate: new(day: 05, month: 03, year: 2021),
                             subjCode: "1150000",
-                            subjName: "Штраф по законодательству об административных правонарушениях (АП)"))
-                    {
-                        RulingDate = new(day: 25, month: 04, year: 2021)
-                    })
+                            subjName: "Штраф по законодательству об административных правонарушениях (АП)")))
             });
 
         //Assert              

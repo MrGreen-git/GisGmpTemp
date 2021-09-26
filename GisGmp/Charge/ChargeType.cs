@@ -43,6 +43,35 @@ namespace GisGmp.Charge
             BudgetIndex = budgetIndex;
         }
 
+
+        /// <summary>
+        /// УИН
+        /// <para>use: required</para>
+        /// </summary>
+        [XmlAttribute("supplierBillID")]
+        public string SupplierBillID { get; set; }
+
+        /// <summary>
+        /// Поле номер 1011: Количество дней от даты начисления, подлежащей уплате плательщиком, по истечении которых необходимо повторно предоставлять уведомление о начислении по подписке в случае, если оно не оплачено или сумма платежей меньше суммы к оплате, указанной в начислении
+        /// not required
+        /// </summary>
+        [XmlAttribute("noticeTerm", DataType = "integer")]
+        public string NoticeTerm { get; set; }
+
+        /// <summary>
+        /// Код по ОКВЭД | not required
+        /// </summary>
+        [XmlAttribute("OKVED")]
+        public string OKVED { get; set; }
+
+        /// <summary>
+        /// Поле номер 1400: Признак административного правонарушения, зафиксированного специальными техническими средствами, работающими в автоматическом режиме
+        /// not required
+        /// </summary>
+        [XmlAttribute("chargeOffense", DataType = "integer")]
+        public string ChargeOffense { get; set; }
+
+
         /// <summary>
         /// Поле номер 1003: Идентификаторы начислений, на основании которых выставлено данное начисление
         /// not required
@@ -92,30 +121,8 @@ namespace GisGmp.Charge
         [XmlElement("AdditionalData", Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
         public AdditionalDataType[] AdditionalData { get; set; }
 
-        /// <summary>
-        /// УИН | required
-        /// </summary>
-        [XmlAttribute("supplierBillID")]
-        public string SupplierBillID { get; set; }
 
-        /// <summary>
-        /// Поле номер 1011: Количество дней от даты начисления, подлежащей уплате плательщиком, по истечении которых необходимо повторно предоставлять уведомление о начислении по подписке в случае, если оно не оплачено или сумма платежей меньше суммы к оплате, указанной в начислении
-        /// not required
-        /// </summary>
-        [XmlAttribute("noticeTerm", DataType = "integer")]
-        public string NoticeTerm { get; set; }
 
-        /// <summary>
-        /// Код по ОКВЭД | not required
-        /// </summary>
-        [XmlAttribute("OKVED")]
-        public string OKVED { get; set; }
-
-        /// <summary>
-        /// Поле номер 1400: Признак административного правонарушения, зафиксированного специальными техническими средствами, работающими в автоматическом режиме
-        /// not required
-        /// </summary>
-        [XmlAttribute("chargeOffense", DataType = "integer")]
-        public string ChargeOffense { get; set; }
+        
     }
 }
