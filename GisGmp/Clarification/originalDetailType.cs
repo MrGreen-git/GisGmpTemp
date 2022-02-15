@@ -12,6 +12,7 @@ namespace GisGmp.Clarification
     {
         /// <summary>
         /// Целое число, показывающее сумму в копейках.
+        /// <para>use: not required</para>
         /// </summary>
         [XmlAttribute("amount")]
         public ulong Amount { get; set; }

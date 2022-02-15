@@ -11,37 +11,37 @@ namespace GisGmp.Clarification
     public enum BudgetLevel
     {
         /// <summary>
-        /// «федеральный»
+        /// 1 – «федеральный»
         /// </summary>
         [XmlEnum("1")]
         Item1,
 
         /// <summary>
-        /// «бюджет субъекта РФ»
+        /// 2 – «бюджет субъекта РФ»
         /// </summary>
         [XmlEnum("2")]
         Item2,
 
         /// <summary>
-        /// «местный бюджет»
+        /// 3 – «местный бюджет»
         /// </summary>
         [XmlEnum("3")]
         Item3,
 
         /// <summary>
-        /// «бюджет ГВФ РФ»
+        /// 4 – «бюджет ГВФ РФ»
         /// </summary>
         [XmlEnum("4")]
         Item4,
 
         /// <summary>
-        /// «бюджет ТГВФ РФ»
+        /// 5 – «бюджет ТГВФ РФ»
         /// </summary>
         [XmlEnum("5")]
         Item5,
 
         /// <summary>
-        /// «средства ЮЛ»
+        /// 6 – «средства ЮЛ»
         /// </summary>
         [XmlEnum("6")]
         Item6,

@@ -96,8 +96,8 @@ public class ExportNotice
                     Oktmo = "88888000",
                     PaymentDate = new DateTime(day: 01, month: 07, year: 2021, hour: 14, minute: 06, second: 30, millisecond: 313, kind: DateTimeKind.Local),
                     Purpose = "test",
-                    receiptDate = new DateTime(day: 01, month: 07, year: 2021),
-                    receiptDateSpecified = true,
+                    ReceiptDate = new DateTime(day: 01, month: 07, year: 2021),
+                    ReceiptDateSpecified = true,
                     SupplierBillID = "88818012420345815071",
                     TransKind = TransKindType.Item01,
                     PaymentOrg = new(
@@ -229,10 +229,12 @@ public class ExportNotice
 
         //Act
         var request = gisgmp.CreateExportNoticeRequest(
-            destination: new(recipientIdentifier: "3eb5f9", routingCode: "45382000"),
+            destination: new(
+                recipientIdentifier: "3eb5f9", 
+                routingCode: "45382000"),
             noticeChargeExecutive: new NoticeChargeExecutiveType[]
             {
-                new NoticeChargeExecutiveType()
+                new()
                 {
                     ChangeStatusInfo = new(meaning: "1"),
 
@@ -243,12 +245,16 @@ public class ExportNotice
                     kbk = "18811630000010000140",
                     oktmo = "45348000",
                     amountToPay = 50000,
-                    Payee = new Payee(
-                        organization: new OrganizationType(name: "ЦАФАП ОДД ГИБДД ГУ МВД России по г. Москве", inn: "7707089111", kpp: "770731015"),
-                        orgAccount: new(accountNumber: "03100643000000019500",
-                        bank: new(bik: "024501901", correspondentBankAccount: "40102810045370000002")
-                        )
-                        ),
+                    Payee = new(
+                        organization: new(
+                            name: "ЦАФАП ОДД ГИБДД ГУ МВД России по г. Москве", 
+                            inn: "7707089111", 
+                            kpp: "770731015"),
+                        orgAccount: new(
+                            accountNumber: "03100643000000019500",
+                            bank: new(
+                                bik: "024501901", 
+                                correspondentBankAccount: "40102810045370000002"))),
                     Payer = new NoticeChargeExecutiveTypePayer(){ payerName = "Иванов Иван Иванович", PayerIdentifier = "1010000000008751379232" },
                     BudgetIndex = new(
                         status: "01",
@@ -270,20 +276,21 @@ public class ExportNotice
                             idDocDate: new(day: 04, month: 02, year: 2021),
                             subjCode: "1150000",
                             subjName: "Штраф по законодательству об административных правонарушениях (АП)"),
-                        executOrgan: new(){
-                            OrganOkogu = "1318025",
-                            OrganCode = "30",
-                            Organ = "МВД России",
-                            OrganAdr = "Тестовый адрес/00074320071000000000",
-                            OrganSignCodePost = "11-3-4-062",
-                            OrganSign = "Специалист",
-                            OrganSignFIO = "Фамилия Имя ОТчество"},
-                        debtor: new(){
-                            DebtorType = DebtorType.Item2,
-                            DebtorAdr = "Тестовый адрес/00074320071000000000",
+                        executOrgan: new(
+                            organOkogu: "1318025",
+                            organCode: "30",
+                            organ: "МВД России",
+                            organAdr: "Тестовый адрес/00074320071000000000",
+                            organSignCodePost: "11-3-4-062",
+                            organSign: "Специалист",
+                            organSignFIO: "Фамилия Имя ОТчество"),
+                        debtor: new(
+                            debtorType: DebtorType.Item2,
+                            debtorAdr: "Тестовый адрес/00074320071000000000"
+                            ){
                             Person = new(){ DebtorGender = Gender.мужской }})
                 }
-            });
+            }); ;
 
         //Assert              
         Assert.True(CheckObjToXml(request, $@"{nameof(ExportNoticeRequest4)}", pathRoot));

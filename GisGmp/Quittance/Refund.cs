@@ -10,10 +10,13 @@ namespace GisGmp.Quittance
     [XmlType(AnonymousType = true, Namespace = "http://roskazna.ru/gisgmp/xsd/Quittance/2.4.0")]
     public class Refund
     {
-        /// <summary/>
         protected Refund() { }
 
-        /// <summary/>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="refundId">Уникальный идентификатор возврата (УИВ)</param>
+        /// <param name="amount">Сумма возврата</param>
         public Refund(
             string refundId,
             ulong amount
@@ -24,13 +27,15 @@ namespace GisGmp.Quittance
         }
 
         /// <summary>
-        /// Уникальный идентификатор возврата (УИВ) | required
+        /// Уникальный идентификатор возврата (УИВ)
+        /// <para>use: required</para>
         /// </summary>
         [XmlAttribute("refundId")]
         public string RefundId { get; set; }
 
         /// <summary>
-        /// Сумма возврата | required
+        /// Сумма возврата
+        /// <para>use: required</para>
         /// </summary>
         [XmlAttribute("amount")]
         public ulong Amount { get; set; }

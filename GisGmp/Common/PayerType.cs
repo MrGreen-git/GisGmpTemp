@@ -8,7 +8,6 @@ namespace GisGmp.Common
     [XmlType(Namespace = "http://roskazna.ru/gisgmp/xsd/Common/2.4.0")]
     public class PayerType
     {
-        /// <summary/>
         protected PayerType() { }
 
         /// <summary/>

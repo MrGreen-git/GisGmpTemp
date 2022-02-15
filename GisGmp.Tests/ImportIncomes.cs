@@ -38,6 +38,12 @@ public class ImportIncomes
                                 name: "УВД по ЦАО ГУ МВД России по г. Москве",
                                 inn: "7706012716",
                                 kpp: "770901011")),
+                        budgetIndex: new(
+                            status: "01",
+                            paytReason: "0",
+                            taxPeriod: "0",
+                            taxDocNumber: "0",
+                            taxDocDate: "0"),
                         purpose: "Штраф",
                         amount: 50000,
                         transKind: TransKindType.Item01,
@@ -54,13 +60,7 @@ public class ImportIncomes
                         SupplierBillID = "18817072416285972102",
                         Payer = new(
                             payerIdentifier: "1010000000003751379232",
-                            payerName: "Тестовый плательщик"),
-                        BudgetIndex = new(
-                            status: "01",
-                            paytReason: "0",
-                            taxPeriod: "0",
-                            taxDocNumber: "0",
-                            taxDocDate: "0")
+                            payerName: "Тестовый плательщик")
                     }
             });
 

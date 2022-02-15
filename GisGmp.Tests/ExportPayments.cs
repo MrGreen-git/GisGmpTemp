@@ -73,6 +73,12 @@ public class ExportPayments
                                 bank: new(
                                     bik: "044525000"),
                                 accountNumber: "40101810045250010041")),
+                        budgetIndex: new(
+                            status: "01",//Status.Item01,
+                            paytReason: "0",//PaytReason.Item0,
+                            taxPeriod: "0",
+                            taxDocNumber: "0",
+                            taxDocDate: "0"),
                         purpose: "ФГБУ «ФКП Росреестра» по г Москва (ТЕСТОВЫЕ ДАННЫЕ!)",
                         amount: 500000,
                         transKind: TransKindType.Item01)
@@ -82,13 +88,7 @@ public class ExportPayments
                         Oktmo = "45348000",
                         Payer = new(
                             payerIdentifier: "1010000000008751379232",
-                            payerName: "Тестовый плательщик"),
-                        BudgetIndex = new(
-                            status: "01",//Status.Item01,
-                            paytReason: "0",//PaytReason.Item0,
-                            taxPeriod: "0",
-                            taxDocNumber: "0",
-                            taxDocDate: "0")
+                            payerName: "Тестовый плательщик")
                     })
                 { 
                     AcknowledgmentInfo = new(

@@ -13,55 +13,77 @@ namespace GisGmp.Clarification
     public class paymentDetailType
     {
         /// <summary>
-        /// Указывается наименование получателя уточняемого распоряжения.
+        /// Наименование получателя
+        /// <para>use: not required</para>
+        /// <para>length: 0..500</para>
+        /// <para>pattern: "\S+([\S\s]*\S+)*"</para>
         /// </summary>
         [XmlAttribute("payeeName")]
         public string PayeeName { get; set; }
 
         /// <summary>
-        /// Указывается идентификационный номер налогоплательщика - получателя средств.
+        /// ИНН получателя
+        /// <para>use: not required</para>
+        /// <para>type: com:INNType</para>
         /// </summary>
         [XmlAttribute("inn")]
         public string Inn { get; set; }
 
         /// <summary>
-        /// Указывается код причины постановки на учет в налоговом органе получателя средств.
+        /// КПП получателя
+        /// <para>use: not required</para>
+        /// <para>type: com:KPPType</para>
         /// </summary>
         [XmlAttribute("kpp")]
         public string Kpp { get; set; }
 
         /// <summary>
-        /// Указывается лицевой счет получателя средств.
+        /// Лицевой счет Получателя
+        /// <para>use: not required</para>
+        /// <para>type: com:PayeeAccountType</para>
         /// </summary>
         [XmlAttribute("payeeAccount")]
         public string PayeeAccount { get; set; }
 
         /// <summary>
-        /// Указывается 8-значный код по Общероссийскому классификатору территорий муниципальных образований.
+        /// Код по ОКТМО
+        /// <para>use: not required</para>
+        /// <para>type: com:OKTMOType</para>
         /// </summary>
         [XmlAttribute("oktmo")]
         public string Oktmo { get; set; }
 
         /// <summary>
-        /// Указывается код классификации доходов бюджетов, в соответствии с действующей бюджетной классификацией Российской Федерации.
+        /// Код по БКБ
+        /// <para>use: not required</para>
+        /// <para>type: com:KBKType</para>
         /// </summary>
         [XmlAttribute("kbk")]
         public string Kbk { get; set; }
 
         /// <summary>
-        /// Указывается код цели субсидии (субвенции).
+        /// Код цели субсидии (субвенции)
+        /// <para>use: not required</para>
+        /// <para>length: 1..25</para>
+        /// <para>pattern: "\w+"</para>
         /// </summary>
         [XmlAttribute("subsidy")]
         public string Subsidy { get; set; }
 
         /// <summary>
-        /// Указывается назначение платежа.
+        /// Назначение платежа
+        /// <para>use: not required</para>
+        /// <para>length: 0..210</para>
+        /// <para>pattern: "\S+([\S\s]*\S+)*"</para>
         /// </summary>
         [XmlAttribute("purpose")]
         public string Purpose { get; set; }
 
         /// <summary>
-        /// Указывается прочая необходимая информация.
+        /// Примечание
+        /// <para>use: not required</para>
+        /// <para>length: 0..210</para>
+        /// <para>pattern: "\S+([\S\s]*\S+)*"</para>
         /// </summary>
         [XmlAttribute("description")]
         public string Description { get; set; }

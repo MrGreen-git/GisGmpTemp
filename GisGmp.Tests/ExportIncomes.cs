@@ -73,6 +73,12 @@ public class ExportIncomes
                                 bank: new(
                                     bik: "024501901",
                                     correspondentBankAccount: "40102810045370000002"))),
+                        budgetIndex: new(
+                            status: "01",
+                            paytReason: "0",
+                            taxPeriod: "0",
+                            taxDocNumber: "0",
+                            taxDocDate: "0"),
                         purpose: "Штраф",
                         amount: 50000,
                         transKind: TransKindType.Item01,
@@ -89,13 +95,7 @@ public class ExportIncomes
                         SupplierBillID = "18817072416285972102",
                         Payer = new(
                             payerName: "Тестовый плательщик",
-                            payerIdentifier: "1010000000003751379232"),
-                        BudgetIndex = new(
-                            status: "01",
-                            paytReason: "0",
-                            taxPeriod: "0",
-                            taxDocNumber: "0",
-                            taxDocDate: "0")
+                            payerIdentifier: "1010000000003751379232")
                     })                       
             });
 

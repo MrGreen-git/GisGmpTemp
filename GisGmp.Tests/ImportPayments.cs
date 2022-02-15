@@ -42,20 +42,20 @@ public class ImportPayments
                             organization: new (
                                 name: "УВД по ЦАО ГУ МВД России по г. Москве",
                                 inn: "7706012716",
-                                kpp: "770901011")))
+                                kpp: "770901011")),
+                        budgetIndex: new (
+                            status: "01",
+                            paytReason: "0",
+                            taxPeriod: "0",
+                            taxDocNumber: "0",
+                            taxDocDate: "0"))
                     {
                         Kbk = "18811630020016000140",
                         Oktmo = "45348000",
                         SupplierBillID = "18817072416285972102",
                         Payer = new (
                             payerIdentifier: "1010000000003751379232",
-                            payerName: "Тестовый плательщик"),
-                        BudgetIndex = new (
-                            status: "01",
-                            paytReason: "0",
-                            taxPeriod: "0",
-                            taxDocNumber: "0",
-                            taxDocDate: "0")
+                            payerName: "Тестовый плательщик")
                     })                   
             });
 

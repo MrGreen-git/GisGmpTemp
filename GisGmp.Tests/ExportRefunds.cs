@@ -71,7 +71,7 @@ public class ExportRefunds
                         refundApplication: new(
                             appNum: "987894",
                             appDate: new(day: 30, month: 09, year: 2020),
-                            paymentIdType: "10471020010005233009202000000012",
+                            paymentId: "10471020010005233009202000000012",
                             cashType: 1,
                             amount: 300000,
                             purpose: "Штраф за нарушение ПДД (ТЕСТОВЫЕ ДАННЫЕ!)"),

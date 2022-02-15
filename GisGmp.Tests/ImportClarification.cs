@@ -70,12 +70,14 @@ namespace GisGmp.Tests
                                 ApplicationDate = new(day: 11, month: 03, year: 2021),
                                 IncomeId = "45100110320210000000000000000004"
                             },
-                            signs: new() {
+                            signs: new(
+                                executorPost: "Петров А.Г.",
+                                executorName: "Петров А.Г.",
+                                executorNum: "Петров А.Г."
+                                )
+                            {
                                 HeadPost = "Смирнова А.М.",
                                 HeadName = "Смирнова А.М.",
-                                ExecutorPost = "Петров А.Г.",
-                                ExecutorName = "Петров А.Г.",
-                                ExecutorNum = "Петров А.Г.",
                                 SignDate = new(day: 11, month: 03, year: 2021),
                                 SignDateSpecified = true,
                                 TOFKheadPost = "Смирнова А.М.",
